@@ -14,6 +14,7 @@
 		2573760920B8ABA2003D1B27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573760720B8ABA2003D1B27 /* LaunchScreen.storyboard */; };
 		2573761420B8ABA2003D1B27 /* EcoCapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573761320B8ABA2003D1B27 /* EcoCapTests.swift */; };
 		2573761F20B8ABA2003D1B27 /* EcoCapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573761E20B8ABA2003D1B27 /* EcoCapUITests.swift */; };
+		2573762F20B8B21B003D1B27 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573762E20B8B21B003D1B27 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2573761A20B8ABA2003D1B27 /* EcoCapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoCapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2573761E20B8ABA2003D1B27 /* EcoCapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoCapUITests.swift; sourceTree = "<group>"; };
 		2573762020B8ABA2003D1B27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2573762E20B8B21B003D1B27 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2573760520B8ABA2003D1B27 /* Assets.xcassets */,
 				2573760720B8ABA2003D1B27 /* LaunchScreen.storyboard */,
 				2573760A20B8ABA2003D1B27 /* Info.plist */,
+				2573762E20B8B21B003D1B27 /* Home.storyboard */,
 			);
 			path = EcoCap;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				2573760920B8ABA2003D1B27 /* LaunchScreen.storyboard in Resources */,
 				2573760620B8ABA2003D1B27 /* Assets.xcassets in Resources */,
 				2573760420B8ABA1003D1B27 /* Main.storyboard in Resources */,
+				2573762F20B8B21B003D1B27 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
