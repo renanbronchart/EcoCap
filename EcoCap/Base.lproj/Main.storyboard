@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2913" y="-286"/>
-        </scene>
         <!--On Boarding Container View Controller-->
         <scene sceneID="UnF-UP-a0D">
             <objects>
@@ -153,13 +138,16 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRt-ci-fuA">
-                                        <rect key="frame" x="164" y="585" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="146" y="32" width="82" height="30"/>
+                                        <state key="normal" title="Go To Login"/>
+                                        <connections>
+                                            <action selector="goToLoginPage:" destination="ccn-tK-Psc" eventType="touchUpInside" id="8J3-aD-vdD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hRt-ci-fuA" secondAttribute="bottom" constant="32" id="LOh-mc-qQg"/>
+                                    <constraint firstItem="hRt-ci-fuA" firstAttribute="top" secondItem="sv6-nb-b5D" secondAttribute="top" constant="32" id="oUH-fr-DPW"/>
                                     <constraint firstItem="hRt-ci-fuA" firstAttribute="centerX" secondItem="sv6-nb-b5D" secondAttribute="centerX" id="pZp-ex-uRF"/>
                                 </constraints>
                             </view>

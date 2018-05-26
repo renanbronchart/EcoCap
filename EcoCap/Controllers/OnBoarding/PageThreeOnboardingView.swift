@@ -22,6 +22,16 @@ class PageThreeOnboardingView: UIViewController {
     }
     
 
+    @IBAction func goToLoginPage(_ sender: Any) {
+        var LoginStoryBoard: UIStoryboard!
+        
+        LoginStoryBoard = UIStoryboard(name: "Login", bundle: nil)
+        
+        if let signInViewController = LoginStoryBoard.instantiateViewController(withIdentifier: "signInViewControllerIdentifier") as?  SignInViewController {
+            self.present(signInViewController, animated: true, completion: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
