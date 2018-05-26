@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		252907AB20B8D9E4000C53C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252907AA20B8D9E4000C53C3 /* Login.storyboard */; };
+		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
+		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
+		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
+		256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A620B9AAD900490E1D /* SettingsViewController.swift */; };
 		257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257375FE20B8ABA1003D1B27 /* AppDelegate.swift */; };
 		2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573760020B8ABA1003D1B27 /* SignInViewController.swift */; };
 		2573760420B8ABA1003D1B27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573760220B8ABA1003D1B27 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 
 /* Begin PBXFileReference section */
 		252907AA20B8D9E4000C53C3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
+		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		256803A620B9AAD900490E1D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		257375FB20B8ABA1003D1B27 /* EcoCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257375FE20B8ABA1003D1B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573760020B8ABA1003D1B27 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +157,10 @@
 			children = (
 				2573760020B8ABA1003D1B27 /* SignInViewController.swift */,
 				2573763D20B8B9ED003D1B27 /* OnBoarding */,
+				256803A020B9AA8B00490E1D /* ProfileViewController.swift */,
+				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
+				256803A420B9AAC500490E1D /* RankingViewController.swift */,
+				256803A620B9AAD900490E1D /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,10 +333,14 @@
 			files = (
 				2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */,
 				2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */,
+				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
+				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
+				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
+				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
