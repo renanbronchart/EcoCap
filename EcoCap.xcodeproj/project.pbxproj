@@ -28,6 +28,7 @@
 		2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */; };
 		25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E020BAB22700639D18 /* HeaderStickyView.swift */; };
 		25D165E320BAB62E00639D18 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E220BAB62E00639D18 /* GradientView.swift */; };
+		25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
 		25D165E020BAB22700639D18 /* HeaderStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickyView.swift; sourceTree = "<group>"; };
 		25D165E220BAB62E00639D18 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
 				256803A420B9AAC500490E1D /* RankingViewController.swift */,
 				256803A620B9AAD900490E1D /* SettingsViewController.swift */,
+				25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
 				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
+				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
