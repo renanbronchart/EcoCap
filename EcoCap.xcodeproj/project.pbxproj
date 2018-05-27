@@ -12,6 +12,7 @@
 		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
 		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
 		256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A620B9AAD900490E1D /* SettingsViewController.swift */; };
+		256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A820B9BAF900490E1D /* ProgressBarView.swift */; };
 		257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257375FE20B8ABA1003D1B27 /* AppDelegate.swift */; };
 		2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573760020B8ABA1003D1B27 /* SignInViewController.swift */; };
 		2573760420B8ABA1003D1B27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573760220B8ABA1003D1B27 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 		2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */; };
 		2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */; };
 		2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */; };
+		25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E020BAB22700639D18 /* HeaderStickyView.swift */; };
+		25D165E320BAB62E00639D18 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E220BAB62E00639D18 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,7 @@
 		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		256803A620B9AAD900490E1D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		256803A820B9BAF900490E1D /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		257375FB20B8ABA1003D1B27 /* EcoCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257375FE20B8ABA1003D1B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573760020B8ABA1003D1B27 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoOnboardingView.swift; sourceTree = "<group>"; };
 		2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeOnboardingView.swift; sourceTree = "<group>"; };
 		2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
+		25D165E020BAB22700639D18 /* HeaderStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickyView.swift; sourceTree = "<group>"; };
+		25D165E220BAB62E00639D18 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,9 @@
 		2573763920B8B7E3003D1B27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				256803A820B9BAF900490E1D /* ProgressBarView.swift */,
+				25D165E020BAB22700639D18 /* HeaderStickyView.swift */,
+				25D165E220BAB62E00639D18 /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -335,9 +344,12 @@
 				2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */,
 				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
+				25D165E320BAB62E00639D18 /* GradientView.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
 				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
 				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
+				256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */,
+				25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */,
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
 				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,

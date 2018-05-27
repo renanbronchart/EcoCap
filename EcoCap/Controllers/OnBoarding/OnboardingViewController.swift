@@ -8,6 +8,19 @@
 
 import UIKit
 
+// Need to declare the type of the protocol as class
+protocol OnboardingViewControllerDelegate: class {
+    // Called when the number of pages is updated.
+    func onboardingViewController(onboardingViewController: OnboardingViewController,
+                                  didUpdatePageCount count: Int)
+    
+    
+    // Called when the current index is updated.
+    func onboardingViewController(onboardingViewController: OnboardingViewController,
+                                  didUpdatePageIndex index: Int)
+    
+}
+
 class OnboardingViewController: UIPageViewController {
     
     weak var onboardingDelegate: OnboardingViewControllerDelegate?
@@ -53,19 +66,6 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
             onboardingDelegate?.onboardingViewController(onboardingViewController: self, didUpdatePageIndex: index)
         }
     }
-}
-
-// Need to declare the type of the protocol as class
-protocol OnboardingViewControllerDelegate: class {
-     // Called when the number of pages is updated.
-    func onboardingViewController(onboardingViewController: OnboardingViewController,
-                                    didUpdatePageCount count: Int)
-    
-    
-     // Called when the current index is updated.
-    func onboardingViewController(onboardingViewController: OnboardingViewController,
-                                    didUpdatePageIndex index: Int)
-    
 }
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
