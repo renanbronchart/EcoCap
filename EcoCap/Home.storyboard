@@ -59,9 +59,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-Ep-iun" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-Zm-qjd" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-279" width="375" height="667"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-Zm-qjd" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-200" width="375" height="754"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -114,12 +113,15 @@
                                             <constraint firstItem="8XN-YT-2j7" firstAttribute="top" secondItem="x8F-Ep-iun" secondAttribute="top" constant="8" id="Cvz-yW-Tka"/>
                                             <constraint firstItem="bxx-Wl-4kW" firstAttribute="centerY" secondItem="jls-QL-HXe" secondAttribute="centerY" id="Lsd-jb-xDw"/>
                                             <constraint firstItem="jls-QL-HXe" firstAttribute="centerX" secondItem="x8F-Ep-iun" secondAttribute="centerX" id="Nox-Ro-NaQ"/>
+                                            <constraint firstItem="bUs-Zm-qjd" firstAttribute="leading" secondItem="x8F-Ep-iun" secondAttribute="leading" id="X24-Vg-AnA"/>
+                                            <constraint firstItem="bUs-Zm-qjd" firstAttribute="top" secondItem="x8F-Ep-iun" secondAttribute="top" constant="-200" id="YJh-PR-3tD"/>
                                             <constraint firstItem="bxx-Wl-4kW" firstAttribute="trailing" secondItem="jls-QL-HXe" secondAttribute="trailing" constant="-16" id="ZXD-x4-ovI"/>
                                             <constraint firstItem="8XN-YT-2j7" firstAttribute="centerX" secondItem="x8F-Ep-iun" secondAttribute="centerX" id="bGi-Eg-LBr"/>
                                             <constraint firstItem="jls-QL-HXe" firstAttribute="leading" secondItem="x8F-Ep-iun" secondAttribute="leading" constant="16" id="hco-BB-8it"/>
                                             <constraint firstItem="6iY-qE-ucr" firstAttribute="leading" secondItem="jls-QL-HXe" secondAttribute="leading" constant="16" id="kWO-M3-jrD"/>
                                             <constraint firstAttribute="trailing" secondItem="jls-QL-HXe" secondAttribute="trailing" constant="16" id="miK-6m-31G"/>
                                             <constraint firstItem="6iY-qE-ucr" firstAttribute="centerY" secondItem="jls-QL-HXe" secondAttribute="centerY" id="nBt-Dc-apg"/>
+                                            <constraint firstAttribute="trailing" secondItem="bUs-Zm-qjd" secondAttribute="trailing" id="ypo-qe-sQs"/>
                                             <constraint firstItem="jls-QL-HXe" firstAttribute="top" secondItem="8XN-YT-2j7" secondAttribute="bottom" constant="24" id="z9s-Qr-MLs"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -335,6 +337,7 @@
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="EQD-Ke-NbG"/>
                             <constraint firstAttribute="bottom" secondItem="riG-TI-Y90" secondAttribute="bottom" id="IDj-vc-5oY"/>
                             <constraint firstAttribute="trailing" secondItem="riG-TI-Y90" secondAttribute="trailing" id="O3q-zY-YEa"/>
+                            <constraint firstItem="bUs-Zm-qjd" firstAttribute="bottom" secondItem="iO9-tt-g0f" secondAttribute="bottom" id="Z98-bd-Q8Z"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="trailing" secondItem="vn1-og-rJd" secondAttribute="trailing" id="fr8-Rc-u6z"/>
                             <constraint firstItem="riG-TI-Y90" firstAttribute="top" secondItem="zFB-yg-gwS" secondAttribute="bottom" id="tc7-Kd-H02"/>
                         </constraints>
