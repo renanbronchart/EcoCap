@@ -31,6 +31,7 @@
 		25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */; };
 		25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E820BB813500639D18 /* CustomViewCell.swift */; };
 		25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */; };
+		25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewCell.swift; sourceTree = "<group>"; };
 		25D165E820BB813500639D18 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				25D165E020BAB22700639D18 /* HeaderStickyView.swift */,
 				25D165E220BAB62E00639D18 /* GradientView.swift */,
 				25D165E820BB813500639D18 /* CustomViewCell.swift */,
+				25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
 				25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */,
+				25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -127,55 +128,95 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCellIdentifier" rowHeight="76" id="tPj-Bo-Hek" customClass="CategoryTableViewCell" customModule="EcoCap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCellIdentifier" rowHeight="76" id="tPj-Bo-Hek" customClass="CategoryTableViewCell" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tPj-Bo-Hek" id="Ugc-V6-fhX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tPj-Bo-Hek" id="Ugc-V6-fhX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsc-rY-qkE">
-                                                    <rect key="frame" x="31" y="35" width="46" height="18"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsc-rY-qkE" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="35" width="92" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="XxJ-ur-ssu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                            <color key="value" red="0.22352941176470587" green="0.76862745098039209" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                            <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-To-NZ1">
-                                                    <rect key="frame" x="164" y="29" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-To-NZ1" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                                    <rect key="frame" x="141" y="35" width="92" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="X9u-L3-v71"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                            <color key="value" red="0.23921568630000001" green="0.80784313730000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                            <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-Wy-EGM">
-                                                    <rect key="frame" x="298" y="29" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-Wy-EGM" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                                    <rect key="frame" x="267.5" y="35" width="91.5" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="hGZ-Un-DZ6"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                            <color key="value" red="0.23921568630000001" green="0.80784313730000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                            <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1hD-To-NZ1" firstAttribute="centerX" secondItem="Ugc-V6-fhX" secondAttribute="centerX" id="7ma-m1-zdm"/>
-                                                <constraint firstItem="1hD-To-NZ1" firstAttribute="centerY" secondItem="Xsc-rY-qkE" secondAttribute="centerY" id="KXz-dH-JOT"/>
-                                                <constraint firstItem="Xsc-rY-qkE" firstAttribute="top" secondItem="Ugc-V6-fhX" secondAttribute="topMargin" constant="24" id="So2-hP-JdZ"/>
-                                                <constraint firstItem="Xsc-rY-qkE" firstAttribute="leading" secondItem="Ugc-V6-fhX" secondAttribute="leadingMargin" constant="16" id="de6-1L-PZu"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Xsc-rY-qkE" secondAttribute="bottom" constant="12" id="hlf-Jg-V4n"/>
-                                                <constraint firstItem="hcq-Wy-EGM" firstAttribute="trailing" secondItem="Ugc-V6-fhX" secondAttribute="trailingMargin" constant="-16" id="soB-Me-fkc"/>
+                                                <constraint firstItem="Xsc-rY-qkE" firstAttribute="top" secondItem="Ugc-V6-fhX" secondAttribute="topMargin" constant="24" id="Cah-lN-p7O"/>
+                                                <constraint firstItem="1hD-To-NZ1" firstAttribute="centerY" secondItem="Xsc-rY-qkE" secondAttribute="centerY" id="dDP-kd-PJr"/>
                                                 <constraint firstItem="hcq-Wy-EGM" firstAttribute="centerY" secondItem="1hD-To-NZ1" secondAttribute="centerY" id="zkr-60-vhC"/>
                                             </constraints>
+                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="Xsc-rY-qkE" firstAttribute="width" secondItem="tPj-Bo-Hek" secondAttribute="width" multiplier="0.33" constant="-32" id="83y-jx-w25"/>
+                                            <constraint firstItem="1hD-To-NZ1" firstAttribute="width" secondItem="tPj-Bo-Hek" secondAttribute="width" multiplier="0.33" constant="-32" id="BwK-jp-mb4"/>
+                                            <constraint firstAttribute="trailing" secondItem="hcq-Wy-EGM" secondAttribute="trailing" constant="16" id="jQM-OJ-V8m"/>
+                                            <constraint firstItem="hcq-Wy-EGM" firstAttribute="width" secondItem="tPj-Bo-Hek" secondAttribute="width" multiplier="0.33" constant="-32" id="kgq-NI-SBx"/>
+                                            <constraint firstItem="Xsc-rY-qkE" firstAttribute="leading" secondItem="tPj-Bo-Hek" secondAttribute="leading" constant="16" id="w5q-w6-mBv"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="challengesTableViewCellIdentifier" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengesTableViewCellIdentifier" rowHeight="190" id="KUf-VI-hWU" customClass="ChallengesTableViewCell" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="104" width="375" height="190"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="challengesTableViewCellIdentifier" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengesTableViewCellIdentifier" rowHeight="192" id="KUf-VI-hWU" customClass="ChallengesTableViewCell" customModule="EcoCap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="104" width="375" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUf-VI-hWU" id="mha-XT-X5i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUf-VI-hWU" id="mha-XT-X5i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXc-w9-CCf" customClass="CustomViewCell" customModule="EcoCap" customModuleProvider="target">
-                                                    <rect key="frame" x="31" y="23" width="313" height="168"/>
+                                                    <rect key="frame" x="16" y="12" width="343" height="168"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T2-NO-ELE">
-                                                            <rect key="frame" x="64" y="24" width="177" height="24"/>
+                                                            <rect key="frame" x="64" y="24" width="207" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybk-Av-oQq">
-                                                            <rect key="frame" x="64" y="56" width="177" height="19.5"/>
+                                                            <rect key="frame" x="64" y="56" width="207" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -187,7 +228,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-xy-WbG">
-                                                            <rect key="frame" x="205.5" y="99.5" width="35.5" height="17"/>
+                                                            <rect key="frame" x="235.5" y="99.5" width="35.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -199,17 +240,17 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUh-1B-4zw">
-                                                            <rect key="frame" x="205.5" y="116.5" width="35.5" height="17"/>
+                                                            <rect key="frame" x="235.5" y="116.5" width="35.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-JR-STY">
-                                                            <rect key="frame" x="267" y="69" width="46" height="30"/>
+                                                            <rect key="frame" x="297" y="69" width="46" height="30"/>
                                                             <state key="normal" title="Button"/>
                                                         </button>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-zE-ZgI" customClass="ProgressBarView" customModule="EcoCap" customModuleProvider="target">
-                                                            <rect key="frame" x="64" y="141.5" width="177" height="8"/>
+                                                            <rect key="frame" x="64" y="141.5" width="207" height="8"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="8" id="VEY-ip-bgi"/>
                                                             </constraints>
@@ -252,13 +293,15 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="tXc-w9-CCf" firstAttribute="top" secondItem="mha-XT-X5i" secondAttribute="topMargin" constant="12" id="FHb-Xs-nEX"/>
-                                                <constraint firstItem="tXc-w9-CCf" firstAttribute="bottom" secondItem="mha-XT-X5i" secondAttribute="bottomMargin" constant="12" id="Jg5-UD-hPc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tXc-w9-CCf" secondAttribute="trailing" constant="16" id="KEb-Rp-dnu"/>
-                                                <constraint firstItem="tXc-w9-CCf" firstAttribute="leading" secondItem="mha-XT-X5i" secondAttribute="leadingMargin" constant="16" id="mHZ-KO-ANy"/>
-                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="tXc-w9-CCf" firstAttribute="top" secondItem="KUf-VI-hWU" secondAttribute="top" constant="12" id="8u8-mI-Nxp"/>
+                                            <constraint firstItem="tXc-w9-CCf" firstAttribute="leading" secondItem="KUf-VI-hWU" secondAttribute="leading" constant="16" id="9rv-3X-nK2"/>
+                                            <constraint firstAttribute="trailing" secondItem="tXc-w9-CCf" secondAttribute="trailing" constant="16" id="BCY-t9-i6W"/>
+                                            <constraint firstAttribute="bottom" secondItem="tXc-w9-CCf" secondAttribute="bottom" constant="12" id="WcG-XD-MLa"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         <connections>
                                             <outlet property="customViewCell" destination="tXc-w9-CCf" id="u1q-No-pHg"/>
                                         </connections>

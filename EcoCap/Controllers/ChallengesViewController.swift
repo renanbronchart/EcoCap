@@ -60,9 +60,6 @@ class ChallengesViewController: UIViewController {
         tableView.dataSource = self
         headerProgressView.setProgress(0, animated: false)
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 192
-        
     }
     
     override func didReceiveMemoryWarning() {
