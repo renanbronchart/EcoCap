@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021386D1ED735E20CE3E2B32 /* Pods_EcoCap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */; };
 		252907AB20B8D9E4000C53C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252907AA20B8D9E4000C53C3 /* Login.storyboard */; };
+		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
+		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
+		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
+		256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A620B9AAD900490E1D /* SettingsViewController.swift */; };
+		256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A820B9BAF900490E1D /* ProgressBarView.swift */; };
 		257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257375FE20B8ABA1003D1B27 /* AppDelegate.swift */; };
 		2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573760020B8ABA1003D1B27 /* SignInViewController.swift */; };
 		2573760420B8ABA1003D1B27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2573760220B8ABA1003D1B27 /* Main.storyboard */; };
@@ -21,6 +27,15 @@
 		2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */; };
 		2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */; };
 		2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */; };
+		25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E020BAB22700639D18 /* HeaderStickyView.swift */; };
+		25D165E320BAB62E00639D18 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E220BAB62E00639D18 /* GradientView.swift */; };
+		25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */; };
+		25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E820BB813500639D18 /* CustomViewCell.swift */; };
+		25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */; };
+		25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */; };
+		25E8ABDE20BCBFBB00079A17 /* DetailChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */; };
+		94BCEBD638CC6B69A69EA665 /* Pods_EcoCapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */; };
+		EDC9B40D2A661E4068ED3862 /* Pods_EcoCapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F3DD0FAE813D9EC3C5D9AF /* Pods_EcoCapUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +57,11 @@
 
 /* Begin PBXFileReference section */
 		252907AA20B8D9E4000C53C3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
+		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		256803A620B9AAD900490E1D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		256803A820B9BAF900490E1D /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		257375FB20B8ABA1003D1B27 /* EcoCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257375FE20B8ABA1003D1B27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2573760020B8ABA1003D1B27 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +81,22 @@
 		2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoOnboardingView.swift; sourceTree = "<group>"; };
 		2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeOnboardingView.swift; sourceTree = "<group>"; };
 		2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
+		25D165E020BAB22700639D18 /* HeaderStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickyView.swift; sourceTree = "<group>"; };
+		25D165E220BAB62E00639D18 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewCell.swift; sourceTree = "<group>"; };
+		25D165E820BB813500639D18 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRoundedButton.swift; sourceTree = "<group>"; };
+		25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChallengeViewController.swift; sourceTree = "<group>"; };
+		2D0A6CF63423A885B1AA7068 /* Pods-EcoCapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapUITests/Pods-EcoCapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F3DD0FAE813D9EC3C5D9AF /* Pods_EcoCapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		905A57EE2B992C40F75B14C5 /* Pods-EcoCap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCap/Pods-EcoCap.debug.xcconfig"; sourceTree = "<group>"; };
+		A9826AB092E812C905074085 /* Pods-EcoCapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapTests/Pods-EcoCapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0E50B3E46CF057FB4C473A5 /* Pods-EcoCapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapTests/Pods-EcoCapTests.release.xcconfig"; sourceTree = "<group>"; };
+		BC15E08D95B1193ACFA78F3F /* Pods-EcoCapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapUITests/Pods-EcoCapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FAAC53C4ACD15F91FE557A65 /* Pods-EcoCap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCap.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCap/Pods-EcoCap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				021386D1ED735E20CE3E2B32 /* Pods_EcoCap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BCEBD638CC6B69A69EA665 /* Pods_EcoCapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +120,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC9B40D2A661E4068ED3862 /* Pods_EcoCapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0310B452D6428E20D95EDF65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */,
+				2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */,
+				64F3DD0FAE813D9EC3C5D9AF /* Pods_EcoCapUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		257375F220B8ABA1003D1B27 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +144,8 @@
 				2573761220B8ABA2003D1B27 /* EcoCapTests */,
 				2573761D20B8ABA2003D1B27 /* EcoCapUITests */,
 				257375FC20B8ABA1003D1B27 /* Products */,
+				66BBD07205EDC370959C96D5 /* Pods */,
+				0310B452D6428E20D95EDF65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +200,13 @@
 			children = (
 				2573760020B8ABA1003D1B27 /* SignInViewController.swift */,
 				2573763D20B8B9ED003D1B27 /* OnBoarding */,
+				256803A020B9AA8B00490E1D /* ProfileViewController.swift */,
+				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
+				256803A420B9AAC500490E1D /* RankingViewController.swift */,
+				256803A620B9AAD900490E1D /* SettingsViewController.swift */,
+				25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */,
+				25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */,
+				25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +214,11 @@
 		2573763920B8B7E3003D1B27 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				256803A820B9BAF900490E1D /* ProgressBarView.swift */,
+				25D165E020BAB22700639D18 /* HeaderStickyView.swift */,
+				25D165E220BAB62E00639D18 /* GradientView.swift */,
+				25D165E820BB813500639D18 /* CustomViewCell.swift */,
+				25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +249,19 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		66BBD07205EDC370959C96D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				905A57EE2B992C40F75B14C5 /* Pods-EcoCap.debug.xcconfig */,
+				FAAC53C4ACD15F91FE557A65 /* Pods-EcoCap.release.xcconfig */,
+				A9826AB092E812C905074085 /* Pods-EcoCapTests.debug.xcconfig */,
+				B0E50B3E46CF057FB4C473A5 /* Pods-EcoCapTests.release.xcconfig */,
+				2D0A6CF63423A885B1AA7068 /* Pods-EcoCapUITests.debug.xcconfig */,
+				BC15E08D95B1193ACFA78F3F /* Pods-EcoCapUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2573762320B8ABA2003D1B27 /* Build configuration list for PBXNativeTarget "EcoCap" */;
 			buildPhases = (
+				EAB1019CB9CD741C8745F59F /* [CP] Check Pods Manifest.lock */,
 				257375F720B8ABA1003D1B27 /* Sources */,
 				257375F820B8ABA1003D1B27 /* Frameworks */,
 				257375F920B8ABA1003D1B27 /* Resources */,
@@ -210,6 +287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2573762620B8ABA2003D1B27 /* Build configuration list for PBXNativeTarget "EcoCapTests" */;
 			buildPhases = (
+				D4C9CE04EA564A89A865CEC9 /* [CP] Check Pods Manifest.lock */,
 				2573760B20B8ABA2003D1B27 /* Sources */,
 				2573760C20B8ABA2003D1B27 /* Frameworks */,
 				2573760D20B8ABA2003D1B27 /* Resources */,
@@ -228,6 +306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2573762920B8ABA2003D1B27 /* Build configuration list for PBXNativeTarget "EcoCapUITests" */;
 			buildPhases = (
+				B30B4A802746E727EEA3689F /* [CP] Check Pods Manifest.lock */,
 				2573761620B8ABA2003D1B27 /* Sources */,
 				2573761720B8ABA2003D1B27 /* Frameworks */,
 				2573761820B8ABA2003D1B27 /* Resources */,
@@ -314,6 +393,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B30B4A802746E727EEA3689F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EcoCapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C9CE04EA564A89A865CEC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EcoCapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB1019CB9CD741C8745F59F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EcoCap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		257375F720B8ABA1003D1B27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,11 +457,23 @@
 			files = (
 				2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */,
 				2573760120B8ABA1003D1B27 /* SignInViewController.swift in Sources */,
+				25E8ABDE20BCBFBB00079A17 /* DetailChallengeViewController.swift in Sources */,
+				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
+				25D165E320BAB62E00639D18 /* GradientView.swift in Sources */,
+				25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
+				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
+				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
+				256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */,
+				25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */,
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
+				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
+				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
+				25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */,
+				25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +644,7 @@
 		};
 		2573762420B8ABA2003D1B27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905A57EE2B992C40F75B14C5 /* Pods-EcoCap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -514,6 +663,7 @@
 		};
 		2573762520B8ABA2003D1B27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAAC53C4ACD15F91FE557A65 /* Pods-EcoCap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +682,7 @@
 		};
 		2573762720B8ABA2003D1B27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9826AB092E812C905074085 /* Pods-EcoCapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +704,7 @@
 		};
 		2573762820B8ABA2003D1B27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0E50B3E46CF057FB4C473A5 /* Pods-EcoCapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -574,6 +726,7 @@
 		};
 		2573762A20B8ABA2003D1B27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D0A6CF63423A885B1AA7068 /* Pods-EcoCapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +747,7 @@
 		};
 		2573762B20B8ABA2003D1B27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC15E08D95B1193ACFA78F3F /* Pods-EcoCapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
