@@ -12,13 +12,8 @@ class ChallengesTableViewCell: UITableViewCell {
     
     var challenge = ""
 
-//    @IBOutlet weak var titleChallengeLabel: UILabel!
-//    @IBOutlet weak var descriptionChallengeLabel: UILabel!
-//    @IBOutlet weak var completedLabel: UILabel!
-//    @IBOutlet weak var moreThanLabel: UILabel!
-//    @IBOutlet weak var percentLabel: UILabel!
-//    @IBOutlet weak var remaingCompleteChallengeLabel: UILabel!
-//    @IBOutlet weak var progressCompleteChallenge: UIProgressView!
+    @IBOutlet weak var customViewCell: CustomViewCell!
+    
     
 //    @IBAction func buttonMission(_ sender: Any) {
 //        print("mission + 1")
@@ -27,6 +22,11 @@ class ChallengesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        customViewCell.firstColor = UIColor(displayP3Red: 255/255, green: 42/255, blue: 101/255, alpha: 1)
+        customViewCell.secondColor = UIColor(displayP3Red: 254/255, green: 169/255, blue: 70/255, alpha: 1)
+
+
         
 //        titleChallengeLabel.text = challenge
 //        gradientView.layer.cornerRadius = 30
