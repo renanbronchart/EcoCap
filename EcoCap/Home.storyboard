@@ -26,7 +26,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5R-SL-RGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="410"/>
+            <point key="canvasLocation" x="566" y="186"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="oAf-TR-4OS">
+            <objects>
+                <navigationController id="LA7-1g-K97" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wkr-wg-93t"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EU5-2S-wvt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lGY-Ok-E8b" kind="relationship" relationship="rootViewController" id="iBJ-DK-J9z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxJ-PC-Hpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="-2382"/>
         </scene>
         <!--Item-->
         <scene sceneID="8xp-RZ-LZ5">
@@ -37,13 +54,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-yg-gwS" customClass="HeaderStickyView" customModule="EcoCap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="110"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="110"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-Ep-iun" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-Zm-qjd" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-20" width="375" height="667"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-Zm-qjd" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-279" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -124,8 +142,8 @@
                                     <constraint firstItem="x8F-Ep-iun" firstAttribute="top" secondItem="zFB-yg-gwS" secondAttribute="top" id="xsM-eJ-EhG"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="riG-TI-Y90">
-                                <rect key="frame" x="0.0" y="130" width="375" height="537"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="riG-TI-Y90">
+                                <rect key="frame" x="0.0" y="174" width="375" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCellIdentifier" rowHeight="76" id="tPj-Bo-Hek" customClass="CategoryTableViewCell" customModule="EcoCap" customModuleProvider="target">
@@ -303,6 +321,7 @@
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         <connections>
+                                            <outlet property="challengeNameLabel" destination="3T2-NO-ELE" id="340-IC-Lkn"/>
                                             <outlet property="customViewCell" destination="tXc-w9-CCf" id="u1q-No-pHg"/>
                                         </connections>
                                     </tableViewCell>
@@ -312,20 +331,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="riG-TI-Y90" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="6pf-ww-wJd"/>
-                            <constraint firstItem="bUs-Zm-qjd" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="CGc-lL-eSf"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="top" secondItem="iO9-tt-g0f" secondAttribute="top" id="DiU-QH-KRr"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="EQD-Ke-NbG"/>
                             <constraint firstAttribute="bottom" secondItem="riG-TI-Y90" secondAttribute="bottom" id="IDj-vc-5oY"/>
-                            <constraint firstItem="bUs-Zm-qjd" firstAttribute="top" secondItem="vn1-og-rJd" secondAttribute="top" id="Iam-tI-Vci"/>
-                            <constraint firstAttribute="trailing" secondItem="bUs-Zm-qjd" secondAttribute="trailing" id="JHf-NX-sas"/>
                             <constraint firstAttribute="trailing" secondItem="riG-TI-Y90" secondAttribute="trailing" id="O3q-zY-YEa"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="trailing" secondItem="vn1-og-rJd" secondAttribute="trailing" id="fr8-Rc-u6z"/>
-                            <constraint firstAttribute="bottom" secondItem="bUs-Zm-qjd" secondAttribute="bottom" id="oMk-et-btr"/>
                             <constraint firstItem="riG-TI-Y90" firstAttribute="top" secondItem="zFB-yg-gwS" secondAttribute="bottom" id="tc7-Kd-H02"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iO9-tt-g0f"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="5fd-sg-dxa"/>
+                    <navigationItem key="navigationItem" id="e6y-eD-Iui"/>
                     <connections>
                         <outlet property="gradientView" destination="x8F-Ep-iun" id="ZIV-B1-dVg"/>
                         <outlet property="headerProgressView" destination="jls-QL-HXe" id="77F-Nf-CGs"/>
@@ -343,21 +359,32 @@
             </objects>
             <point key="canvasLocation" x="565.60000000000002" y="-2381.5592203898054"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="cls-ff-hYp">
+        <!--Detail Challenge View Controller-->
+        <scene sceneID="567-dX-Ggs">
             <objects>
-                <viewController id="25V-i3-n6Q" customClass="ChallengesViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZCs-09-Ojo">
+                <viewController storyboardIdentifier="detailChallengeViewControllerIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t7k-kM-fTh" customClass="DetailChallengeViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mfd-BK-t3W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0x-kf-Wnk">
+                                <rect key="frame" x="166" y="142" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="c70-4C-1Rl"/>
+                        <viewLayoutGuide key="safeArea" id="GlP-Lg-OdW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lqa-hK-KLm"/>
+                    <connections>
+                        <outlet property="challengeNameLabel" destination="D0x-kf-Wnk" id="Lcu-Lr-BaL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1CW-ej-Jmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nyj-Tp-1SU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-1542"/>
+            <point key="canvasLocation" x="1803" y="-2379"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="G5v-6N-CNr">
@@ -373,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkF-GC-fLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="-542"/>
+            <point key="canvasLocation" x="566" y="-1183"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3Nx-Lz-p57">
@@ -387,8 +414,7 @@
                     <connections>
                         <segue destination="RJJ-V3-tYa" kind="relationship" relationship="viewControllers" id="cD5-kG-15g"/>
                         <segue destination="1Oh-ls-des" kind="relationship" relationship="viewControllers" id="COB-YB-Bt0"/>
-                        <segue destination="25V-i3-n6Q" kind="relationship" relationship="viewControllers" id="N5h-0Q-FbA"/>
-                        <segue destination="lGY-Ok-E8b" kind="relationship" relationship="viewControllers" id="VlE-2c-xSG"/>
+                        <segue destination="LA7-1g-K97" kind="relationship" relationship="viewControllers" id="fJ3-Pu-SaW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8Z-5M-oR8" userLabel="First Responder" sceneMemberID="firstResponder"/>

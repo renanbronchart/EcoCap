@@ -59,12 +59,22 @@ class ChallengesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         headerProgressView.setProgress(0, animated: false)
-        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
     }
 }
 
@@ -101,6 +111,17 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
             cell.challenge = challenges[row - 1]
             
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked")
+        if let detailChallengeView =
+            self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
+            
+            detailChallengeView.challenge = challenges[indexPath.row]
+            
+            self.navigationController?.pushViewController(detailChallengeView, animated: true)
         }
     }
 }
