@@ -12,23 +12,25 @@ class ChallengesTableViewCell: UITableViewCell {
     
     var challenge = ""
 
-    @IBOutlet weak var titleChallengeLabel: UILabel!
-    @IBOutlet weak var descriptionChallengeLabel: UILabel!
-    @IBOutlet weak var completedLabel: UILabel!
-    @IBOutlet weak var moreThanLabel: UILabel!
-    @IBOutlet weak var percentLabel: UILabel!
-    @IBOutlet weak var remaingCompleteChallengeLabel: UILabel!
-    @IBOutlet weak var progressCompleteChallenge: UIProgressView!
+//    @IBOutlet weak var titleChallengeLabel: UILabel!
+//    @IBOutlet weak var descriptionChallengeLabel: UILabel!
+//    @IBOutlet weak var completedLabel: UILabel!
+//    @IBOutlet weak var moreThanLabel: UILabel!
+//    @IBOutlet weak var percentLabel: UILabel!
+//    @IBOutlet weak var remaingCompleteChallengeLabel: UILabel!
+//    @IBOutlet weak var progressCompleteChallenge: UIProgressView!
     
-    @IBAction func buttonMission(_ sender: Any) {
-        print("mission + 1")
-    }
+//    @IBAction func buttonMission(_ sender: Any) {
+//        print("mission + 1")
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
 //        titleChallengeLabel.text = challenge
+//        gradientView.layer.cornerRadius = 30
+//        gradientView.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

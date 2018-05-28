@@ -74,6 +74,10 @@ class ChallengesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         headerProgressView.setProgress(0, animated: false)
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,8 +104,16 @@ extension ChallengesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 190
     }
+//
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 190
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//    }
     
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -17,14 +17,6 @@ class HeaderStickyView: UIView {
         super.init(frame: frame)
     }
     
-    public func decrementViewAlpha (view: UIView, offset: CGFloat) {
-        if view.alpha <= 1 {
-            let alphaOffset = (offset / 500) / 85
-            
-            view.alpha += alphaOffset
-        }
-    }
-    
     public func decrementLabelAlpha (label: UILabel, offset: CGFloat) {
         if label.alpha <= 1 {
             let alphaOffset = max((offset - 65) / 85.0, 0)
@@ -33,35 +25,11 @@ class HeaderStickyView: UIView {
         }
     }
     
-    public func decrementImageAlpha(imageView: UIImageView, offset: CGFloat) {
-        if imageView.alpha >= 0 {
-            let alphaOffset = max((offset - 65) / 85.0, 0)
-            
-            imageView.alpha = alphaOffset
-        }
-    }
-    
-    public func incrementViewAlpha (view: UIView, offset: CGFloat) {
-        if view.alpha >= 0.45 {
-            let alphaOffset = (offset / 200) / 85
-            
-            view.alpha -= alphaOffset
-        }
-    }
-    
     public func incrementLabelAlpha (label: UILabel, offset: CGFloat) {
         if label.alpha >= 0.1 {
             let alphaOffset = (offset / 100) / 85
             
             label.alpha -= alphaOffset
-        }
-    }
-    
-    public func incrementImageAlpha(imageView: UIImageView, offset: CGFloat) {
-        if imageView.alpha <= 1 {
-            let alphaOffset = max((offset - 65) / 85.0, 0)
-            
-            imageView.alpha = alphaOffset
         }
     }
 }
