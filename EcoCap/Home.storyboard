@@ -268,6 +268,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-JR-STY">
                                                             <rect key="frame" x="297" y="69" width="46" height="30"/>
                                                             <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="startDownload:" destination="KUf-VI-hWU" eventType="touchUpInside" id="X50-hi-l20"/>
+                                                            </connections>
                                                         </button>
                                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-zE-ZgI" customClass="ProgressBarView" customModule="EcoCap" customModuleProvider="target">
                                                             <rect key="frame" x="64" y="141.5" width="207" height="8"/>
@@ -323,7 +326,12 @@
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         <connections>
+                                            <outlet property="challengeButton" destination="KNI-JR-STY" id="Xf0-gE-hi7"/>
                                             <outlet property="challengeNameLabel" destination="3T2-NO-ELE" id="340-IC-Lkn"/>
+                                            <outlet property="challengePercentLabel" destination="k55-qS-aoD" id="CKI-uR-Rhp"/>
+                                            <outlet property="challengeProgressBar" destination="1iV-zE-ZgI" id="RZH-vi-cVW"/>
+                                            <outlet property="challengeProgressLabel" destination="mUh-1B-4zw" id="5Uh-Yx-Rdv"/>
+                                            <outlet property="challengeShortDescriptionLabel" destination="ybk-Av-oQq" id="aFI-02-CEf"/>
                                             <outlet property="customViewCell" destination="tXc-w9-CCf" id="u1q-No-pHg"/>
                                         </connections>
                                     </tableViewCell>
@@ -382,7 +390,7 @@
                         <viewLayoutGuide key="safeArea" id="GlP-Lg-OdW"/>
                     </view>
                     <connections>
-                        <outlet property="challengeNameLabel" destination="D0x-kf-Wnk" id="Lcu-Lr-BaL"/>
+                        <outlet property="challengeNameLabel" destination="D0x-kf-Wnk" id="CaT-Sa-5kA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyj-Tp-1SU" userLabel="First Responder" sceneMemberID="firstResponder"/>

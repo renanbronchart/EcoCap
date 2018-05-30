@@ -10,7 +10,9 @@ import UIKit
 
 class ChallengesViewController: UIViewController {
     
-    let challenges = ["Toilette de chat", "Thé ou café", "Le bobo bio", "A vélo on dépasse les auto", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins"]
+//    let challenges = ["Toilette de chat", "Thé ou café", "Le bobo bio", "A vélo on dépasse les auto", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins"]
+    
+    lazy var challenges = [ChallengeBeta]()
     
     var minValue = 0
     var maxValue = 100
@@ -55,6 +57,12 @@ class ChallengesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        // à virer quand on aura le service
+        challenges.append(ChallengeBeta(name: "Toilette de chat", type: "Préserver l'eau", short_description: "Ne prenez plus de bain pendant un mois", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !", total_missions: 10, complete_missions: 0, name_mission: "douche", value: 1000))
+        challenges.append(ChallengeBeta(name: "Thé ou café ?", type: "Manger mieux", short_description: "Changez votre tasse de café par du thé une fois par jour.", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", total_missions: 25, complete_missions: 0, name_mission: "Thé", value: 800))
+        challenges.append(ChallengeBeta(name: "Monte en selle", type: "Mobilité", short_description: "Rends toi au boulot en vélo", description: "A vélo on dépasse les auto Remplacez un moyen de transport journalier par de la marche ou du vélo, ce n’est pas si long et c’est bon pour la forme, et pour la planète ...", total_missions: 10, complete_missions: 0, name_mission: "trajets", value: 1800))
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -119,7 +127,7 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         if let detailChallengeView =
             self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
             
-            detailChallengeView.challenge = challenges[indexPath.row]
+            detailChallengeView.challenge =  challenges[indexPath.row - 1]
             
             self.navigationController?.pushViewController(detailChallengeView, animated: true)
         }

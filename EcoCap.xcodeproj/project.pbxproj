@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		021386D1ED735E20CE3E2B32 /* Pods_EcoCap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */; };
+		25259A2E20BF343000E00F5A /* ChallengeBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25259A2D20BF343000E00F5A /* ChallengeBeta.swift */; };
+		252907AB20B8D9E4000C53C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252907AA20B8D9E4000C53C3 /* Login.storyboard */; };
 		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
 		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
 		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25259A2D20BF343000E00F5A /* ChallengeBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBeta.swift; sourceTree = "<group>"; };
+		252907AA20B8D9E4000C53C3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		2573763A20B8B7EA003D1B27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				25259A2D20BF343000E00F5A /* ChallengeBeta.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,6 +510,7 @@
 				25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
 				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
+				25259A2E20BF343000E00F5A /* ChallengeBeta.swift in Sources */,
 				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
 				256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */,
 				25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */,
