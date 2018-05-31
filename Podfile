@@ -17,4 +17,7 @@ target 'EcoCap' do
     # Pods for testing
   end
 
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end
