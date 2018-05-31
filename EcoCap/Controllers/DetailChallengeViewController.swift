@@ -31,7 +31,7 @@ class DetailChallengeViewController: UIViewController {
         self.view.clipsToBounds = true
         
         challengeNameLabel.text = challenge?.name
-        pointsLabel.text = "\(challenge?.value) pts"
+        pointsLabel.text = "\(challenge.value!) pts"
         
         
         // Do any additional setup after loading the view.
