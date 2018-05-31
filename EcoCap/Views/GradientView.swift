@@ -35,6 +35,8 @@ class GradientView: UIView {
         
         gradientLayer.locations = [0.0, 1.0]
         
+        self.clipsToBounds = true
+        
         // Insert layer if not already inserted
         if gradientLayer.superlayer == nil {
             self.layer.insertSublayer(gradientLayer, at: 0)
@@ -56,6 +58,16 @@ class GradientView: UIView {
     @IBInspectable var isHorizontal: Bool = true {
         didSet {
             updateView()
+        }
+    }
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
         }
     }
 }

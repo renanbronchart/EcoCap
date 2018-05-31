@@ -169,13 +169,15 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("clicked")
-        if let detailChallengeView =
-            self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
-            
-            detailChallengeView.challenge =  challenges[indexPath.row - 1]
-            
-            self.navigationController?.pushViewController(detailChallengeView, animated: true)
+        if indexPath.row == 0 {
+        } else {
+            if let detailChallengeView =
+                self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
+                
+                detailChallengeView.challenge =  challenges[indexPath.row - 1]
+                
+                self.navigationController?.pushViewController(detailChallengeView, animated: true)
+            }
         }
     }
 }
