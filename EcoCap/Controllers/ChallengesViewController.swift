@@ -10,16 +10,17 @@ import UIKit
 
 class ChallengesViewController: UIViewController {
     
-//    let challenges = ["Toilette de chat", "Thé ou café", "Le bobo bio", "A vélo on dépasse les auto", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins", "Deux degré de moins"]
-    
     lazy var challenges = [ChallengeBeta]()
+    lazy var levels = [Level]()
     
     var minValue = 0
     var maxValue = 100
-    var xpMore = 10
+    var xpMore = 0
     var more: Int = 0
     var downloader = Timer()
-//    private var lastContentOffset: CGFloat = 0
+    var currentLevel: Level!
+    var userPoints: Int = 0
+    var remainingPoints: Int = 5000
     
     @IBOutlet weak var headerStickyHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerStickyView: HeaderStickyView!
@@ -33,16 +34,16 @@ class ChallengesViewController: UIViewController {
     @IBOutlet weak var progressViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
-    func startDownload(_ sender: Any) {
+    func startDownload() {
+        print("Start value")
         more = minValue + xpMore
-        downloader = Timer.scheduledTimer(timeInterval: 0.06, target: self, selector: (#selector(self.updater)), userInfo: nil, repeats: true)
+        downloader = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: (#selector(self.updater)), userInfo: nil, repeats: true)
     }
     
     @objc func updater () {
         if minValue != maxValue {
             if minValue != more {
                 minValue += 1
-                remainingPointsLabel.text = "\(minValue)"
                 headerProgressView.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
@@ -57,17 +58,57 @@ class ChallengesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        // à virer quand on aura le service
+        // à virer quand on aura le service retrieveChallenges
         challenges.append(ChallengeBeta(name: "Toilette de chat", type: "Préserver l'eau", short_description: "Ne prenez plus de bain pendant un mois", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !", total_missions: 10, complete_missions: 0, name_mission: "douche", value: 1000))
         challenges.append(ChallengeBeta(name: "Thé ou café ?", type: "Manger mieux", short_description: "Changez votre tasse de café par du thé une fois par jour.", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", total_missions: 25, complete_missions: 0, name_mission: "Thé", value: 800))
         challenges.append(ChallengeBeta(name: "Monte en selle", type: "Mobilité", short_description: "Rends toi au boulot en vélo", description: "A vélo on dépasse les auto Remplacez un moyen de transport journalier par de la marche ou du vélo, ce n’est pas si long et c’est bon pour la forme, et pour la planète ...", total_missions: 10, complete_missions: 0, name_mission: "trajets", value: 1800))
         
+        // à virer quand on aura le retrieve de user pour userPoints
+        userPoints = 11500
+        
+        // à virer quand on aura le service retrieveLevels
+        levels.append(Level(name: "1", value: 5000))
+        levels.append(Level(name: "2", value: 6000))
+        levels.append(Level(name: "3", value: 7000))
+        levels.append(Level(name: "4", value: 8000))
+        levels.append(Level(name: "5", value: 9000))
+        levels.append(Level(name: "6", value: 10000))
+        levels.append(Level(name: "7", value: 11000))
+        levels.append(Level(name: "8", value: 12000))
+        
+        // Add delegate to self to use native function table View
         tableView.delegate = self
         tableView.dataSource = self
         headerProgressView.setProgress(0, animated: false)
         self.navigationController?.isNavigationBarHidden = true
+        
+        retrieveCurrentLevel()
+    }
+    
+    // set progress bar and set currentLevel
+    func retrieveCurrentLevel () {
+        var totalLevelPoint = 0
+        var precedentTotalPoints = 0
+        
+        levels.forEach { (level) in
+            if ((level.value + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
+                remainingPoints = (level.value + totalLevelPoint) - userPoints
+                let progressInLevel = level.value - remainingPoints
+                
+                self.currentLevel = level
+                self.minValue = progressInLevel
+                self.maxValue = level.value
+                
+                headerProgressView.progress = Float(minValue) / Float(maxValue)
+                
+                levelLabel.text = String("Niveau \(level.name!)")
+                remainingPointsLabel.text = "Encore \(remainingPoints) points"
+            }
+            
+            precedentTotalPoints = level.value + totalLevelPoint
+            totalLevelPoint += level.value
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +127,15 @@ class ChallengesViewController: UIViewController {
     }
 }
 
+extension ChallengesViewController: CellProgressDelegate {
+    func didCompleteChallenge(value: Int) {
+        self.xpMore = value
+        self.remainingPointsLabel.text = "\(remainingPoints)"
+        
+        self.startDownload()
+    }
+}
+
 extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return challenges.count + 1
@@ -99,12 +149,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
     }
-//
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//    }
-    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
@@ -117,6 +161,8 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "challengesTableViewCellIdentifier") as! ChallengesTableViewCell
             
             cell.challenge = challenges[row - 1]
+            
+            cell.delegate = self
             
             return cell
         }
@@ -136,17 +182,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ChallengesViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        // If move up
-//        if (self.lastContentOffset > scrollView.contentOffset.y) {
-//            print("move up")
-//        }
-//        else if (self.lastContentOffset < scrollView.contentOffset.y) {
-//            print("move down")
-//        }
-
-        // update the new position acquired
-//        self.lastContentOffset = scrollView.contentOffset.y
-        
         if (scrollView.contentOffset.y < 0) {
             if (self.headerStickyHeightConstraint.constant > 110) {
                 animateHeader()
@@ -159,8 +194,6 @@ extension ChallengesViewController: UIScrollViewDelegate {
             }
             
         } else if (scrollView.contentOffset.y > 0) {
-            print(self.headerStickyHeightConstraint, "> = 80")
-            
             if (self.headerStickyHeightConstraint.constant >= 80) {
                 self.headerStickyHeightConstraint.constant -= scrollView.contentOffset.y / 104
             }
@@ -173,7 +206,6 @@ extension ChallengesViewController: UIScrollViewDelegate {
         }
         
         if self.headerStickyHeightConstraint.constant < 80 {
-            print("< 80")
             self.headerStickyHeightConstraint.constant = 80
         }
         
@@ -183,20 +215,12 @@ extension ChallengesViewController: UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if self.headerStickyHeightConstraint.constant > 250 {
-//            self.headerStickyHeightConstraint.constant = 250
-//        }
-        
         if self.headerStickyHeightConstraint.constant > 110 {
             animateHeader()
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        if self.headerStickyHeightConstraint.constant > 250 {
-//            self.headerStickyHeightConstraint.constant = 250
-//        }
-        
         if self.headerStickyHeightConstraint.constant > 110 {
             animateHeader()
         }

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CellProgressDelegate {
+    func didCompleteChallenge(value: Int)
+}
+
 class ChallengesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var customViewCell: CustomViewCell!
@@ -20,17 +24,21 @@ class ChallengesTableViewCell: UITableViewCell {
     @IBOutlet weak var challengeProgressLabel: UILabel!
     @IBOutlet weak var challengePercentLabel: UILabel!
     
+    var delegate: CellProgressDelegate?
+    
     var minValue = 0
     var maxValue = 100
     var xpMore = 10
     var more: Int = 0
     var downloader = Timer()
+    var challengeValue: Int = 0
     
     var challenge: ChallengeBeta! {
         didSet {
             challengeNameLabel.text = challenge.name
             challengeProgressLabel.text = "\(challenge.total_missions - challenge.complete_missions)"
             challengePercentLabel.text = "\("\(challenge.complete_missions * 100 / challenge.total_missions)")"
+            challengeValue = challenge.value
         }
     }
     
@@ -53,7 +61,9 @@ class ChallengesTableViewCell: UITableViewCell {
         } else {
             minValue = 0
             more = minValue
-            print("Niveau suivant")
+            print("before deleg")
+            delegate?.didCompleteChallenge(value: challengeValue)
+            print("niveau suivant")
         }
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		021386D1ED735E20CE3E2B32 /* Pods_EcoCap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */; };
 		25259A2E20BF343000E00F5A /* ChallengeBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25259A2D20BF343000E00F5A /* ChallengeBeta.swift */; };
+		25259A3020BF479400E00F5A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25259A2F20BF479400E00F5A /* Level.swift */; };
 		252907AB20B8D9E4000C53C3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 252907AA20B8D9E4000C53C3 /* Login.storyboard */; };
 		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
 		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		25259A2D20BF343000E00F5A /* ChallengeBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBeta.swift; sourceTree = "<group>"; };
+		25259A2F20BF479400E00F5A /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		252907AA20B8D9E4000C53C3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				25259A2D20BF343000E00F5A /* ChallengeBeta.swift */,
+				25259A2F20BF479400E00F5A /* Level.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */,
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
+				25259A3020BF479400E00F5A /* Level.swift in Sources */,
 				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
