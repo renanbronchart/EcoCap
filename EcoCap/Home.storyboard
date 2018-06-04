@@ -378,6 +378,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2a-m0-IYN">
+                                <rect key="frame" x="0.0" y="319" width="375" height="348"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0k-8m-pze" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="96" width="343" height="286"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pourquoi je dois faire ça ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfD-FB-Win">
+                                                <rect key="frame" x="8" y="24" width="327" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBF-Xf-Bc8">
+                                                <rect key="frame" x="24" y="64" width="295" height="162.5"/>
+                                                <string key="text"> ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk </string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À toi de jouer !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndr-Cf-0Mk">
+                                                <rect key="frame" x="24" y="242.5" width="295" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vBF-Xf-Bc8" secondAttribute="trailing" constant="24" id="3yN-Mt-AeY"/>
+                                            <constraint firstItem="vBF-Xf-Bc8" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="24" id="Fg6-R1-OpX"/>
+                                            <constraint firstItem="ndr-Cf-0Mk" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="24" id="NhI-KQ-rGN"/>
+                                            <constraint firstItem="BfD-FB-Win" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="8" id="RNk-59-fna"/>
+                                            <constraint firstAttribute="trailing" secondItem="ndr-Cf-0Mk" secondAttribute="trailing" constant="24" id="fEA-Lo-iUY"/>
+                                            <constraint firstItem="ndr-Cf-0Mk" firstAttribute="top" secondItem="vBF-Xf-Bc8" secondAttribute="bottom" constant="16" id="hKu-QT-Ydm"/>
+                                            <constraint firstItem="BfD-FB-Win" firstAttribute="top" secondItem="B0k-8m-pze" secondAttribute="top" constant="24" id="hXC-3m-1KT"/>
+                                            <constraint firstAttribute="bottom" secondItem="ndr-Cf-0Mk" secondAttribute="bottom" constant="24" id="huQ-7G-rYu"/>
+                                            <constraint firstAttribute="trailing" secondItem="BfD-FB-Win" secondAttribute="trailing" constant="8" id="okY-gE-WhH"/>
+                                            <constraint firstItem="vBF-Xf-Bc8" firstAttribute="top" secondItem="BfD-FB-Win" secondAttribute="bottom" constant="16" id="xR8-5W-e1B"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="B0k-8m-pze" firstAttribute="width" secondItem="K2a-m0-IYN" secondAttribute="width" constant="-32" id="3rC-SJ-QDy"/>
+                                    <constraint firstItem="B0k-8m-pze" firstAttribute="top" secondItem="K2a-m0-IYN" secondAttribute="top" constant="96" id="B7R-D2-zal"/>
+                                    <constraint firstAttribute="trailing" secondItem="B0k-8m-pze" secondAttribute="trailing" constant="16" id="JpB-Fa-12h"/>
+                                    <constraint firstItem="B0k-8m-pze" firstAttribute="leading" secondItem="K2a-m0-IYN" secondAttribute="leading" constant="16" id="iJc-1i-hLU"/>
+                                    <constraint firstAttribute="bottom" secondItem="B0k-8m-pze" secondAttribute="bottom" constant="16" id="qM8-9n-9aV"/>
+                                </constraints>
+                            </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmQ-T0-OoE" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
                                 <rect key="frame" x="-300" y="-200" width="975" height="559"/>
                                 <subviews>
@@ -530,7 +584,7 @@
                                         <color key="value" red="0.23921568630000001" green="0.89019607840000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="501"/>
+                                        <real key="value" value="496"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                         <size key="value" width="8" height="12"/>
@@ -551,70 +605,19 @@
                                     <constraint firstAttribute="height" constant="70" id="VyS-Nq-Yik"/>
                                 </constraints>
                                 <state key="normal" image="btn_water"/>
+                                <connections>
+                                    <action selector="completeChallenge:" destination="t7k-kM-fTh" eventType="touchUpInside" id="FX6-6w-BKe"/>
+                                </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K2a-m0-IYN">
-                                <rect key="frame" x="0.0" y="394" width="375" height="273"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0k-8m-pze" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="369.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pourquoi je dois faire ça ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BfD-FB-Win">
-                                                <rect key="frame" x="8" y="24" width="327" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBF-Xf-Bc8">
-                                                <rect key="frame" x="24" y="64" width="295" height="162.5"/>
-                                                <string key="text"> ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk  ldksd sldsldnsld sldknsld sld slkd ls dlsdls dlsk </string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À toi de jouer !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndr-Cf-0Mk">
-                                                <rect key="frame" x="24" y="242.5" width="295" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="vBF-Xf-Bc8" secondAttribute="trailing" constant="24" id="3yN-Mt-AeY"/>
-                                            <constraint firstItem="vBF-Xf-Bc8" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="24" id="Fg6-R1-OpX"/>
-                                            <constraint firstItem="ndr-Cf-0Mk" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="24" id="NhI-KQ-rGN"/>
-                                            <constraint firstItem="BfD-FB-Win" firstAttribute="leading" secondItem="B0k-8m-pze" secondAttribute="leading" constant="8" id="RNk-59-fna"/>
-                                            <constraint firstAttribute="trailing" secondItem="ndr-Cf-0Mk" secondAttribute="trailing" constant="24" id="fEA-Lo-iUY"/>
-                                            <constraint firstItem="ndr-Cf-0Mk" firstAttribute="top" secondItem="vBF-Xf-Bc8" secondAttribute="bottom" constant="16" id="hKu-QT-Ydm"/>
-                                            <constraint firstItem="BfD-FB-Win" firstAttribute="top" secondItem="B0k-8m-pze" secondAttribute="top" constant="24" id="hXC-3m-1KT"/>
-                                            <constraint firstAttribute="bottom" secondItem="ndr-Cf-0Mk" secondAttribute="bottom" constant="107.5" id="huQ-7G-rYu"/>
-                                            <constraint firstAttribute="trailing" secondItem="BfD-FB-Win" secondAttribute="trailing" constant="8" id="okY-gE-WhH"/>
-                                            <constraint firstItem="vBF-Xf-Bc8" firstAttribute="top" secondItem="BfD-FB-Win" secondAttribute="bottom" constant="16" id="xR8-5W-e1B"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="B0k-8m-pze" firstAttribute="width" secondItem="K2a-m0-IYN" secondAttribute="width" constant="-32" id="3rC-SJ-QDy"/>
-                                    <constraint firstItem="B0k-8m-pze" firstAttribute="top" secondItem="K2a-m0-IYN" secondAttribute="top" id="B7R-D2-zal"/>
-                                    <constraint firstAttribute="trailing" secondItem="B0k-8m-pze" secondAttribute="trailing" constant="16" id="JpB-Fa-12h"/>
-                                    <constraint firstItem="B0k-8m-pze" firstAttribute="leading" secondItem="K2a-m0-IYN" secondAttribute="leading" constant="16" id="iJc-1i-hLU"/>
-                                    <constraint firstAttribute="bottom" secondItem="B0k-8m-pze" secondAttribute="bottom" constant="16" id="qM8-9n-9aV"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lmQ-T0-OoE" firstAttribute="top" secondItem="Mfd-BK-t3W" secondAttribute="top" constant="-200" id="110-KQ-ebm"/>
                             <constraint firstItem="uxu-ox-D1h" firstAttribute="top" secondItem="GlP-Lg-OdW" secondAttribute="top" id="2it-kg-OoB"/>
                             <constraint firstItem="uxu-ox-D1h" firstAttribute="leading" secondItem="GlP-Lg-OdW" secondAttribute="leading" id="3Eh-LW-zhQ"/>
+                            <constraint firstItem="K2a-m0-IYN" firstAttribute="top" secondItem="lmQ-T0-OoE" secondAttribute="bottom" constant="-40" id="528-Kb-oTk"/>
                             <constraint firstItem="lmQ-T0-OoE" firstAttribute="leading" secondItem="GlP-Lg-OdW" secondAttribute="leading" constant="-300" id="5d3-eX-jt3"/>
                             <constraint firstItem="GlP-Lg-OdW" firstAttribute="trailing" secondItem="K2a-m0-IYN" secondAttribute="trailing" id="Iec-6n-AQV"/>
-                            <constraint firstItem="K2a-m0-IYN" firstAttribute="top" secondItem="LO7-wK-Ndl" secondAttribute="bottom" id="Ips-nz-eD1"/>
                             <constraint firstItem="LO7-wK-Ndl" firstAttribute="top" secondItem="lmQ-T0-OoE" secondAttribute="bottom" constant="-35" id="Urb-DR-rge"/>
                             <constraint firstItem="GlP-Lg-OdW" firstAttribute="trailing" secondItem="uxu-ox-D1h" secondAttribute="trailing" id="WTB-VK-fzG"/>
                             <constraint firstItem="lmQ-T0-OoE" firstAttribute="trailing" secondItem="GlP-Lg-OdW" secondAttribute="trailing" constant="300" id="X04-yP-fKP"/>
@@ -626,9 +629,12 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="C9E-zn-Xzv" id="xP4-us-hzj"/>
+                        <outlet property="challengeDetailButton" destination="LO7-wK-Ndl" id="bSU-Rf-b9I"/>
                         <outlet property="challengeNameLabel" destination="D0x-kf-Wnk" id="CaT-Sa-5kA"/>
+                        <outlet property="challengeProgressBar" destination="QWn-ZC-wIc" id="Rt7-zY-eN8"/>
                         <outlet property="gradientView" destination="lmQ-T0-OoE" id="DZK-9g-uYl"/>
                         <outlet property="informationChallengeView" destination="B0k-8m-pze" id="LUE-kQ-qde"/>
+                        <outlet property="informationScrollView" destination="K2a-m0-IYN" id="0is-96-Hen"/>
                         <outlet property="percentLabel" destination="gM1-ZB-0Ib" id="cMc-nW-7B8"/>
                         <outlet property="pointsLabel" destination="JVb-8Z-q3R" id="ub2-Hr-b6j"/>
                         <outlet property="progressLabel" destination="Vs1-8x-IJW" id="G32-nj-LHI"/>

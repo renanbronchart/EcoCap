@@ -128,6 +128,10 @@ class ChallengesViewController: UIViewController {
 }
 
 extension ChallengesViewController: CellProgressDelegate {
+    func didChangeChallengeCompleteMissions(value: Int) {
+        
+    }
+    
     func didCompleteChallenge(value: Int) {
         self.xpMore = value
         self.remainingPointsLabel.text = "\(remainingPoints)"
@@ -173,7 +177,10 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
+                let currentCell = tableView.cellForRow(at: indexPath)
                 
+                detailChallengeView.delegate = currentCell as? ChallengeDetailDelegate
+                    
                 detailChallengeView.challenge =  challenges[indexPath.row - 1]
                 
                 self.navigationController?.pushViewController(detailChallengeView, animated: true)

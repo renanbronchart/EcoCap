@@ -20,14 +20,6 @@ class HeaderStickyView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        // ça ne fonctionne pas
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 1
-        layer.shadowOffset = CGSize(width: 400, height: 15)
-        layer.shadowRadius = 10
-        
-        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-        layer.shouldRasterize = true
     }
     
     public func decrementLabelAlpha (label: UILabel, offset: CGFloat) {
