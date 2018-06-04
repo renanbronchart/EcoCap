@@ -1,15 +1,20 @@
 //
-//  PageThreeOnboardingViewController.swift
+//  LoginViewController.swift
 //  EcoCap
 //
-//  Created by Renan Bronchart on 25/05/2018.
+//  Created by Bourgoin Théo on 04/06/2018.
 //  Copyright © 2018 Renan Bronchart. All rights reserved.
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
-class PageThreeOnboardingView: UIViewController {
+class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +26,11 @@ class PageThreeOnboardingView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func goToLoginPage(_ sender: Any) {
-        var AuthStoryboard: UIStoryboard!
-        
-        AuthStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-        
-        if let authViewController = AuthStoryboard.instantiateViewController(withIdentifier: "loginIdentifier") as? AuthViewController {
-            self.present(authViewController, animated: true, completion: nil)
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        if let email = emailTextField.text , let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { (data, error) in
+                print(data.?user)
+            }
         }
     }
     

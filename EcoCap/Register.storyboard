@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SignInViewController-->
+        <!--RegisterViewController-->
         <scene sceneID="UWR-ET-nTQ">
             <objects>
-                <viewController storyboardIdentifier="signinStoryboard" title="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TdV-g4-Dm4" customClass="SignInViewController" customModule="EcoCap" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerStoryboard" title="RegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TdV-g4-Dm4" customClass="RegisterViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ejr-gp-lwB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,8 +122,7 @@
                                 <rect key="frame" x="159" y="543" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="registerButtonTapped:" destination="TdV-g4-Dm4" eventType="touchUpInside" id="7jW-A3-xNc"/>
-                                    <segue destination="6Qn-Zg-DAK" kind="show" identifier="registerSuccess" id="bzp-Pz-rZK"/>
+                                    <action selector="registerButtonTapped:" destination="TdV-g4-Dm4" eventType="touchUpInside" id="mQT-eP-yhI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI5-Aq-YbE">
@@ -147,40 +146,17 @@
                         <viewLayoutGuide key="safeArea" id="UKF-I4-MlH"/>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="X9U-Y5-wfr" id="xce-l1-kRa"/>
-                        <outlet property="nameTextField" destination="vS6-bj-zv7" id="Ah8-bm-cy7"/>
-                        <outlet property="passwordTextField" destination="D6V-lz-U8w" id="CRG-86-c1M"/>
-                        <outlet property="registerButton" destination="jFV-o0-ycB" id="OVx-ew-ces"/>
+                        <outlet property="emailTextField" destination="X9U-Y5-wfr" id="qO9-1L-UBF"/>
+                        <outlet property="nameTextField" destination="vS6-bj-zv7" id="Qge-bS-cpM"/>
+                        <outlet property="passwordTextField" destination="D6V-lz-U8w" id="6DA-HF-MrX"/>
+                        <outlet property="registerButton" destination="jFV-o0-ycB" id="C2o-JP-L71"/>
                         <outlet property="repeatPasswordTextField" destination="opI-3c-6pd" id="xV2-rY-Tcg"/>
+                        <outlet property="repeatedPasswordTextField" destination="opI-3c-6pd" id="nRR-Vq-e1k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOM-zW-JMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="9"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="L5T-W9-Qhe">
-            <objects>
-                <viewController id="6Qn-Zg-DAK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mk9-Hm-qhF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thank you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE8-5N-csn">
-                                <rect key="frame" x="147" y="95" width="80" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="WlV-tr-oYs"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HGP-T7-enL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="351" y="5"/>
+            <point key="canvasLocation" x="-1154" y="-1"/>
         </scene>
     </scenes>
 </document>

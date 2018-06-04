@@ -48,7 +48,7 @@
         <!--Item-->
         <scene sceneID="8xp-RZ-LZ5">
             <objects>
-                <viewController id="lGY-Ok-E8b" customClass="ChallengesViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="challengesViewControllerIdentifier" id="lGY-Ok-E8b" customClass="ChallengesViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vn1-og-rJd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
