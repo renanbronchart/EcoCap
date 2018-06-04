@@ -16,6 +16,8 @@ target 'EcoCap' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  platform :ios, '11.3'
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
