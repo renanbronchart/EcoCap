@@ -32,7 +32,7 @@ class DetailChallengeViewController: UIViewController {
     
     @IBOutlet weak var informationScrollView: UIScrollView!
     
-    var challenge: ChallengeBeta!
+    var challenge: Challenge!
     var delegate: ChallengeDetailDelegate?
     
     var minValue = 0

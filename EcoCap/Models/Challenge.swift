@@ -1,5 +1,5 @@
 //
-//  ChallengeBeta.swift
+//  Challenge.swift
 //  EcoCap
 //
 //  Created by Renan Bronchart on 30/05/2018.
@@ -9,7 +9,7 @@
 import Foundation
 //import SwiftyJSON
 
-class ChallengeBeta {
+class Challenge {
     var type: String!
     var name: String!
     var short_description: String!
