@@ -34,7 +34,7 @@ class ChallengesTableViewCell: UITableViewCell {
     var downloader = Timer()
     var challengeValue: Int = 0
     
-    var challenge: ChallengeBeta! {
+    var challenge: Challenge! {
         didSet {
             challengeNameLabel.text = challenge.name
             challengeProgressLabel.text = "\(challenge.total_missions - challenge.complete_missions)"
