@@ -50,7 +50,7 @@ class GradientRoundedButton: UIButton {
         } else {
             gradientLayer.colors = [enableColor.cgColor, enableColor.cgColor]
         }
-        
+        self.titleLabel?.textColor = UIColor.white
         gradientLayer.locations = [0.0, 1.0]
         
         // Insert layer if not already inserted
@@ -63,6 +63,8 @@ class GradientRoundedButton: UIButton {
         super.layoutSubviews()
         
         gradientLayer.colors = isSelected ? [firstColor.cgColor, secondColor.cgColor] : [enableColor.cgColor, enableColor.cgColor]
+        self.titleLabel?.textColor = UIColor.white
+        
         self.titleLabel?.textColor = isEnabled ? UIColor.white : UIColor(displayP3Red: 218/255, green: 218/255, blue: 218/255, alpha: 1)
     }
     

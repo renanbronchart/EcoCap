@@ -28,6 +28,8 @@
 		2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */; };
 		2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */; };
 		2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */; };
+		25CCA40B20C73DA2009D0F55 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */; };
+		25CCA40D20C74A72009D0F55 /* overrideUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CCA40C20C74A72009D0F55 /* overrideUIImage.swift */; };
 		25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E020BAB22700639D18 /* HeaderStickyView.swift */; };
 		25D165E320BAB62E00639D18 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E220BAB62E00639D18 /* GradientView.swift */; };
 		25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */; };
@@ -88,6 +90,8 @@
 		2573763420B8B78F003D1B27 /* PageTwoOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoOnboardingView.swift; sourceTree = "<group>"; };
 		2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeOnboardingView.swift; sourceTree = "<group>"; };
 		2573763E20B8CB44003D1B27 /* OnBoardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingContainerViewController.swift; sourceTree = "<group>"; };
+		25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		25CCA40C20C74A72009D0F55 /* overrideUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overrideUIImage.swift; sourceTree = "<group>"; };
 		25D165E020BAB22700639D18 /* HeaderStickyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickyView.swift; sourceTree = "<group>"; };
 		25D165E220BAB62E00639D18 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesTableViewCell.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */,
 				25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */,
 				25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */,
+				25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				25F70F3220C5C33F00AD33F7 /* overrideUiColor.swift */,
+				25CCA40C20C74A72009D0F55 /* overrideUIImage.swift */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
 				25D165E320BAB62E00639D18 /* GradientView.swift in Sources */,
 				25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */,
+				25CCA40D20C74A72009D0F55 /* overrideUIImage.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
 				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
 				25F70F3720C5F72600AD33F7 /* ProfileTableViewCell.swift in Sources */,
@@ -525,6 +532,7 @@
 				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
 				25F70F3320C5C33F00AD33F7 /* overrideUiColor.swift in Sources */,
 				256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */,
+				25CCA40B20C73DA2009D0F55 /* RankingTableViewCell.swift in Sources */,
 				25D165E120BAB22700639D18 /* HeaderStickyView.swift in Sources */,
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
