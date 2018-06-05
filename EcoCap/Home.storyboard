@@ -53,6 +53,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-ZY-HJn" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.10980392160000001" green="0.62352941179999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" red="0.23921568630000001" green="0.89019607840000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-yg-gwS" customClass="HeaderStickyView" customModule="EcoCap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="375" height="110"/>
                                 <subviews>
@@ -64,10 +77,10 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                        <color key="value" red="0.25882352941176467" green="0.63137254901960782" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.10980392160000001" green="0.62352941179999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                        <color key="value" red="0.23921568627450979" green="0.80784313725490198" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="value" red="0.23921568630000001" green="0.89019607840000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
@@ -126,10 +139,10 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.25882352941176467" green="0.63137254901960782" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.10980392160000001" green="0.62352941179999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.23921568627450979" green="0.80784313725490198" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="value" red="0.23921568630000001" green="0.89019607840000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                         </userDefinedRuntimeAttributes>
@@ -169,7 +182,13 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                             <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
+                                                            <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="filterByMonth:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="mh3-tb-b8Y"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hD-To-NZ1" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
                                                     <rect key="frame" x="141" y="35" width="92" height="40"/>
@@ -184,9 +203,15 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                             <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
+                                                            <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="filterByWeek:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="iXj-S3-Qqx"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-Wy-EGM" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-Wy-EGM" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
                                                     <rect key="frame" x="267.5" y="35" width="91.5" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hGZ-Un-DZ6"/>
@@ -197,9 +222,15 @@
                                                             <color key="value" red="0.23921568630000001" green="0.80784313730000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                            <color key="value" red="0.23921568627450979" green="0.8901960784313725" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="value" red="0.10980392160000001" green="0.62352941179999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
+                                                            <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="filterByDay:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="JtS-Z7-2PE"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -218,6 +249,11 @@
                                             <constraint firstItem="Xsc-rY-qkE" firstAttribute="leading" secondItem="tPj-Bo-Hek" secondAttribute="leading" constant="16" id="w5q-w6-mBv"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                        <connections>
+                                            <outlet property="dailyButton" destination="hcq-Wy-EGM" id="Pb1-C0-SBU"/>
+                                            <outlet property="monthlyButton" destination="Xsc-rY-qkE" id="jDA-fl-s8b"/>
+                                            <outlet property="weeklyButton" destination="1hD-To-NZ1" id="Gtj-lm-Li8"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="challengesTableViewCellIdentifier" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengesTableViewCellIdentifier" rowHeight="192" id="KUf-VI-hWU" customClass="ChallengesTableViewCell" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="104" width="375" height="192"/>
@@ -340,13 +376,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="iO9-tt-g0f" firstAttribute="top" secondItem="mc7-ZY-HJn" secondAttribute="top" constant="64" id="1Eq-r6-5gj"/>
                             <constraint firstItem="riG-TI-Y90" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="6pf-ww-wJd"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="top" secondItem="iO9-tt-g0f" secondAttribute="top" id="DiU-QH-KRr"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="leading" secondItem="vn1-og-rJd" secondAttribute="leading" id="EQD-Ke-NbG"/>
                             <constraint firstAttribute="bottom" secondItem="riG-TI-Y90" secondAttribute="bottom" id="IDj-vc-5oY"/>
                             <constraint firstAttribute="trailing" secondItem="riG-TI-Y90" secondAttribute="trailing" id="O3q-zY-YEa"/>
                             <constraint firstItem="bUs-Zm-qjd" firstAttribute="bottom" secondItem="iO9-tt-g0f" secondAttribute="bottom" id="Z98-bd-Q8Z"/>
+                            <constraint firstItem="iO9-tt-g0f" firstAttribute="trailing" secondItem="mc7-ZY-HJn" secondAttribute="trailing" id="cwg-UO-aOU"/>
+                            <constraint firstItem="mc7-ZY-HJn" firstAttribute="leading" secondItem="iO9-tt-g0f" secondAttribute="leading" id="fXj-d5-FQ6"/>
                             <constraint firstItem="zFB-yg-gwS" firstAttribute="trailing" secondItem="vn1-og-rJd" secondAttribute="trailing" id="fr8-Rc-u6z"/>
+                            <constraint firstItem="mc7-ZY-HJn" firstAttribute="bottom" secondItem="iO9-tt-g0f" secondAttribute="bottom" constant="49" id="sAp-F9-Fx8"/>
                             <constraint firstItem="riG-TI-Y90" firstAttribute="top" secondItem="zFB-yg-gwS" secondAttribute="bottom" id="tc7-Kd-H02"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iO9-tt-g0f"/>

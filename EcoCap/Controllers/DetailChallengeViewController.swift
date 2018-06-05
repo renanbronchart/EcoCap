@@ -42,6 +42,10 @@ class DetailChallengeViewController: UIViewController {
     var downloader = Timer()
     var challengeValue: Int = 0
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

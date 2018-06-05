@@ -39,6 +39,10 @@ class ProfilViewController: UIViewController {
         sections.append(week)
         sections.append(month)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
 
 extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {

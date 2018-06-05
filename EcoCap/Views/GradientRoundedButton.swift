@@ -26,6 +26,16 @@ class GradientRoundedButton: UIButton {
         updateView()
     }
     
+    override var isSelected: Bool {
+        willSet {
+            
+        }
+        
+        didSet {
+            updateView()
+        }
+    }
+    
     
     func updateView () {
         // Fill view with gradient layer
@@ -35,7 +45,11 @@ class GradientRoundedButton: UIButton {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint (x: 1, y: 0.5)
         
-        gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+        if (self.isSelected) {
+            gradientLayer.colors = [firstColor.cgColor, secondColor.cgColor]
+        } else {
+            gradientLayer.colors = [enableColor.cgColor, enableColor.cgColor]
+        }
         
         gradientLayer.locations = [0.0, 1.0]
         
@@ -48,9 +62,16 @@ class GradientRoundedButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        gradientLayer.colors = isEnabled ? [firstColor.cgColor, secondColor.cgColor] : [UIColor.lightGray.cgColor, UIColor.lightGray.cgColor]
+        gradientLayer.colors = isSelected ? [firstColor.cgColor, secondColor.cgColor] : [enableColor.cgColor, enableColor.cgColor]
         self.titleLabel?.textColor = isEnabled ? UIColor.white : UIColor(displayP3Red: 218/255, green: 218/255, blue: 218/255, alpha: 1)
     }
+    
+    @IBInspectable var enableColor: UIColor = UIColor.clear {
+        didSet {
+            updateView()
+        }
+    }
+    
     
     @IBInspectable var firstColor: UIColor = UIColor.clear {
         didSet {

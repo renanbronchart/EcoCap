@@ -34,6 +34,10 @@ class ChallengesViewController: UIViewController {
     @IBOutlet weak var progressViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func startDownload() {
         print("Start value")
         more = minValue + xpMore
