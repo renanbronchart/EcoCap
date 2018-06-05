@@ -50,11 +50,11 @@ class DetailChallengeViewController: UIViewController {
         self.view.clipsToBounds = true
         
         challengeNameLabel.text = challenge?.name
-        pointsLabel.text = "\(challenge.value!) pts"
-        challengeValue = challenge.value
+        //pointsLabel.text = "\(challenge.value!) pts"
+        //challengeValue = challenge.value
         
-        maxValue = challenge.total_missions * 10
-        minValue = challenge.complete_missions * 10
+        //maxValue = challenge.total_missions * 10
+        //minValue = challenge.complete_missions * 10
         challengeProgressBar.setProgress((Float(minValue) / Float(maxValue)), animated: false)
         progressLabel.text = "\((maxValue / 10) - (minValue / 10))"
     }
