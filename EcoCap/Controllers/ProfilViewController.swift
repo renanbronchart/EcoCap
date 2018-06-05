@@ -15,7 +15,13 @@ struct Section {
 
 class ProfilViewController: UIViewController {
 
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var challengeCompletedLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var levelNameLabel: UILabel!
+    @IBOutlet weak var remainingPointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     var sections = [Section]()
     
     override func viewDidLoad() {
@@ -33,16 +39,6 @@ class ProfilViewController: UIViewController {
         sections.append(week)
         sections.append(month)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,6 +54,14 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileTableViewCellIdentifier") as! ProfileTableViewCell
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 139
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -83,7 +87,7 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 192
+        return 8
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

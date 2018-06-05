@@ -9,19 +9,25 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var customViewCellGradient: CustomViewCell!
-    @IBOutlet weak var logoCategoryImageView: UIImageView!
-    @IBOutlet weak var challengeNameLabel: UILabel!
-    @IBOutlet weak var challengeShortDescriptionLabel: UILabel!
     
+    @IBOutlet weak var challengeTypeImageView: UIImageView!
+    @IBOutlet weak var challengeNameLabel: UILabel!
+    @IBOutlet weak var shortDescriptionLabel: UILabel!
+    @IBOutlet weak var checkImageView: UIImageView!
+    @IBOutlet weak var customViewCellGradient: CustomViewCell!
+    
+    var challenge: Challenge! {
+        didSet {
+            challengeNameLabel.text = challenge.name
+            shortDescriptionLabel.text = challenge.short_description
+            customViewCellGradient.firstColor = UIColor(hexString: "#5245C5")
+            customViewCellGradient.secondColor = UIColor(hexString: "#61A8FB")
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        customViewCellGradient.firstColor = UIColor(hexString: "#E94366")
-        customViewCellGradient.secondColor = UIColor(hexString: "#F3AC5A")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
