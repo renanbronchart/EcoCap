@@ -303,7 +303,7 @@
                                                     <rect key="frame" x="16" y="4" width="343" height="91"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-vm-8zn">
-                                                            <rect key="frame" x="69" y="16" width="162" height="19.5"/>
+                                                            <rect key="frame" x="69" y="16" width="154" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -319,19 +319,19 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBS-KM-mtB">
-                                                            <rect key="frame" x="69" y="43" width="162" height="16"/>
+                                                            <rect key="frame" x="69" y="43" width="154" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="owi-cS-wMm">
-                                                            <rect key="frame" x="239" y="0.0" width="104" height="91"/>
+                                                            <rect key="frame" x="231" y="0.0" width="112" height="91"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="104" id="3PF-PD-k7t"/>
+                                                                <constraint firstAttribute="width" constant="112" id="3PF-PD-k7t"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynx-V1-VPj">
-                                                            <rect key="frame" x="69" y="59" width="162" height="16"/>
+                                                            <rect key="frame" x="69" y="59" width="154" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -391,6 +391,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="containerLevelImage" destination="owi-cS-wMm" id="R8e-0w-3Rl"/>
                                             <outlet property="userCompletionLabel" destination="TBS-KM-mtB" id="vgz-B5-5qq"/>
                                             <outlet property="userImageView" destination="O5I-61-vS6" id="Y5b-kn-jMP"/>
                                             <outlet property="userNameLabel" destination="aU3-vm-8zn" id="YWI-pT-1wE"/>
