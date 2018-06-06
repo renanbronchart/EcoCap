@@ -63,20 +63,23 @@ class ChallengesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LevelService.instance.getLevels { (levelArray) in
-            self.levels = levelArray
-        }
-        ChallengeService.instance.getChallenges { (challenges) in
-            self.challenges = challenges
-            
-            // Refresh UI de la tableView 👍
-            self.tableView.reloadData()
-        }
-        print(self.challenges)
+        // à virer quand on aura le service retrieveChallenges
+        challenges.append(Challenge(name: "Toilette de chat", type: "Préserver l'eau", short_description: "Ne prenez plus de bain pendant un mois", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !", total_missions: 10, complete_missions: 0, name_mission: "douche", value: 1000))
+        challenges.append(Challenge(name: "Thé ou café ?", type: "Manger mieux", short_description: "Changez votre tasse de café par du thé une fois par jour.", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", total_missions: 25, complete_missions: 0, name_mission: "Thé", value: 800))
+        challenges.append(Challenge(name: "Monte en selle", type: "Mobilité", short_description: "Rends toi au boulot en vélo", description: "A vélo on dépasse les auto Remplacez un moyen de transport journalier par de la marche ou du vélo, ce n’est pas si long et c’est bon pour la forme, et pour la planète ...", total_missions: 10, complete_missions: 0, name_mission: "trajets", value: 1800))
+        
+        // à virer quand on aura le retrieve de user pour userPoints
         userPoints = 11500
         
         // à virer quand on aura le service retrieveLevels
-        
+        levels.append(Level(name: "1", value: 5000))
+        levels.append(Level(name: "2", value: 6000))
+        levels.append(Level(name: "3", value: 7000))
+        levels.append(Level(name: "4", value: 8000))
+        levels.append(Level(name: "5", value: 9000))
+        levels.append(Level(name: "6", value: 10000))
+        levels.append(Level(name: "7", value: 11000))
+        levels.append(Level(name: "8", value: 12000))
         
         // Add delegate to self to use native function table View
         tableView.delegate = self
@@ -93,22 +96,22 @@ class ChallengesViewController: UIViewController {
         var precedentTotalPoints = 0
         
         levels.forEach { (level) in
-            if ((level.required + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
-                remainingPoints = (level.required + totalLevelPoint) - userPoints
-                let progressInLevel = level.required - remainingPoints
+            if ((level.value + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
+                remainingPoints = (level.value + totalLevelPoint) - userPoints
+                let progressInLevel = level.value - remainingPoints
                 
                 self.currentLevel = level
                 self.minValue = progressInLevel
-                self.maxValue = level.required
+                self.maxValue = level.value
                 
                 headerProgressView.progress = Float(minValue) / Float(maxValue)
                 
-                levelLabel.text = String("Niveau \(level.name)")
+                levelLabel.text = String("Niveau \(level.name!)")
                 remainingPointsLabel.text = "Encore \(remainingPoints) points"
             }
             
-            precedentTotalPoints = level.required + totalLevelPoint
-            totalLevelPoint += level.required
+            precedentTotalPoints = level.value + totalLevelPoint
+            totalLevelPoint += level.value
         }
     }
     

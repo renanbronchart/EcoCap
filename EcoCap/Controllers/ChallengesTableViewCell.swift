@@ -41,7 +41,7 @@ class ChallengesTableViewCell: UITableViewCell {
             challengePercentLabel.text = "\("\(challenge.complete_missions * 100 / challenge.total_missions)")"
             challengeValue = challenge.value
             maxValue = challenge.total_missions * 10
-            minValue = challenge.complete_missions(* * 0)
+            minValue = challenge.complete_missions * 10
         }
     }
     
