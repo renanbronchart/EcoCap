@@ -16,7 +16,7 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var checkImageView: UIImageView!
     @IBOutlet weak var customViewCellGradient: CustomViewCell!
     
-    var challenge: Challenge! {
+    var challenge: ChallengeRun! {
         didSet {
             challengeNameLabel.text = challenge.name
             shortDescriptionLabel.text = challenge.short_description

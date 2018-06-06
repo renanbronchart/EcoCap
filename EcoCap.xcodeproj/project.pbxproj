@@ -11,6 +11,9 @@
 		25259A2E20BF343000E00F5A /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25259A2D20BF343000E00F5A /* Challenge.swift */; };
 		25259A3020BF479400E00F5A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25259A2F20BF479400E00F5A /* Level.swift */; };
 		2543A2FB20C833C8000D8A6E /* overrideUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A2FA20C833C8000D8A6E /* overrideUIView.swift */; };
+		2543A2FD20C8642C000D8A6E /* UserBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A2FC20C8642C000D8A6E /* UserBeta.swift */; };
+		2543A2FF20C864FF000D8A6E /* ChallengeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A2FE20C864FF000D8A6E /* ChallengeRun.swift */; };
+		2543A30320C88F82000D8A6E /* LevelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A30220C88F82000D8A6E /* LevelUpViewController.swift */; };
 		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
 		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
 		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
@@ -68,6 +71,9 @@
 		25259A2D20BF343000E00F5A /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		25259A2F20BF479400E00F5A /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		2543A2FA20C833C8000D8A6E /* overrideUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = overrideUIView.swift; sourceTree = "<group>"; };
+		2543A2FC20C8642C000D8A6E /* UserBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBeta.swift; sourceTree = "<group>"; };
+		2543A2FE20C864FF000D8A6E /* ChallengeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRun.swift; sourceTree = "<group>"; };
+		2543A30220C88F82000D8A6E /* LevelUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpViewController.swift; sourceTree = "<group>"; };
 		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */,
 				25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */,
 				25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */,
+				2543A30220C88F82000D8A6E /* LevelUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +257,8 @@
 			children = (
 				25259A2D20BF343000E00F5A /* Challenge.swift */,
 				25259A2F20BF479400E00F5A /* Level.swift */,
+				2543A2FC20C8642C000D8A6E /* UserBeta.swift */,
+				2543A2FE20C864FF000D8A6E /* ChallengeRun.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -524,6 +533,7 @@
 				2573760120B8ABA1003D1B27 /* AuthViewController.swift in Sources */,
 				25E8ABDE20BCBFBB00079A17 /* DetailChallengeViewController.swift in Sources */,
 				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
+				2543A2FF20C864FF000D8A6E /* ChallengeRun.swift in Sources */,
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
 				25D165E320BAB62E00639D18 /* GradientView.swift in Sources */,
 				25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */,
@@ -533,6 +543,7 @@
 				25F70F3720C5F72600AD33F7 /* ProfileTableViewCell.swift in Sources */,
 				25259A2E20BF343000E00F5A /* Challenge.swift in Sources */,
 				256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */,
+				2543A30320C88F82000D8A6E /* LevelUpViewController.swift in Sources */,
 				25F70F3320C5C33F00AD33F7 /* overrideUiColor.swift in Sources */,
 				256803A920B9BAF900490E1D /* ProgressBarView.swift in Sources */,
 				25CCA40B20C73DA2009D0F55 /* RankingTableViewCell.swift in Sources */,
@@ -544,6 +555,7 @@
 				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 				25F70F3520C5E8C600AD33F7 /* ProfilViewController.swift in Sources */,
+				2543A2FD20C8642C000D8A6E /* UserBeta.swift in Sources */,
 				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
 				25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */,
 				25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */,

@@ -10,8 +10,10 @@ import UIKit
 
 class ChallengesViewController: UIViewController {
     
-    lazy var challenges = [Challenge]()
+    lazy var challenges = [ChallengeRun]()
     lazy var levels = [Level]()
+    var user: UserBeta!
+    var challenges_user: [ChallengeRun] = []
     
     var minValue = 0
     var maxValue = 100
@@ -39,7 +41,6 @@ class ChallengesViewController: UIViewController {
     }
     
     func startDownload() {
-        print("Start value")
         more = minValue + xpMore
         downloader = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: (#selector(self.updater)), userInfo: nil, repeats: true)
     }
@@ -47,7 +48,7 @@ class ChallengesViewController: UIViewController {
     @objc func updater () {
         if minValue != maxValue {
             if minValue != more {
-                minValue += 1
+                minValue += 5
                 headerProgressView.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
@@ -55,7 +56,9 @@ class ChallengesViewController: UIViewController {
         } else {
             minValue = 0
             more = minValue
-            print("Niveau suivant")
+            if let levelUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "levelUpViewControllerIdentifier") as? LevelUpViewController {
+                self.present(levelUpViewController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -64,9 +67,19 @@ class ChallengesViewController: UIViewController {
         super.viewDidLoad()
         
         // à virer quand on aura le service retrieveChallenges
-        challenges.append(Challenge(name: "Toilette de chat", type: "Préserver l'eau", short_description: "Ne prenez plus de bain pendant un mois", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !", total_missions: 10, complete_missions: 0, name_mission: "douche", value: 1000))
-        challenges.append(Challenge(name: "Thé ou café ?", type: "Manger mieux", short_description: "Changez votre tasse de café par du thé une fois par jour.", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", total_missions: 25, complete_missions: 0, name_mission: "Thé", value: 800))
-        challenges.append(Challenge(name: "Monte en selle", type: "Mobilité", short_description: "Rends toi au boulot en vélo", description: "A vélo on dépasse les auto Remplacez un moyen de transport journalier par de la marche ou du vélo, ce n’est pas si long et c’est bon pour la forme, et pour la planète ...", total_missions: 10, complete_missions: 0, name_mission: "trajets", value: 1800))
+        challenges.append(ChallengeRun(uid: "123", name: "Thé ou café ?", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", points: 9000, repetition: 10, repetition_type: "weekly", repetition_name: "Thé", type: "water", level: 1, short_description: "Changez votre tasse de café par du thé une fois par jour."))
+        
+        challenges.append(ChallengeRun(uid: "1234", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 1000, repetition: 20, repetition_type: "monthly", repetition_name: "Thé", type: "water", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
+        
+        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 4000, repetition: 5, repetition_type: "monthly", repetition_name: "Thé", type: "buy", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
+        
+        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 3000, repetition: 12, repetition_type: "monthly", repetition_name: "Thé", type: "draft", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
+        
+        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 6000, repetition: 2, repetition_type: "daily", repetition_name: "Thé", type: "eat", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
+        
+        user = UserBeta(name: "Renan", score: 0, challenge_list: challenges)
+        
+        challenges_user = user.challenge_list ?? []
         
         // à virer quand on aura le retrieve de user pour userPoints
         userPoints = 11500
@@ -136,9 +149,16 @@ extension ChallengesViewController: CellProgressDelegate {
         
     }
     
-    func didCompleteChallenge(value: Int) {
-        self.xpMore = value
+    func didCompleteChallenge(_ challenge: ChallengeRun) {
+        self.xpMore = challenge.points
         self.remainingPointsLabel.text = "\(remainingPoints)"
+        
+        if let index = challenges_user.index(where: { $0 === challenge }) {
+            challenges_user.remove(at: index)
+            let indexPath = IndexPath(item: index + 1, section: 0)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
+        }
         
         self.startDownload()
     }
@@ -146,7 +166,7 @@ extension ChallengesViewController: CellProgressDelegate {
 
 extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return challenges.count + 1
+        return challenges_user.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -168,7 +188,7 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "challengesTableViewCellIdentifier") as! ChallengesTableViewCell
             
-            cell.challenge = challenges[row - 1]
+            cell.challenge = challenges_user[row - 1]
             
             cell.delegate = self
             
@@ -179,13 +199,17 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
         } else {
+            print("selected")
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
+                print("before push")
                 let currentCell = tableView.cellForRow(at: indexPath)
+                print(currentCell as Any, "currentCell")
                 
                 detailChallengeView.delegate = currentCell as? ChallengeDetailDelegate
                     
-                detailChallengeView.challenge =  challenges[indexPath.row - 1]
+                detailChallengeView.challenge = challenges_user[indexPath.row - 1]
+                print("detailChallengeView", detailChallengeView)
                 
                 self.navigationController?.pushViewController(detailChallengeView, animated: true)
             }

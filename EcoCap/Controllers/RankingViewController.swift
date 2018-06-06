@@ -86,4 +86,8 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
         return 99
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("clicked clicked clicked clicked clicked clicked clicked clicked")
+    }
+    
 }
