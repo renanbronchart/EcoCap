@@ -19,6 +19,20 @@ class OnBoardingContainerViewController: UIViewController {
             onboardingViewController.onboardingDelegate = self
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func goToLoginPage(_ sender: Any) {
+        var AuthStoryboard: UIStoryboard!
+        
+        AuthStoryboard = UIStoryboard(name: "Auth", bundle: nil)
+        
+        if let authViewController = AuthStoryboard.instantiateViewController(withIdentifier: "loginIdentifier") as? AuthViewController {
+            self.present(authViewController, animated: true, completion: nil)
+        }
+    }
 }
 
 extension OnBoardingContainerViewController: OnboardingViewControllerDelegate {

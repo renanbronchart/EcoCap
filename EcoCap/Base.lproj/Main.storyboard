@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8bO-fS-6SV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8bO-fS-6SV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKv-1Q-W7t">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="X4e-6I-rEX" kind="embed" id="5oW-IR-b8q"/>
                                 </connections>
@@ -28,7 +28,7 @@
                                 <rect key="frame" x="164" y="629" width="46" height="30"/>
                                 <state key="normal" title="Passer"/>
                                 <connections>
-                                    <action selector="goToLoginPage:" destination="ccn-tK-Psc" eventType="touchUpInside" id="gso-WY-Bgo"/>
+                                    <action selector="goToLoginPage:" destination="8bO-fS-6SV" eventType="touchUpInside" id="VgH-9K-0Ze"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-Ap-loi">
@@ -43,7 +43,7 @@
                             <constraint firstItem="YKv-1Q-W7t" firstAttribute="leading" secondItem="cAy-EW-DwJ" secondAttribute="leading" id="c1r-7Z-XYZ"/>
                             <constraint firstItem="cAy-EW-DwJ" firstAttribute="trailing" secondItem="YKv-1Q-W7t" secondAttribute="trailing" id="hCA-WM-qKF"/>
                             <constraint firstItem="cAy-EW-DwJ" firstAttribute="bottom" secondItem="Nbm-Ap-loi" secondAttribute="bottom" constant="32" id="iaw-3o-CbF"/>
-                            <constraint firstItem="YKv-1Q-W7t" firstAttribute="top" secondItem="cAy-EW-DwJ" secondAttribute="top" id="pSo-uz-KOk"/>
+                            <constraint firstItem="cAy-EW-DwJ" firstAttribute="top" secondItem="YKv-1Q-W7t" secondAttribute="top" constant="20" id="lP2-FZ-0BS"/>
                             <constraint firstItem="Nbm-Ap-loi" firstAttribute="centerX" secondItem="Q0q-Lh-5iV" secondAttribute="centerX" id="xwz-wy-JTw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAy-EW-DwJ"/>
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAi-Rp-WUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1075" y="-1098"/>
+            <point key="canvasLocation" x="1074.4000000000001" y="-1098.8005997001501"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="7JI-r6-hT1">
@@ -244,7 +244,6 @@ Continue comme ça</string>
         <!--Page Two Onboarding View-->
         <scene sceneID="Arc-O6-PI8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jta-aM-dZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="pageTwoOnboardingViewIdentifier" id="Yzr-Lk-zQT" customClass="PageTwoOnboardingView" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GfS-9G-pSi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -315,6 +314,7 @@ Continue comme ça</string>
                         <viewLayoutGuide key="safeArea" id="6kD-uA-g8E"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jta-aM-dZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1981.5999999999999" y="484.40779610194909"/>
         </scene>
