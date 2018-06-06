@@ -8,24 +8,12 @@
 
 import Foundation
 
-struct Level {
-    var name: String
-    var number: Int
-    var required: Int
+class Level {
+    var name: String!
+    var value: Int!
     
-    var dictionary:[String: Any] {
-        return [
-            "name": name,
-            "number": number,
-            "required": required
-        ]
-    }
-}
-
-extension Level: DocumentSerializable {
-    init?(dictionary: [String : Any]) {
-        guard let name = dictionary["name"] as? String, let number = dictionary["number"] as? Int, let required = dictionary["required"] as? Int else { return nil }
-        
-        self.init(name: name, number: number, required: required)
+    init(name: String!, value: Int!) {
+        self.name = name
+        self.value = value
     }
 }
