@@ -21,17 +21,6 @@ class PageThreeOnboardingView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func goToLoginPage(_ sender: Any) {
-        var AuthStoryboard: UIStoryboard!
-        
-        AuthStoryboard = UIStoryboard(name: "Auth", bundle: nil)
-        
-        if let authViewController = AuthStoryboard.instantiateViewController(withIdentifier: "loginIdentifier") as? AuthViewController {
-            self.present(authViewController, animated: true, completion: nil)
-        }
-    }
-    
     /*
     // MARK: - Navigation
 
