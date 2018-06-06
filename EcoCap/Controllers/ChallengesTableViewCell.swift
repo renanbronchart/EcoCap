@@ -38,8 +38,6 @@ class ChallengesTableViewCell: UITableViewCell {
         didSet {
             challenge.repetition_completed = challenge.repetition_completed ?? 0
             
-            // mettre à jour le challenge user
-            
             challengeNameLabel.text = challenge.name
             challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed!)"
             challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)")"
