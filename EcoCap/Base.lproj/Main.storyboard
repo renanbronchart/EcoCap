@@ -119,21 +119,14 @@ Continue comme ça</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU5-nN-Ii4" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU5-nN-Ii4">
                                         <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                        <color key="backgroundColor" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="DUH-H5-Ifa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <state key="normal" title="Continuer"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -144,6 +137,7 @@ Continue comme ça</string>
                                     <constraint firstItem="jHg-RL-cj6" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" constant="52" id="E2P-A3-ejf"/>
                                     <constraint firstItem="9E4-WT-ifX" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" id="HX2-MA-YFh"/>
                                     <constraint firstAttribute="trailing" secondItem="cU5-nN-Ii4" secondAttribute="trailing" id="Hvs-3H-csv"/>
+                                    <constraint firstItem="cU5-nN-Ii4" firstAttribute="width" secondItem="SIN-On-cNw" secondAttribute="width" id="JCw-83-SOz"/>
                                     <constraint firstItem="ktl-3k-ZT4" firstAttribute="top" secondItem="9E4-WT-ifX" secondAttribute="bottom" constant="48" id="QGS-cZ-owd"/>
                                     <constraint firstAttribute="trailing" secondItem="jHg-RL-cj6" secondAttribute="trailing" constant="52" id="SPu-5f-vvK"/>
                                     <constraint firstItem="ktl-3k-ZT4" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" constant="52" id="Saq-FW-fVI"/>
@@ -262,6 +256,9 @@ Continue comme ça</string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On s’y met dès maintenant !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fll-BQ-aVS">
                                         <rect key="frame" x="0.0" y="421" width="375" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="v0H-rM-pYD"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
