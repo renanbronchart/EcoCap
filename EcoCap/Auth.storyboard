@@ -51,10 +51,10 @@
                                             <action selector="registerButtonTapped:" destination="TeE-GU-XJ5" eventType="touchUpInside" id="y73-EE-SBt"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Déjà inscrit ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmq-ZJ-DcR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Déjà inscrit ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmq-ZJ-DcR">
                                         <rect key="frame" x="0.0" y="598" width="375" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <color key="textColor" red="0.47450980390000003" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4QQ-Lj-qiw">
@@ -131,9 +131,9 @@
                                     <constraint firstItem="9Og-sG-0t2" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="32" id="Z5K-h8-rix"/>
                                     <constraint firstAttribute="trailing" secondItem="9Og-sG-0t2" secondAttribute="trailing" constant="32" id="ZUr-XC-fFG"/>
                                     <constraint firstAttribute="trailing" secondItem="gG6-7S-Skh" secondAttribute="trailing" id="byY-lk-qvM"/>
+                                    <constraint firstItem="Cmq-ZJ-DcR" firstAttribute="top" secondItem="VmU-P8-4FB" secondAttribute="bottom" constant="21" id="cMM-4D-Xw1"/>
                                     <constraint firstItem="Xzc-rw-oRv" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="32" id="k2c-i5-uWX"/>
                                     <constraint firstItem="yUL-P9-PA7" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="32" id="mNM-01-C1c"/>
-                                    <constraint firstItem="Cmq-ZJ-DcR" firstAttribute="top" secondItem="VmU-P8-4FB" secondAttribute="bottom" constant="21" id="nx8-4i-wZH"/>
                                     <constraint firstAttribute="trailing" secondItem="YUu-Xd-Br4" secondAttribute="trailing" constant="32" id="qV5-ob-bQw"/>
                                     <constraint firstItem="Cmq-ZJ-DcR" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" id="s8m-sS-3Km"/>
                                     <constraint firstAttribute="trailing" secondItem="yUL-P9-PA7" secondAttribute="trailing" constant="32" id="slE-im-gf6"/>
