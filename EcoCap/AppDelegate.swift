@@ -20,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+
+        if let tabBarController = window?.rootViewController as? UITabBarController {
+            let items = tabBarController.tabBar.items
+            
+            items![0].image = UIImage(named: "icn_ranking")
+            items![1].image = UIImage(named: "icn_profile")
+            items![2].image = UIImage(named: "icn_challenge")
+            
+            tabBarController.tabBar.tintColor = UIColor(red: 60.0 / 255.0, green: 206.0 / 255.0, blue: 222.0 / 255.0, alpha: 1.0)
+        }
+
         return true
     }
 

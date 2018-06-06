@@ -30,6 +30,14 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
             print("CONNECTED")
             var homeStoryboard: UIStoryboard!
@@ -39,15 +47,8 @@ class AuthViewController: UIViewController {
             }
             
         }
+    }
         
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // Handle registering with firebase and
     // create a new user detail.
     @IBAction func registerButtonTapped(_ sender: UIButton) {
@@ -118,7 +119,7 @@ class AuthViewController: UIViewController {
     // Present view on current Storyboard by identifier
     func showOnCurrentStoryboard(identifier: String){
         if let authViewcontroller = self.storyboard?.instantiateViewController(withIdentifier: identifier) as? AuthViewController {
-            self.present(authViewcontroller, animated: true, completion: nil)
+            self.present(authViewcontroller, animated: false, completion: nil)
         }
     }
 }

@@ -42,6 +42,10 @@ class DetailChallengeViewController: UIViewController {
     var downloader = Timer()
     var challengeValue: Int = 0
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,11 +54,11 @@ class DetailChallengeViewController: UIViewController {
         self.view.clipsToBounds = true
         
         challengeNameLabel.text = challenge?.name
-        pointsLabel.text = "\(challenge.value!) pts"
-        challengeValue = challenge.value
+        pointsLabel.text = "\(challenge.points) pts"
+        challengeValue = challenge.points
         
-        maxValue = challenge.total_missions * 10
-        minValue = challenge.complete_missions * 10
+        maxValue = challenge.repetition * 10
+        minValue = 1 * 10
         challengeProgressBar.setProgress((Float(minValue) / Float(maxValue)), animated: false)
         progressLabel.text = "\((maxValue / 10) - (minValue / 10))"
     }
