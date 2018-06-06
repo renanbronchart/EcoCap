@@ -16,31 +16,37 @@ protocol DocumentSerializable {
 
 struct Challenge {
 
+    var uid: String
     var name: String
     var description: String
-    var value: Int
+    var points: Int
     var repetition: Int
     var repetition_type: String
-    var thema: String
+    var type: String
     var level: Int
+    var repetition_name: String
+    var short_description: String
     
     var dictionary:[String:Any] {
         return [
             "name": name,
             "description": description,
-            "value": value,
+            "points": points,
             "repetition": repetition,
             "repetition_type": repetition_type,
-            "thema": thema,
-            "level": level
+            "type": type,
+            "level": level,
+            "repetition_name": repetition_name,
+            "short_description": short_description
+            
         ]
     }
 }
 
 extension Challenge: DocumentSerializable {
     init?(dictionary:[String:Any]) {
-        guard let name = dictionary["name"] as? String, let description = dictionary["description"] as? String, let value = dictionary["points"] as? Int, let repetition = dictionary["repetition"] as? Int, let repetition_type = dictionary["repetition_type"] as? String, let thema = dictionary["thema"] as? String, let level = dictionary["level"] as? Int else { return nil }
+        guard let uid = dictionary["uid"] as? String , let name = dictionary["name"] as? String, let description = dictionary["description"] as? String, let points = dictionary["points"] as? Int, let repetition = dictionary["repetition"] as? Int, let repetition_type = dictionary["repetition_type"] as? String, let type = dictionary["type"] as? String, let level = dictionary["level"] as? Int , let repetition_name = dictionary["repetition_name"] as? String, let short_description = dictionary["short_description"] as? String else { return nil }
         
-        self.init(name: name, description: description, value: value, repetition: repetition, repetition_type: repetition_type, thema: thema, level: level)
+        self.init(uid: uid, name: name, description: description, points: points, repetition: repetition, repetition_type: repetition_type, type: type, level: level, repetition_name: repetition_name, short_description: short_description)
     }
 }

@@ -36,14 +36,12 @@ class ChallengesTableViewCell: UITableViewCell {
     
     var challenge: Challenge! {
         didSet {
-            /*
             challengeNameLabel.text = challenge.name
             challengeProgressLabel.text = "\(challenge.total_missions - challenge.complete_missions)"
             challengePercentLabel.text = "\("\(challenge.complete_missions * 100 / challenge.total_missions)")"
             challengeValue = challenge.value
             maxValue = challenge.total_missions * 10
-            minValue = challenge.complete_missions * 10
- */
+            minValue = challenge.complete_missions(* * 0)
         }
     }
     
@@ -57,14 +55,14 @@ class ChallengesTableViewCell: UITableViewCell {
         if minValue != maxValue {
             if minValue != more {
                 minValue += 1
-                //challenge.complete_missions = minValue / 10
+                challenge.complete_missions = minValue / 10
                 challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10))"
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
                 challengeButton.isEnabled = true
                 
-                //delegate?.didChangeChallengeCompleteMissions(value: challenge.complete_missions * 10)
+                delegate?.didChangeChallengeCompleteMissions(value: challenge.complete_missions * 10)
             }
         } else {
             minValue = 0
@@ -103,7 +101,7 @@ extension ChallengesTableViewCell: ChallengeDetailDelegate {
     }
     
     func didChangeChallengeCompleteMissions(value: Int) {
-        //challenge.complete_missions = value
+        challenge.complete_missions = value
         minValue = value * 10
         challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10))"
         challengeProgressBar.progress = Float(minValue) / Float(maxValue)
