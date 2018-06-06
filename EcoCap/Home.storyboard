@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syy-QE-SLK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syy-QE-SLK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,6 +50,10 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
                                                 <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="filterByMonth:" destination="1Oh-ls-des" eventType="touchUpInside" id="bUR-Bd-VI8"/>
@@ -76,6 +80,10 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                 <color key="value" red="0.18823529411764706" green="0.75294117647058822" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="filterByWeek:" destination="1Oh-ls-des" eventType="touchUpInside" id="DMu-JY-yyj"/>
@@ -100,6 +108,11 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                 <color key="value" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelectedStateAccept" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="filterByDay:" destination="1Oh-ls-des" eventType="touchUpInside" id="U9a-te-tD5"/>
@@ -403,7 +416,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zvJ-AP-G1I"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icn_ranking" id="qCJ-5C-VFe">
+                    <tabBarItem key="tabBarItem" title="" id="qCJ-5C-VFe">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <connections>
@@ -430,7 +443,7 @@
         <scene sceneID="oAf-TR-4OS">
             <objects>
                 <navigationController storyboardIdentifier="challengeNavigationControllerIdentifier" id="LA7-1g-K97" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icn_challenge" id="wkr-wg-93t">
+                    <tabBarItem key="tabBarItem" title="" id="wkr-wg-93t">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EU5-2S-wvt">
@@ -585,6 +598,10 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
                                                             <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="filterByMonth:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="mh3-tb-b8Y"/>
@@ -606,6 +623,10 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
                                                             <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="filterByWeek:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="iXj-S3-Qqx"/>
@@ -627,6 +648,10 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
                                                             <color key="value" red="0.66707645939086291" green="0.66707645939086291" blue="0.66707645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="selectable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="filterByDay:" destination="tPj-Bo-Hek" eventType="touchUpInside" id="JtS-Z7-2PE"/>
@@ -1044,7 +1069,7 @@
                                     <constraint firstAttribute="width" constant="70" id="7gZ-n4-AbF"/>
                                     <constraint firstAttribute="height" constant="70" id="VyS-Nq-Yik"/>
                                 </constraints>
-                                <state key="normal" image="btn_water"/>
+                                <state key="normal" image="btn_plus_water"/>
                                 <connections>
                                     <action selector="completeChallenge:" destination="t7k-kM-fTh" eventType="touchUpInside" id="FX6-6w-BKe"/>
                                 </connections>
@@ -1355,7 +1380,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SH3-QK-g4B"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icn_profile" id="w9E-E5-IJV">
+                    <tabBarItem key="tabBarItem" title="" id="w9E-E5-IJV">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <connections>
@@ -1371,10 +1396,10 @@
             </objects>
             <point key="canvasLocation" x="565.60000000000002" y="-1183.3583208395803"/>
         </scene>
-        <!--Custom Tab Bar View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="3Nx-Lz-p57">
             <objects>
-                <tabBarController id="syy-QE-SLK" customClass="CustomTabBarViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="syy-QE-SLK" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IUY-nm-ljw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1395,10 +1420,7 @@
     <resources>
         <image name="1" width="64" height="64"/>
         <image name="banner-frame" width="1280" height="610"/>
-        <image name="btn_water" width="138" height="136"/>
-        <image name="icn_challenge" width="26" height="24"/>
-        <image name="icn_profile" width="18" height="24"/>
-        <image name="icn_ranking" width="24" height="24"/>
+        <image name="btn_plus_water" width="138" height="136"/>
         <image name="star_1" width="77" height="41"/>
         <image name="star_2" width="48" height="37"/>
         <image name="star_3" width="33" height="32"/>
