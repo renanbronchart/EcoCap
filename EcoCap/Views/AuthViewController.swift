@@ -118,7 +118,7 @@ class AuthViewController: UIViewController {
     // Present view on current Storyboard by identifier
     func showOnCurrentStoryboard(identifier: String){
         if let authViewcontroller = self.storyboard?.instantiateViewController(withIdentifier: identifier) as? AuthViewController {
-            self.present(authViewcontroller, animated: true, completion: nil)
+            self.present(authViewcontroller, animated: false, completion: nil)
         }
     }
 }
