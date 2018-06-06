@@ -12,12 +12,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Ranking View Controller-->
         <scene sceneID="FXy-9P-ISB">
             <objects>
                 <viewController id="1Oh-ls-des" customClass="RankingViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fe5-eC-mmA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mf-I4-foE" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
@@ -403,7 +403,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zvJ-AP-G1I"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="qCJ-5C-VFe"/>
+                    <tabBarItem key="tabBarItem" title="" image="icn_ranking" id="qCJ-5C-VFe">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="dailyButton" destination="DPd-vc-4sH" id="0p3-ym-bIj"/>
                         <outlet property="firstUserCompletionLabel" destination="vFB-7d-FRw" id="bYk-IZ-AuI"/>
@@ -424,11 +426,13 @@
             </objects>
             <point key="canvasLocation" x="565.60000000000002" y="185.75712143928038"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="oAf-TR-4OS">
             <objects>
-                <navigationController id="LA7-1g-K97" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wkr-wg-93t"/>
+                <navigationController storyboardIdentifier="challengeNavigationControllerIdentifier" id="LA7-1g-K97" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icn_challenge" id="wkr-wg-93t">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EU5-2S-wvt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -446,7 +450,7 @@
             <objects>
                 <viewController storyboardIdentifier="challengesViewControllerIdentifier" id="lGY-Ok-E8b" customClass="ChallengesViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vn1-og-rJd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-ZY-HJn" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
@@ -554,7 +558,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="riG-TI-Y90">
-                                <rect key="frame" x="0.0" y="174" width="375" height="493"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryTableViewCellIdentifier" rowHeight="76" id="tPj-Bo-Hek" customClass="CategoryTableViewCell" customModule="EcoCap" customModuleProvider="target">
@@ -1081,12 +1085,12 @@
             </objects>
             <point key="canvasLocation" x="1802.4000000000001" y="-2379.7601199400301"/>
         </scene>
-        <!--Item 1-->
+        <!--Profil View Controller-->
         <scene sceneID="G5v-6N-CNr">
             <objects>
                 <viewController id="RJJ-V3-tYa" customClass="ProfilViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p5a-TG-Iig">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de0-NF-cyq" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
@@ -1351,7 +1355,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SH3-QK-g4B"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="w9E-E5-IJV"/>
+                    <tabBarItem key="tabBarItem" title="" image="icn_profile" id="w9E-E5-IJV">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="challengeCompletedLabel" destination="GRG-Yh-a96" id="aRC-B2-529"/>
                         <outlet property="levelNameLabel" destination="CSq-hD-fsz" id="jlZ-nE-dZr"/>
@@ -1365,18 +1371,19 @@
             </objects>
             <point key="canvasLocation" x="565.60000000000002" y="-1183.3583208395803"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar View Controller-->
         <scene sceneID="3Nx-Lz-p57">
             <objects>
-                <tabBarController id="syy-QE-SLK" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IUY-nm-ljw">
+                <tabBarController id="syy-QE-SLK" customClass="CustomTabBarViewController" customModule="EcoCap" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IUY-nm-ljw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="RJJ-V3-tYa" kind="relationship" relationship="viewControllers" id="cD5-kG-15g"/>
                         <segue destination="1Oh-ls-des" kind="relationship" relationship="viewControllers" id="COB-YB-Bt0"/>
+                        <segue destination="RJJ-V3-tYa" kind="relationship" relationship="viewControllers" id="cD5-kG-15g"/>
                         <segue destination="LA7-1g-K97" kind="relationship" relationship="viewControllers" id="fJ3-Pu-SaW"/>
                     </connections>
                 </tabBarController>
@@ -1389,6 +1396,9 @@
         <image name="1" width="64" height="64"/>
         <image name="banner-frame" width="1280" height="610"/>
         <image name="btn_water" width="138" height="136"/>
+        <image name="icn_challenge" width="26" height="24"/>
+        <image name="icn_profile" width="18" height="24"/>
+        <image name="icn_ranking" width="24" height="24"/>
         <image name="star_1" width="77" height="41"/>
         <image name="star_2" width="48" height="37"/>
         <image name="star_3" width="33" height="32"/>
