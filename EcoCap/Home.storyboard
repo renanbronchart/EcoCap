@@ -588,7 +588,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="XxJ-ur-ssu"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Mois"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                             <color key="value" red="0.22352941176470587" green="0.76862745098039209" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -610,7 +610,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="X9u-L3-v71"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Semaine"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                             <color key="value" red="0.23921568630000001" green="0.80784313730000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -632,7 +632,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hGZ-Un-DZ6"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Jour"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                             <color key="value" red="0.23921568630000001" green="0.80784313730000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

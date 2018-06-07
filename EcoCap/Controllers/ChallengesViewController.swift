@@ -14,6 +14,7 @@ class ChallengesViewController: UIViewController {
     lazy var levels = [Level]()
     var user: UserBeta!
     lazy var challenges_user = [ChallengeRun]()
+    lazy var allChallengesUser = [ChallengeRun]()
     lazy var themas = [Thema]()
     
     var minValue = 0
@@ -67,7 +68,6 @@ class ChallengesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Récupérer les thémas avec le service des thématique
         themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "society"))
         themas.append(Thema(color_gradient_1: "#58E4F5", color_gradient_2: "#2DBEDA", description: "Préservez l'eau", name: "water"))
@@ -90,7 +90,8 @@ class ChallengesViewController: UIViewController {
         
         user = UserBeta(name: "Renan", score: 0, challenge_list: challenges)
         
-        challenges_user = user.challenge_list ?? []
+        allChallengesUser = user.challenge_list ?? []
+        challenges_user = allChallengesUser
         
         // à virer quand on aura le retrieve de user pour userPoints
         userPoints = 11500
@@ -175,6 +176,13 @@ extension ChallengesViewController: CellProgressDelegate {
     }
 }
 
+extension ChallengesViewController: FilterChallengeDelegate {
+    func didFilterBy(type: String) {
+        self.challenges_user = allChallengesUser.filter({$0.repetition_type == type})
+        tableView.reloadData()
+    }
+}
+
 extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return challenges_user.count + 1
@@ -201,6 +209,8 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "categoryTableViewCellIdentifier") as! CategoryTableViewCell
+            
+            cell.delegate = self
             
             return cell
         } else {
