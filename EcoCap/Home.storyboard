@@ -682,6 +682,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXc-w9-CCf" customClass="CustomViewCell" customModule="EcoCap" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="12" width="343" height="168"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageType" translatesAutoresizingMaskIntoConstraints="NO" id="40K-Hd-row" userLabel="Image Type">
+                                                            <rect key="frame" x="-32" y="-32" width="120" height="120"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="120" id="52c-3S-ECm"/>
+                                                                <constraint firstAttribute="width" constant="120" id="xQY-eu-K9W"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3T2-NO-ELE">
                                                             <rect key="frame" x="64" y="24" width="207" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -694,14 +701,14 @@
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N05-bd-XVv">
-                                                            <rect key="frame" x="64" y="99.5" width="35.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Défi complété à" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N05-bd-XVv">
+                                                            <rect key="frame" x="64" y="99.5" width="101.5" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-xy-WbG">
-                                                            <rect key="frame" x="235.5" y="99.5" width="35.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lo-xy-WbG">
+                                                            <rect key="frame" x="226" y="99.5" width="45" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -749,13 +756,13 @@
                                                     <constraints>
                                                         <constraint firstItem="1iV-zE-ZgI" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="64" id="0d2-IQ-9u4"/>
                                                         <constraint firstAttribute="trailing" secondItem="ybk-Av-oQq" secondAttribute="trailing" constant="72" id="2XM-iM-CIA"/>
+                                                        <constraint firstItem="40K-Hd-row" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="-32" id="2jM-bH-L3V"/>
                                                         <constraint firstItem="N05-bd-XVv" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="64" id="7Vz-Uw-scl"/>
                                                         <constraint firstAttribute="trailing" secondItem="KNI-JR-STY" secondAttribute="trailing" id="EoR-eo-Wcg"/>
-                                                        <constraint firstItem="N05-bd-XVv" firstAttribute="top" secondItem="ybk-Av-oQq" secondAttribute="bottom" constant="24" id="JC8-H2-o2r"/>
                                                         <constraint firstAttribute="trailing" secondItem="3T2-NO-ELE" secondAttribute="trailing" constant="72" id="JEL-B2-MTP"/>
                                                         <constraint firstItem="KNI-JR-STY" firstAttribute="centerY" secondItem="tXc-w9-CCf" secondAttribute="centerY" id="JvR-bL-8PC"/>
                                                         <constraint firstItem="6lo-xy-WbG" firstAttribute="centerY" secondItem="N05-bd-XVv" secondAttribute="centerY" id="KhB-UJ-AI3"/>
-                                                        <constraint firstItem="3T2-NO-ELE" firstAttribute="top" secondItem="tXc-w9-CCf" secondAttribute="top" constant="24" id="Lvy-Q6-nQy"/>
+                                                        <constraint firstItem="N05-bd-XVv" firstAttribute="top" secondItem="ybk-Av-oQq" secondAttribute="bottom" constant="24" id="OcM-qj-1ro"/>
                                                         <constraint firstAttribute="trailing" secondItem="6lo-xy-WbG" secondAttribute="trailing" constant="72" id="WMe-Nv-Hl5"/>
                                                         <constraint firstItem="1iV-zE-ZgI" firstAttribute="top" secondItem="k55-qS-aoD" secondAttribute="bottom" constant="8" id="aWh-si-1Uj"/>
                                                         <constraint firstItem="3T2-NO-ELE" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="64" id="amK-QQ-vry"/>
@@ -765,10 +772,15 @@
                                                         <constraint firstItem="ybk-Av-oQq" firstAttribute="top" secondItem="3T2-NO-ELE" secondAttribute="bottom" constant="8" id="k41-d4-DeH"/>
                                                         <constraint firstAttribute="trailing" secondItem="mUh-1B-4zw" secondAttribute="trailing" constant="72" id="kCa-rb-hdN"/>
                                                         <constraint firstItem="mUh-1B-4zw" firstAttribute="centerY" secondItem="k55-qS-aoD" secondAttribute="centerY" id="qBl-Bt-EmI"/>
+                                                        <constraint firstItem="40K-Hd-row" firstAttribute="top" secondItem="tXc-w9-CCf" secondAttribute="top" constant="-32" id="rEM-NG-IWi"/>
                                                         <constraint firstAttribute="trailing" secondItem="1iV-zE-ZgI" secondAttribute="trailing" constant="72" id="zEb-2n-So9"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3T2-NO-ELE" firstAttribute="top" secondItem="mha-XT-X5i" secondAttribute="top" constant="36" id="QeD-6S-CfS"/>
+                                                <constraint firstAttribute="bottom" secondItem="ybk-Av-oQq" secondAttribute="bottom" constant="104.5" id="egk-xf-UVH"/>
+                                            </constraints>
                                             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -785,6 +797,7 @@
                                             <outlet property="challengeProgressBar" destination="1iV-zE-ZgI" id="RZH-vi-cVW"/>
                                             <outlet property="challengeProgressLabel" destination="mUh-1B-4zw" id="5Uh-Yx-Rdv"/>
                                             <outlet property="challengeShortDescriptionLabel" destination="ybk-Av-oQq" id="aFI-02-CEf"/>
+                                            <outlet property="challengeTypeImage" destination="40K-Hd-row" id="kYq-kG-xaP"/>
                                             <outlet property="customViewCell" destination="tXc-w9-CCf" id="u1q-No-pHg"/>
                                         </connections>
                                     </tableViewCell>
@@ -1076,22 +1089,25 @@
                         <viewLayoutGuide key="safeArea" id="GlP-Lg-OdW"/>
                     </view>
                     <connections>
+                        <outlet property="bodyInformationLabel" destination="vBF-Xf-Bc8" id="FKN-pC-Stm"/>
                         <outlet property="categoryLabel" destination="C9E-zn-Xzv" id="xP4-us-hzj"/>
                         <outlet property="challengeDetailButton" destination="LO7-wK-Ndl" id="bSU-Rf-b9I"/>
                         <outlet property="challengeNameLabel" destination="D0x-kf-Wnk" id="CaT-Sa-5kA"/>
                         <outlet property="challengeProgressBar" destination="QWn-ZC-wIc" id="Rt7-zY-eN8"/>
+                        <outlet property="footerInformationLabel" destination="ndr-Cf-0Mk" id="cVq-iA-Ype"/>
                         <outlet property="gradientView" destination="lmQ-T0-OoE" id="DZK-9g-uYl"/>
                         <outlet property="informationChallengeView" destination="B0k-8m-pze" id="LUE-kQ-qde"/>
                         <outlet property="informationScrollView" destination="K2a-m0-IYN" id="0is-96-Hen"/>
                         <outlet property="percentLabel" destination="gM1-ZB-0Ib" id="cMc-nW-7B8"/>
                         <outlet property="pointsLabel" destination="JVb-8Z-q3R" id="ub2-Hr-b6j"/>
                         <outlet property="progressLabel" destination="Vs1-8x-IJW" id="G32-nj-LHI"/>
+                        <outlet property="thematicImage" destination="cMe-bE-KUa" id="kof-yK-l7m"/>
                         <outlet property="titleInformationLabel" destination="BfD-FB-Win" id="bLW-Lw-b27"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyj-Tp-1SU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="-2382"/>
+            <point key="canvasLocation" x="1645.5999999999999" y="-2382.4587706146926"/>
         </scene>
         <!--Profil View Controller-->
         <scene sceneID="G5v-6N-CNr">

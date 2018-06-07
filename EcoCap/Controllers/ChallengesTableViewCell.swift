@@ -25,8 +25,9 @@ class ChallengesTableViewCell: UITableViewCell {
     @IBOutlet weak var challengeProgressLabel: UILabel!
     @IBOutlet weak var challengePercentLabel: UILabel!
     
+    @IBOutlet weak var challengeTypeImage: UIImageView!
     var delegate: CellProgressDelegate?
-    
+    var thema: Thema?
     var minValue = 0
     var maxValue = 100
     var xpMore = 10
@@ -39,8 +40,9 @@ class ChallengesTableViewCell: UITableViewCell {
             challenge.repetition_completed = challenge.repetition_completed ?? 0
             
             challengeNameLabel.text = challenge.name
-            challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed!)"
-            challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)")"
+            challengeShortDescriptionLabel.text = challenge.short_description
+            challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed!) \(challenge.repetition_name!)"
+            challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)") %"
             challengeValue = challenge.points
             maxValue = challenge.repetition * 10
             minValue = challenge.repetition_completed! * 10
@@ -58,11 +60,13 @@ class ChallengesTableViewCell: UITableViewCell {
             if minValue != more {
                 minValue += 1
                 challenge.repetition_completed = minValue / 10
-                challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10))"
+                challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
                 challengeButton.isEnabled = true
+                
+                challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)") %"
                 
                 delegate?.didChangeChallengeCompleteMissions(value: challenge.repetition_completed! * 10)
             }
@@ -73,15 +77,22 @@ class ChallengesTableViewCell: UITableViewCell {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        let firstColor = thema?.color_gradient_1 ?? "#E94366"
+        let secondColor = thema?.color_gradient_2 ?? "#F3AC5A"
+        
+        customViewCell.firstColor = UIColor(hexString: firstColor)
+        customViewCell.secondColor = UIColor(hexString: secondColor)
+        
+        challengeProgressBar.firstColor = UIColor(hexString: firstColor)
+        challengeProgressBar.secondColor = UIColor(hexString: secondColor)
+        challengeTypeImage.image = UIImage(named: "icn_\(challenge.type!)")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.selectionStyle = UITableViewCellSelectionStyle.none
-        
-        
-        customViewCell.firstColor = UIColor(hexString: "#E94366")
-        customViewCell.secondColor = UIColor(hexString: "#F3AC5A")
-
         
         challengeProgressBar.setProgress((Float(minValue) / Float(maxValue)), animated: false)
     }
@@ -101,7 +112,7 @@ extension ChallengesTableViewCell: ChallengeDetailDelegate {
     func didChangeChallengeCompleteMissions(value: Int) {
         challenge.repetition_completed = value
         minValue = value * 10
-        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10))"
+        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
         challengeProgressBar.progress = Float(minValue) / Float(maxValue)
         
         delegate?.didChangeChallengeCompleteMissions(value: value)

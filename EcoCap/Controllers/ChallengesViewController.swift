@@ -13,7 +13,8 @@ class ChallengesViewController: UIViewController {
     lazy var challenges = [ChallengeRun]()
     lazy var levels = [Level]()
     var user: UserBeta!
-    var challenges_user: [ChallengeRun] = []
+    lazy var challenges_user = [ChallengeRun]()
+    lazy var themas = [Thema]()
     
     var minValue = 0
     var maxValue = 100
@@ -66,6 +67,16 @@ class ChallengesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Récupérer les thémas avec le service des thématique
+        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "society"))
+        themas.append(Thema(color_gradient_1: "#58E4F5", color_gradient_2: "#2DBEDA", description: "Préservez l'eau", name: "water"))
+        themas.append(Thema(color_gradient_1: "#614FE8", color_gradient_2: "#FFCAE6", description: "Acheter responsable", name: "buy"))
+        themas.append(Thema(color_gradient_1: "#983BB6", color_gradient_2: "#FEA6D1", description: "Réduire mes déchets", name: "draft"))
+        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "energy"))
+        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "mobility"))
+        themas.append(Thema(color_gradient_1: "#F95A7D", color_gradient_2: "#F288E1", description: "Mangez mieux", name: "eat"))
+        
         // à virer quand on aura le service retrieveChallenges
         challenges.append(ChallengeRun(uid: "123", name: "Thé ou café ?", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", points: 9000, repetition: 10, repetition_type: "weekly", repetition_name: "Thé", type: "water", level: 1, short_description: "Changez votre tasse de café par du thé une fois par jour."))
         
@@ -73,7 +84,7 @@ class ChallengesViewController: UIViewController {
         
         challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 4000, repetition: 5, repetition_type: "monthly", repetition_name: "Thé", type: "buy", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
         
-        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 3000, repetition: 12, repetition_type: "monthly", repetition_name: "Thé", type: "draft", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
+        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 3000, repetition: 12, repetition_type: "monthly", repetition_name: "Thé", type: "draft", level: 1, short_description: "Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois"))
         
         challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 6000, repetition: 2, repetition_type: "daily", repetition_name: "Thé", type: "eat", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
         
@@ -173,9 +184,16 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             return 76
         } else {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 76
+        } else {
             return 192
         }
-        
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -187,8 +205,13 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "challengesTableViewCellIdentifier") as! ChallengesTableViewCell
+            let challenge = challenges_user[row - 1]
             
-            cell.challenge = challenges_user[row - 1]
+            if let found = themas.first(where: { $0.name == challenge.type }) {
+                cell.thema = found
+            }
+            
+            cell.challenge = challenge
             
             cell.delegate = self
             
@@ -197,19 +220,18 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-        } else {
-            print("selected")
+        if indexPath.row > 0 {
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
-                print("before push")
                 let currentCell = tableView.cellForRow(at: indexPath)
-                print(currentCell as Any, "currentCell")
+                let challenge = challenges_user[indexPath.row - 1]
                 
                 detailChallengeView.delegate = currentCell as? ChallengeDetailDelegate
-                    
-                detailChallengeView.challenge = challenges_user[indexPath.row - 1]
-                print("detailChallengeView", detailChallengeView)
+                detailChallengeView.challenge = challenge
+                
+                if let found = themas.first(where: { $0.name == challenge.type }) {
+                    detailChallengeView.thema = found
+                }
                 
                 self.navigationController?.pushViewController(detailChallengeView, animated: true)
             }

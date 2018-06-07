@@ -29,10 +29,14 @@ class DetailChallengeViewController: UIViewController {
     
     @IBOutlet weak var titleInformationLabel: UILabel!
     @IBOutlet weak var informationChallengeView: UIView!
+    @IBOutlet weak var footerInformationLabel: UILabel!
+    @IBOutlet weak var bodyInformationLabel: UILabel!
     
+    @IBOutlet weak var thematicImage: UIImageView!
     @IBOutlet weak var informationScrollView: UIScrollView!
     
     var challenge: ChallengeRun!
+    var thema: Thema!
     var delegate: ChallengeDetailDelegate?
     
     var minValue = 0
@@ -51,6 +55,21 @@ class DetailChallengeViewController: UIViewController {
 
         self.view.clipsToBounds = true
 
+        thematicImage.image = UIImage(named: "icn_\(thema.name!)")
+        categoryLabel.text = "\(thema.description!)"
+        challengeDetailButton.setImage(UIImage(named: "btn_plus_\(thema.name!)"), for: .normal)
+        
+        let firstColor = thema?.color_gradient_1 ?? "#E94366"
+        let secondColor = thema?.color_gradient_2 ?? "#F3AC5A"
+        
+        gradientView.firstColor = UIColor(hexString: firstColor)
+        gradientView.secondColor = UIColor(hexString: secondColor)
+        
+        titleInformationLabel.textColor = UIColor(hexString: firstColor)
+        footerInformationLabel.textColor = UIColor(hexString: firstColor)
+
+        bodyInformationLabel.text = challenge.description
+        
         challengeNameLabel.text = challenge?.name
         pointsLabel.text = "\(challenge.points!) pts"
         challengeValue = challenge.points
