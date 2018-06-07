@@ -202,11 +202,11 @@
 			isa = PBXGroup;
 			children = (
 				EAEE477220C87E5300C043D5 /* Services */,
-				EAEE476220C5369900C043D5 /* Auth.storyboard */,
 				2573763B20B8B805003D1B27 /* SupportFiles */,
 				2573763A20B8B7EA003D1B27 /* Models */,
 				2573763920B8B7E3003D1B27 /* Views */,
 				2573763820B8B7A4003D1B27 /* Controllers */,
+				EAEE476220C5369900C043D5 /* Auth.storyboard */,
 				2573760220B8ABA1003D1B27 /* Main.storyboard */,
 				2573762E20B8B21B003D1B27 /* Home.storyboard */,
 				257375FE20B8ABA1003D1B27 /* AppDelegate.swift */,
@@ -238,8 +238,8 @@
 		2573763820B8B7A4003D1B27 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2573760020B8ABA1003D1B27 /* AuthViewController.swift */,
 				2573763D20B8B9ED003D1B27 /* OnBoarding */,
+				2573760020B8ABA1003D1B27 /* AuthViewController.swift */,
 				256803A020B9AA8B00490E1D /* ProfileViewController.swift */,
 				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
 				256803A420B9AAC500490E1D /* RankingViewController.swift */,

@@ -72,6 +72,8 @@ class ChallengesTableViewCell: UITableViewCell {
             minValue = 0
             more = minValue
             challenge.completed = true
+            
+            downloader.invalidate()
             delegate?.didCompleteChallenge(challenge)
         }
     }
@@ -110,8 +112,6 @@ extension ChallengesTableViewCell: ChallengeDetailDelegate {
 
     func didChangeChallengeCompleteMissions(challenge: ChallengeRun) {
         self.challenge = challenge
-//        minValue = challenge.repetition_completed ?? 0
-//        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
         challengeProgressBar.progress = Float(minValue) / Float(maxValue)
 
         delegate?.didChangeChallengeCompleteMissions(challenge)

@@ -22,7 +22,7 @@ class LevelUpViewController: UIViewController {
     }
     
     @IBAction func moveNextLevel(_ sender: Any) {
-        if let challengesViewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "challengeNavigationControllerIdentifier") as? UINavigationController {
+        if let challengesViewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
             self.present(challengesViewcontroller, animated: true, completion: nil)
         }
     }
