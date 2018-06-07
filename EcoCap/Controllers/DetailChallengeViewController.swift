@@ -59,7 +59,12 @@ class DetailChallengeViewController: UIViewController {
 
         let firstColor = thema?.color_gradient_1 ?? "#E94366"
         let secondColor = thema?.color_gradient_2 ?? "#F3AC5A"
-
+        
+        // Transparent navigation bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = UIColor(hexString: "#ffffff")
         gradientView.firstColor = UIColor(hexString: firstColor)
         gradientView.secondColor = UIColor(hexString: secondColor)
 

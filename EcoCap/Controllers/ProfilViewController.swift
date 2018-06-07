@@ -27,9 +27,6 @@ class ProfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
         // Do any additional setup after loading the view.
         
         let today = Section(type: "Aujourd'hui", belonging: ["Cat", "Dog", "Lion"])
