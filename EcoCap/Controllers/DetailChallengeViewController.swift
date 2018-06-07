@@ -71,13 +71,13 @@ class DetailChallengeViewController: UIViewController {
         bodyInformationLabel.text = challenge.description
 
         challengeNameLabel.text = challenge?.name
-        pointsLabel.text = "\(challenge.points!) pts"
+        pointsLabel.text = "\(challenge.points) pts"
         challengeValue = challenge.points
 
-        percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition) %"
+        percentLabel.text = "\((challenge.repetition_completed * 100) / challenge.repetition) %"
 
         maxValue = challenge.repetition * 10
-        minValue = challenge.repetition_completed! * 10
+        minValue = challenge.repetition_completed * 10
 
         challengeProgressBar.setProgress((Float(minValue) / Float(maxValue)), animated: false)
         progressLabel.text = "\((maxValue / 10) - (minValue / 10))"
@@ -96,8 +96,8 @@ class DetailChallengeViewController: UIViewController {
                 progressLabel.text = "\((maxValue / 10) - (minValue / 10))"
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
-                challenge.repetition_completed! += 1
-                percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition) %"
+                challenge.repetition_completed += 1
+                percentLabel.text = "\((challenge.repetition_completed * 100) / challenge.repetition) %"
                 delegate?.didChangeChallengeCompleteMissions(challenge: challenge)
                 downloader.invalidate()
                 challengeDetailButton.isEnabled = true

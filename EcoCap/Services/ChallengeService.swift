@@ -36,7 +36,7 @@ class ChallengeService {
     }
     
     // Retrieve challenge runs by user
-    func getAllChallengeRuns(userId: Int, completed: Bool, callback: @escaping ([ChallengeRun]) -> Void) {
+    func getAllChallengeRuns(userId: String, completed: Bool, callback: @escaping ([ChallengeRun]) -> Void) {
         var challengeRuns = [ChallengeRun]()
         self.db.collection("challenge_run").whereField("user_id", isEqualTo: userId).whereField("completed", isEqualTo: completed).getDocuments() {
             querySnapshot, error in

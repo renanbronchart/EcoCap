@@ -27,6 +27,16 @@ class AuthViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
+            print("CONNECTED")
+            var homeStoryboard: UIStoryboard!
+            homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+            if let challengesViewcontroller = homeStoryboard.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
+                self.present(challengesViewcontroller, animated: true, completion: nil)
+            }
+            
+        }
     }
     
     
@@ -57,11 +67,11 @@ class AuthViewController: UIViewController {
                 } else if let _ = data {
                     UserDefaults.standard.set(true, forKey: "USERLOGGEDIN")
                     print(UserDefaults.standard.bool(forKey: "USERLOGGEDIN"))
-                    //self.redirectToChallengeViewStoryboard(name: "Home", identifier: "challengesViewControllerIdentifier")
+                    self.redirectToChallengeViewStoryboard(name: "Home", identifier: "challengesViewControllerIdentifier")
                 }
             }
         }
-        UserService.instance.incrementUserScore(points: 10, userId: "ZDzTjDooIfVRvtDWpLnkDcsU7wj1")
+//        UserService.instance.incrementUserScore(points: 10, userId: "ZDzTjDooIfVRvtDWpLnkDcsU7wj1")
     }
     
     // Redirect to register view
@@ -98,12 +108,13 @@ class AuthViewController: UIViewController {
                             "repetition_name": challenge.repetition_name,
                             "type": challenge.type,
                             "user_id": user.user.uid,
+                            "completed": false,
                             "challenge_id": challenge.uid,
                         ])
                     }
                     db.collection("user_detail").document(user.user.uid).setData(["name": name, "score": 0, "level": 1, "challenges_ids": challengeIds, "user_id": user.user.uid])
                 })
-                self.redirectToChallengeViewStoryboard(name: "Home", identifier: "challengesViewControllerIdentifier")
+                self.redirectToChallengeViewStoryboard(name: "Home", identifier: "homeTapBarControllerIdentifier")
             }
         })
     }

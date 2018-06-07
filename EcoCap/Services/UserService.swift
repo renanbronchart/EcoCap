@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class UserService {
     
@@ -35,6 +36,19 @@ class UserService {
                 if userLevel < self.MAX_LEVEL {
                     callback(userDetail, userLevel)
                 }
+            }
+        }
+    }
+    
+    func getUserDetail(callback: @escaping (UserDetail) -> Void) {
+        var userDetail: UserDetail!
+        db.collection("user_detail").document((Auth.auth().currentUser?.uid)!).getDocument() {
+            querySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                userDetail = querySnapshot.flatMap({UserDetail(dictionary: $0.data()!)})
+                callback(userDetail)
             }
         }
     }

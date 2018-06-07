@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ChallengesViewController: UIViewController {
 
     lazy var challenges = [ChallengeRun]()
     lazy var levels = [Level]()
-    var user: UserBeta!
+    var user: UserDetail!
     lazy var challenges_user = [ChallengeRun]()
     lazy var allChallengesUser = [ChallengeRun]()
     lazy var themas = [Thema]()
@@ -78,33 +80,24 @@ class ChallengesViewController: UIViewController {
         themas.append(Thema(color_gradient_1: "#F95A7D", color_gradient_2: "#F288E1", description: "Mangez mieux", name: "eat"))
 
         // à virer quand on aura le service retrieveChallenges
-        challenges.append(ChallengeRun(uid: "123", name: "Thé ou café ?", description: "Pour produire 125ml de café, 140 litres d’eau sont nécessaires, alors que seulement 17 sont nécessaires pour du thé. En plus, on a une légère tendance à menacer la forêt tropicale pour notre café, alors deux raisons pour le prix d’une ! Le bobo bio Acheter bio une fois par semaine, c’est peut être bobo, mais c’est la garantie de manger des produits plus respectueux pour l’environnement et meilleurs à la santé !", points: 9000, repetition: 10, repetition_type: "weekly", repetition_name: "Thé", type: "water", level: 1, short_description: "Changez votre tasse de café par du thé une fois par jour."))
+        if let userId = Auth.auth().currentUser?.uid {
+            ChallengeService.instance.getAllChallengeRuns(userId: userId, completed: false) { (challenges_run) in
+                self.allChallengesUser = challenges_run
+                
+                self.challenges_user = self.allChallengesUser.filter({$0.repetition_type == "daily"})
+                self.tableView.reloadData()
+            }
+        }
 
-        challenges.append(ChallengeRun(uid: "1234", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 1000, repetition: 20, repetition_type: "monthly", repetition_name: "Thé", type: "water", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
-
-        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 4000, repetition: 5, repetition_type: "monthly", repetition_name: "Thé", type: "buy", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
-
-        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 3000, repetition: 12, repetition_type: "monthly", repetition_name: "Thé", type: "draft", level: 1, short_description: "Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois Ne prenez plus de bain pendant un mois"))
-
-        challenges.append(ChallengeRun(uid: "12345", name: "Toilette de chat", description: "Remplacer votre bain par une douche à la durée modérée vous permet d’économiser près de 30% de votre consommation d’eau et 11% de votre chauffage. Un sacré défi pour commencer !!", points: 6000, repetition: 2, repetition_type: "daily", repetition_name: "Thé", type: "eat", level: 1, short_description: "Ne prenez plus de bain pendant un mois"))
-
-        user = UserBeta(name: "Renan", score: 0, challenge_list: challenges)
-
-        allChallengesUser = user.challenge_list ?? []
-        challenges_user = allChallengesUser
-
-        // à virer quand on aura le retrieve de user pour userPoints
-        userPoints = 11500
+        UserService.instance.getUserDetail(callback: { (userDetail) in
+            self.user = userDetail
+            self.userPoints = self.user.score
+        })
 
         // à virer quand on aura le service retrieveLevels
-        levels.append(Level(name: "1", value: 5000))
-        levels.append(Level(name: "2", value: 6000))
-        levels.append(Level(name: "3", value: 7000))
-        levels.append(Level(name: "4", value: 8000))
-        levels.append(Level(name: "5", value: 9000))
-        levels.append(Level(name: "6", value: 10000))
-        levels.append(Level(name: "7", value: 11000))
-        levels.append(Level(name: "8", value: 12000))
+        LevelService.instance.getAllLevels { (levels) in
+            self.levels = levels
+        }
 
         // Add delegate to self to use native function table View
         tableView.delegate = self
@@ -121,22 +114,22 @@ class ChallengesViewController: UIViewController {
         var precedentTotalPoints = 0
 
         levels.forEach { (level) in
-            if ((level.value + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
-                remainingPoints = (level.value + totalLevelPoint) - userPoints
-                let progressInLevel = level.value - remainingPoints
+            if ((level.required + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
+                remainingPoints = (level.required + totalLevelPoint) - userPoints
+                let progressInLevel = level.required - remainingPoints
 
                 self.currentLevel = level
                 self.minValue = progressInLevel
-                self.maxValue = level.value
+                self.maxValue = level.required
 
                 headerProgressView.progress = Float(minValue) / Float(maxValue)
 
-                levelLabel.text = String("Niveau \(level.name!)")
+                levelLabel.text = String("Niveau \(level.name)")
                 remainingPointsLabel.text = "Encore \(remainingPoints) points"
             }
 
-            precedentTotalPoints = level.value + totalLevelPoint
-            totalLevelPoint += level.value
+            precedentTotalPoints = level.required + totalLevelPoint
+            totalLevelPoint += level.required
         }
     }
 
@@ -165,7 +158,7 @@ extension ChallengesViewController: CellProgressDelegate {
         self.xpMore = challenge.points
         self.remainingPointsLabel.text = "\(remainingPoints)"
 
-        if let index = challenges_user.index(where: { $0 === challenge }) {
+        if let index = challenges_user.index(where: { $0.challenge_id == challenge.challenge_id }) {
             challenges_user.remove(at: index)
             let indexPath = IndexPath(item: index + 1, section: 0)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -231,11 +224,15 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row > 0 {
+            print("clicked")
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
+                print("inner clicked")
                 let currentCell = tableView.cellForRow(at: indexPath)
                 let challenge = challenges_user[indexPath.row - 1]
-
+                
+                print(challenge, "challenge")
+                
                 detailChallengeView.delegate = currentCell as? ChallengeDetailDelegate
                 detailChallengeView.challenge = challenge
 

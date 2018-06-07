@@ -37,15 +37,15 @@ class ChallengesTableViewCell: UITableViewCell {
 
     var challenge: ChallengeRun! {
         didSet {
-            challenge.repetition_completed = challenge.repetition_completed ?? 0
+            challenge.repetition_completed = challenge.repetition_completed
 
             challengeNameLabel.text = challenge.name
             challengeShortDescriptionLabel.text = challenge.short_description
-            challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed!) \(challenge.repetition_name!)"
-            challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)") %"
+            challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed) \(challenge.repetition_name)"
+            challengePercentLabel.text = "\("\(challenge.repetition_completed * 100 / challenge.repetition)") %"
             challengeValue = challenge.points
             maxValue = challenge.repetition * 10
-            minValue = challenge.repetition_completed! * 10
+            minValue = challenge.repetition_completed * 10
         }
     }
 
@@ -60,14 +60,14 @@ class ChallengesTableViewCell: UITableViewCell {
             if minValue != more {
                 minValue += 1
                 challenge.repetition_completed = minValue / 10
-                challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
+                challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name)"
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
                 challengeButton.isEnabled = true
-                challengePercentLabel.text = "\("\(challenge.repetition_completed! * 100 / challenge.repetition)") %"
+                challengePercentLabel.text = "\("\(challenge.repetition_completed * 100 / challenge.repetition)") %"
 
-                delegate?.didChangeChallengeCompleteMissions(value: challenge.repetition_completed! * 10)
+                delegate?.didChangeChallengeCompleteMissions(value: challenge.repetition_completed * 10)
             }
         } else {
             minValue = 0
@@ -85,7 +85,7 @@ class ChallengesTableViewCell: UITableViewCell {
 
         challengeProgressBar.firstColor = UIColor(hexString: firstColor)
         challengeProgressBar.secondColor = UIColor(hexString: secondColor)
-        challengeTypeImage.image = UIImage(named: "icn_\(challenge.type!)")
+        challengeTypeImage.image = UIImage(named: "icn_\(challenge.type)")
     }
 
     override func awakeFromNib() {
