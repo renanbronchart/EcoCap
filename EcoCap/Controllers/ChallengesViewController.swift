@@ -58,22 +58,24 @@ class ChallengesViewController: UIViewController {
                 downloader.invalidate()
                 self.user.score = self.userPoints
                 
-                // set user
-                
-//                UserService.instance.updateUserDetail(
+                // Set user with new user details
+                UserService.instance.updateUserDetail(userDetail: self.user) { (currentUserDetail, userDetail, levelUp) in
+                    UserService.instance.updateUserDetailAction(userDetailId: currentUserDetail, userDetail: userDetail, hasLevelUp: levelUp)
+                }
             }
         } else {
             minValue = 0
             more = minValue
             
-            print("level update")
-            
-            self.retrieveCurrentLevelUser()
+            self.currentLevel = levels[self.user.level]
             self.user.score = self.userPoints
             self.user.level = self.currentLevel.number
             
-            levelLabel.text = String("Niveau \(self.currentLevel.name)")
-            // set user
+            levelLabel.text = String("\(self.currentLevel.name)")
+            
+            UserService.instance.updateUserDetail(userDetail: self.user) { (currentUserDetail, userDetail, levelUp) in
+                UserService.instance.updateUserDetailAction(userDetailId: currentUserDetail, userDetail: userDetail, hasLevelUp: levelUp)
+            }
             
             if let levelUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "levelUpViewControllerIdentifier") as? LevelUpViewController {
                 self.present(levelUpViewController, animated: true, completion: nil)
@@ -100,14 +102,13 @@ class ChallengesViewController: UIViewController {
         UserService.instance.getUserDetail(callback: { (userDetail) in
             self.user = userDetail
             self.userPoints = self.user.score
+            
+            LevelService.instance.getAllLevels { (levels) in
+                self.levels = levels
+                self.setDataInHeader()
+            }
         })
-
-        // à virer quand on aura le service retrieveLevels
-        LevelService.instance.getAllLevels { (levels) in
-            self.levels = levels
-            self.retrieveCurrentLevel()
-        }
-
+    
         // Add delegate to self to use native function table View
         tableView.delegate = self
         tableView.dataSource = self
@@ -115,29 +116,12 @@ class ChallengesViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    
-    func retrieveCurrentLevelUser () {
-        var totalLevelPoint = 0
-        var precedentTotalPoints = 0
-        
-        levels.forEach { (level) in
-            if ((level.required + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
-
-                self.currentLevel = level
-            }
-            
-            precedentTotalPoints = level.required + totalLevelPoint
-            totalLevelPoint += level.required
-        }
-    }
-
-    // set progress bar and set currentLevel
-    func retrieveCurrentLevel () {
+    func setDataInHeader () {
         self.currentLevel = levels[self.user.level - 1]
         let requiredLeftLevel = levels.indices.contains(self.user.level - 2) ? levels[self.user.level - 2].required : 0
         let totalLevelPoint = currentLevel.required - requiredLeftLevel
-
-        remainingPoints = totalLevelPoint - userPoints
+        
+        remainingPoints = totalLevelPoint - (userPoints - requiredLeftLevel)
 
         let progressInLevel = currentLevel.required - remainingPoints
         self.minValue = progressInLevel
@@ -162,7 +146,6 @@ class ChallengesViewController: UIViewController {
 
 extension ChallengesViewController: CellProgressDelegate {
     func didChangeChallengeCompleteMissions(_ challenge: ChallengeRun) {
-        print("did change ------------------------")
         ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
             ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
         }
@@ -177,7 +160,6 @@ extension ChallengesViewController: CellProgressDelegate {
     }
 
     func didCompleteChallenge(_ challenge: ChallengeRun) {
-        print("did complete  ------------------------")
         self.xpMore = challenge.points
         self.remainingPointsLabel.text = "\(remainingPoints)"
         

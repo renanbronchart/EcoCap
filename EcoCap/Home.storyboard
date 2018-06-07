@@ -1437,8 +1437,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="1Oh-ls-des" kind="relationship" relationship="viewControllers" id="COB-YB-Bt0"/>
-                        <segue destination="RJJ-V3-tYa" kind="relationship" relationship="viewControllers" id="cD5-kG-15g"/>
                         <segue destination="LA7-1g-K97" kind="relationship" relationship="viewControllers" id="fJ3-Pu-SaW"/>
+                        <segue destination="RJJ-V3-tYa" kind="relationship" relationship="viewControllers" id="cD5-kG-15g"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8Z-5M-oR8" userLabel="First Responder" sceneMemberID="firstResponder"/>

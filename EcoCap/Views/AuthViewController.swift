@@ -25,18 +25,14 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginCreateAccountButton: UIButton!
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
-            print("CONNECTED")
-            var homeStoryboard: UIStoryboard!
-            homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
-            if let challengesViewcontroller = homeStoryboard.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
-                self.present(challengesViewcontroller, animated: true, completion: nil)
-            }
-            
-        }
+//        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
+//            print("CONNECTED")
+//            self.redirectToChallengeViewStoryboard()
+//
+//        }
     }
     
     
@@ -69,7 +65,7 @@ class AuthViewController: UIViewController {
                 } else if let _ = data {
                     UserDefaults.standard.set(true, forKey: "USERLOGGEDIN")
                     print(UserDefaults.standard.bool(forKey: "USERLOGGEDIN"))
-                    self.redirectToChallengeViewStoryboard(name: "Home", identifier: "challengesViewControllerIdentifier")
+                    self.redirectToChallengeViewStoryboard()
                 }
             }
         }
@@ -116,7 +112,7 @@ class AuthViewController: UIViewController {
                     }
                     db.collection("user_detail").document(user.user.uid).setData(["name": name, "score": 0, "level": 1, "challenges_ids": challengeIds, "user_id": user.user.uid])
                 })
-                self.redirectToChallengeViewStoryboard(name: "Home", identifier: "homeTapBarControllerIdentifier")
+                self.redirectToChallengeViewStoryboard()
             }
         })
     }
@@ -135,12 +131,14 @@ class AuthViewController: UIViewController {
         }
     }
     
-    private func redirectToChallengeViewStoryboard(name: String, identifier: String) {
+    private func redirectToChallengeViewStoryboard() {
         var homeStoryboard: UIStoryboard!
-        homeStoryboard = UIStoryboard(name: name, bundle: nil)
-        if let viewController = homeStoryboard.instantiateViewController(withIdentifier: identifier) as? ChallengesViewController {
-            self.present(viewController, animated: true, completion: nil)
+        homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        if let challengesViewcontroller = homeStoryboard.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
+            self.present(challengesViewcontroller, animated: true, completion: nil)
         }
+
     }
 }
 
