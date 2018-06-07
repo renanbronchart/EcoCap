@@ -15,10 +15,12 @@ class RankingTableViewCell: UITableViewCell {
     @IBOutlet weak var userCompletionLabel: UILabel!
     @IBOutlet weak var userTotalPoints: UILabel!
     @IBOutlet weak var userRankingLabel: UILabel!
+    @IBOutlet weak var containerLevelImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        containerLevelImage.image = UIImage(named: "rank_other")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

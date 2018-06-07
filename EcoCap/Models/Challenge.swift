@@ -39,26 +39,3 @@ class Challenge {
     }
 }
 
-
-//// Extension pour le parsing Json, n'importe où dans notre projet
-//extension Episode {
-//    // convenience ne pas ecraser le constructeur par défault
-//    convenience init(json: JSON) {
-//        self.init()
-//
-//        self.name = json["name"].stringValue
-//        self.summary = json["summary"].stringValue
-//
-//        self.season = json["season"].intValue
-//        self.season = json["number"].intValue
-//
-//        let thumbnailUrl = json["image"]["medium"].stringValue
-//
-//        self.thumbnail = thumbnailUrl.replacingOccurrences(of: "http://", with: "https://")
-//
-//        let image = json["image"]["original"].stringValue
-//
-//        self.bigImage = image.replacingOccurrences(of: "http://", with: "https://")
-//    }
-//}
-

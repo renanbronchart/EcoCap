@@ -21,6 +21,7 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var levelNameLabel: UILabel!
     @IBOutlet weak var remainingPointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var levelUserLabel: UILabel!
     
     var sections = [Section]()
     

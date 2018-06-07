@@ -61,7 +61,6 @@ class RankingViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,5 +85,4 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 99
     }
-    
 }

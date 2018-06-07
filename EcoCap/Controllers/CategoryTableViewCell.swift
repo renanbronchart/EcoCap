@@ -9,8 +9,7 @@
 import UIKit
 
 protocol FilterChallengeDelegate {
-    func didCompleteChallenge(value: Int)
-    func didChangeChallengeCompleteMissions(value: Int)
+    func didFilterBy(type: String)
 }
 
 class CategoryTableViewCell: UITableViewCell {
@@ -18,12 +17,14 @@ class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var weeklyButton: GradientRoundedButton!
     @IBOutlet weak var monthlyButton: GradientRoundedButton!
     
+    var delegate: FilterChallengeDelegate?
+    
     @IBAction func filterByMonth(_ sender: Any) {
         dailyButton.isSelected = false
         weeklyButton.isSelected = false
         monthlyButton.isSelected = true
         
-        // call service challenge filter by challenge month
+        delegate?.didFilterBy(type: "monthly")
     }
     
     @IBAction func filterByWeek(_ sender: Any) {
@@ -31,7 +32,7 @@ class CategoryTableViewCell: UITableViewCell {
         weeklyButton.isSelected = true
         monthlyButton.isSelected = false
         
-        // call service challenge filter by challenge week
+        delegate?.didFilterBy(type: "weekly")
     }
     
     @IBAction func filterByDay(_ sender: Any) {
@@ -39,7 +40,8 @@ class CategoryTableViewCell: UITableViewCell {
         weeklyButton.isSelected = false
         monthlyButton.isSelected = false
         
-        // call service challenge filter by challenge day
+        
+        delegate?.didFilterBy(type: "daily")
     }
     
     override func awakeFromNib() {

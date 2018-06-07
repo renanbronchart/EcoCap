@@ -60,14 +60,4 @@ class GradientView: UIView {
             updateView()
         }
     }
-    
-    @IBInspectable
-    var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-        }
-    }
 }
