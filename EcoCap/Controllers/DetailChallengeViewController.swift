@@ -96,9 +96,6 @@ class DetailChallengeViewController: UIViewController {
             } else {
                 challenge.repetition_completed += 1
                 // Update ChallengeRun with new values
-                ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
-                    ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
-                }
                 percentLabel.text = "\((challenge.repetition_completed * 100) / challenge.repetition) %"
                 delegate?.didChangeChallengeCompleteMissions(challenge: challenge)
                 downloader.invalidate()

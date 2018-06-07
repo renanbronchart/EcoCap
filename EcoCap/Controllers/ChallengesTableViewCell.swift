@@ -65,7 +65,7 @@ class ChallengesTableViewCell: UITableViewCell {
                 challengeButton.isEnabled = true
                 challenge.repetition_completed = minValue / 10
                 challengePercentLabel.text = "\("\(challenge.repetition_completed * 100 / challenge.repetition)") %"
-
+                
                 delegate?.didChangeChallengeCompleteMissions(challenge)
             }
         } else {

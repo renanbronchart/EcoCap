@@ -79,6 +79,8 @@ extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingTableViewCellIdentifier") as! RankingTableViewCell
         
+//        cell.user = users[indexPath.row]
+        
         return cell
     }
     

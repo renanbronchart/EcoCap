@@ -28,7 +28,7 @@ struct Thema {
 
 extension Thema: DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let color_gradient_1 = dictionary["color_gradient_1"] as? String, let color_gradient_2 = dictionary["color_gradient_1"] as? String, let desc = dictionary["desc"] as? String, let name = dictionary["name"] as? String, let icon = dictionary["icon"] as? String else { return nil }
+        guard let color_gradient_1 = dictionary["color_gradient_1"] as? String, let color_gradient_2 = dictionary["color_gradient_2"] as? String, let desc = dictionary["desc"] as? String, let name = dictionary["name"] as? String, let icon = dictionary["icon"] as? String else { return nil }
         self.init(color_gradient_1: color_gradient_1, color_gradient_2: color_gradient_2, desc: desc, name: name, icon: icon)
     }
 }
