@@ -10,7 +10,7 @@ import UIKit
 
 protocol ChallengeDetailDelegate {
     func didCompleteChallengeDetail(_ challenge: ChallengeRun)
-    func didChangeChallengeCompleteMissions(value: Int)
+    func didChangeChallengeCompleteMissions(challenge: ChallengeRun)
 }
 
 class DetailChallengeViewController: UIViewController {
@@ -74,7 +74,7 @@ class DetailChallengeViewController: UIViewController {
         pointsLabel.text = "\(challenge.points!) pts"
         challengeValue = challenge.points
         
-        percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition)"
+        percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition) %"
 
         maxValue = challenge.repetition * 10
         minValue = challenge.repetition_completed! * 10
@@ -96,8 +96,8 @@ class DetailChallengeViewController: UIViewController {
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 challenge.repetition_completed! += 1
-                percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition)"
-                delegate?.didChangeChallengeCompleteMissions(value: (minValue / 10))
+                percentLabel.text = "\((challenge.repetition_completed! * 100) / challenge.repetition) %"
+                delegate?.didChangeChallengeCompleteMissions(challenge: challenge)
                 downloader.invalidate()
                 challengeDetailButton.isEnabled = true
             }

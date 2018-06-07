@@ -109,12 +109,12 @@ extension ChallengesTableViewCell: ChallengeDetailDelegate {
         delegate?.didCompleteChallenge(challenge)
     }
     
-    func didChangeChallengeCompleteMissions(value: Int) {
-        challenge.repetition_completed = value
-        minValue = value * 10
-        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
+    func didChangeChallengeCompleteMissions(challenge: ChallengeRun) {
+        self.challenge = challenge
+//        minValue = challenge.repetition_completed ?? 0
+//        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
         challengeProgressBar.progress = Float(minValue) / Float(maxValue)
         
-        delegate?.didChangeChallengeCompleteMissions(value: value)
+        delegate?.didChangeChallengeCompleteMissions(value: challenge.points)
     }
 }
