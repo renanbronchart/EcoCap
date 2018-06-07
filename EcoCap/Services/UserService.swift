@@ -16,6 +16,7 @@ class UserService {
     
     var db: Firestore
     static let instance = UserService()
+    var challenges = [Challenge]()
     
     private init() {
         self.db = Firestore.firestore()
@@ -43,7 +44,7 @@ class UserService {
     */
     
     // Update the userDetail passed in params
-    func updateUserDetail(userDetail: UserDetail, callback: @escaping (String, UserDetail) -> Void) {
+    func updateUserDetail(userDetail: UserDetail, callback: @escaping (String, UserDetail, Bool) -> Void) {
         var currentUserDetail: String = ""
         db.collection("user_detail").whereField("user_id", isEqualTo: userDetail.user_id).getDocuments() {
             querySnapshot, error in
@@ -51,13 +52,27 @@ class UserService {
                 print("\(error.localizedDescription)")
             } else {
                 currentUserDetail = querySnapshot!.documents.first!.documentID
-                callback(currentUserDetail, userDetail)
+                if userDetail.level > querySnapshot?.documents.first?.get("level") as! Int {
+                    ChallengeService.instance.getAllChallenges(level: userDetail.level, callback: { (challengesArray) in
+                        self.challenges = challengesArray
+                        var challengeIds = [String]()
+                        for challenge in self.challenges {
+                            challengeIds.append(challenge.uid)
+                            self.db.collection("challenge_run").addDocument(data: ["name": challenge.name,"level": challenge.level,"description": challenge.description,"points": challenge.points, "short_description": challenge.short_description,"repetition": challenge.repetition, "repetition_completed": 0,"repetition_type": challenge.repetition_type, "repetition_name": challenge.repetition_name,"type": challenge.type,"user_id": (Auth.auth().currentUser?.uid)!,"completed": false,"challenge_id": challenge.uid])
+                            challengeIds.append(contentsOf: userDetail.challenges_ids)
+                        }
+                        self.db.collection("user_detail").document((Auth.auth().currentUser?.uid)!).setData(["name": userDetail.name, "score": userDetail.score, "level": userDetail.level, "challenges_ids": challengeIds, "user_id": (Auth.auth().currentUser?.uid)!])
+                    })
+                } else {
+                    callback(currentUserDetail, userDetail, false)
+                }
             }
         }
     }
     
     // Callback of the updateUserDetail method
-    func updateUserDetailAction(userDetailId: String, userDetail: UserDetail) {
+    func updateUserDetailAction(userDetailId: String, userDetail: UserDetail, hasLevelUp: Bool) {
+        
         self.db.collection("user_detail").document(userDetailId).setData(userDetail.dictionary)
     }
     

@@ -30,7 +30,7 @@ struct ChallengeRun {
             "description": description,
             "points": points,
             "repetition": repetition,
-            "repetion_completed": repetition_completed,
+            "repetition_completed": repetition_completed,
             "repetition_type": repetition_type,
             "repetition_name": repetition_name,
             "type": type,
