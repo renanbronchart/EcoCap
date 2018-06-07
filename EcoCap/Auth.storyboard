@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,7 +30,7 @@
                                         <color key="highlightedColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmU-P8-4FB" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="92" y="529" width="191" height="48"/>
+                                        <rect key="frame" x="92" y="537" width="191" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="nly-i3-xws"/>
                                         </constraints>
@@ -52,7 +54,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Déjà inscrit ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmq-ZJ-DcR">
-                                        <rect key="frame" x="0.0" y="598" width="375" height="17"/>
+                                        <rect key="frame" x="0.0" y="606" width="375" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,48 +62,60 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4QQ-Lj-qiw">
                                         <rect key="frame" x="67" y="60" width="241" height="101"/>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzc-rw-oRv">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzc-rw-oRv" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="319" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="u1Z-E2-0uR"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_user"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom d'utilisateur" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YUu-Xd-Br4">
+                                    <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom d'utilisateur" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YUu-Xd-Br4" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="247" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="3fh-jg-97g"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_user"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-P9-PA7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUL-P9-PA7" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="391" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="4ma-so-VLs"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_password"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Répétez le mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Og-sG-0t2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Répétez le mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Og-sG-0t2" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="463" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="IM5-c0-Um7"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_password"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXP-Xs-4qq">
-                                        <rect key="frame" x="0.0" y="614" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="620" width="375" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <state key="normal" title="Se connecter">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,6 +135,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Cmq-ZJ-DcR" secondAttribute="trailing" id="F4K-Ae-Po2"/>
                                     <constraint firstItem="gG6-7S-Skh" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" id="Ggz-sP-w7x"/>
                                     <constraint firstItem="gG6-7S-Skh" firstAttribute="top" secondItem="4QQ-Lj-qiw" secondAttribute="bottom" constant="8" id="HId-89-gQQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="vXP-Xs-4qq" secondAttribute="bottom" constant="18" id="MvF-Hc-3WR"/>
                                     <constraint firstItem="yUL-P9-PA7" firstAttribute="top" secondItem="Xzc-rw-oRv" secondAttribute="bottom" constant="24" id="OAq-qz-uWz"/>
                                     <constraint firstItem="vXP-Xs-4qq" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" id="Qvt-5Z-Heu"/>
                                     <constraint firstItem="VmU-P8-4FB" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="92" id="TP0-pR-WFj"/>
@@ -132,14 +147,13 @@
                                     <constraint firstAttribute="trailing" secondItem="9Og-sG-0t2" secondAttribute="trailing" constant="32" id="ZUr-XC-fFG"/>
                                     <constraint firstAttribute="trailing" secondItem="gG6-7S-Skh" secondAttribute="trailing" id="byY-lk-qvM"/>
                                     <constraint firstItem="Cmq-ZJ-DcR" firstAttribute="top" secondItem="VmU-P8-4FB" secondAttribute="bottom" constant="21" id="cMM-4D-Xw1"/>
+                                    <constraint firstItem="vXP-Xs-4qq" firstAttribute="firstBaseline" secondItem="Cmq-ZJ-DcR" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="etm-jr-X1p"/>
                                     <constraint firstItem="Xzc-rw-oRv" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="32" id="k2c-i5-uWX"/>
                                     <constraint firstItem="yUL-P9-PA7" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" constant="32" id="mNM-01-C1c"/>
                                     <constraint firstAttribute="trailing" secondItem="YUu-Xd-Br4" secondAttribute="trailing" constant="32" id="qV5-ob-bQw"/>
                                     <constraint firstItem="Cmq-ZJ-DcR" firstAttribute="leading" secondItem="uVZ-RH-j1H" secondAttribute="leading" id="s8m-sS-3Km"/>
                                     <constraint firstAttribute="trailing" secondItem="yUL-P9-PA7" secondAttribute="trailing" constant="32" id="slE-im-gf6"/>
-                                    <constraint firstAttribute="bottom" secondItem="vXP-Xs-4qq" secondAttribute="bottom" constant="24" id="syg-Gk-1w8"/>
                                     <constraint firstAttribute="trailing" secondItem="vXP-Xs-4qq" secondAttribute="trailing" id="vyG-Fc-Fvf"/>
-                                    <constraint firstAttribute="bottom" secondItem="Cmq-ZJ-DcR" secondAttribute="bottom" constant="52" id="xVb-hE-9hg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -202,7 +216,7 @@
                                         <color key="highlightedColor" red="0.97645944360000003" green="0.98027223350000003" blue="0.98431843519999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-7m-ef3" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="92" y="477" width="191" height="48"/>
+                                        <rect key="frame" x="92" y="534" width="191" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="j8V-IZ-ark"/>
                                         </constraints>
@@ -226,25 +240,31 @@
                                             <action selector="loginButtonTapped:" destination="ba0-CX-5Nn" eventType="touchUpInside" id="yPL-Pa-vn1"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59p-zq-In3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59p-zq-In3" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="319" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="4ho-xs-qnS"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_password"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-jQ-k2s">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Adresse email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-jQ-k2s" customClass="CustomField" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="32" y="247" width="311" height="48"/>
-                                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="h2M-t6-O9C"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="imageSrc" value="input_user"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0bR-An-bfE">
                                         <rect key="frame" x="67" y="60" width="241" height="101"/>
@@ -259,7 +279,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Oeg-bg-2AE" firstAttribute="leading" secondItem="Ngy-IZ-3gN" secondAttribute="leading" id="4vj-Y4-PRs"/>
-                                    <constraint firstItem="yXQ-MO-uej" firstAttribute="top" secondItem="Ra6-7m-ef3" secondAttribute="bottom" constant="78" id="7ei-Rf-S3E"/>
                                     <constraint firstAttribute="bottom" secondItem="ghb-8v-os4" secondAttribute="bottom" constant="18" id="8o1-g2-3ke"/>
                                     <constraint firstAttribute="trailing" secondItem="TDn-jQ-k2s" secondAttribute="trailing" constant="32" id="AvR-R6-IAg"/>
                                     <constraint firstItem="Oeg-bg-2AE" firstAttribute="top" secondItem="0bR-An-bfE" secondAttribute="bottom" constant="8" id="BEP-H9-rh2"/>
@@ -271,6 +290,7 @@
                                     <constraint firstItem="yXQ-MO-uej" firstAttribute="leading" secondItem="Ngy-IZ-3gN" secondAttribute="leading" id="KoL-tf-a9q"/>
                                     <constraint firstAttribute="trailing" secondItem="ghb-8v-os4" secondAttribute="trailing" id="LTi-6u-rUj"/>
                                     <constraint firstItem="ghb-8v-os4" firstAttribute="leading" secondItem="Ngy-IZ-3gN" secondAttribute="leading" id="NSk-rg-tmX"/>
+                                    <constraint firstItem="yXQ-MO-uej" firstAttribute="top" secondItem="Ra6-7m-ef3" secondAttribute="bottom" constant="21" id="O2E-fr-fzd"/>
                                     <constraint firstItem="0bR-An-bfE" firstAttribute="leading" secondItem="Ngy-IZ-3gN" secondAttribute="leading" constant="67" id="UWz-QB-Hxp"/>
                                     <constraint firstAttribute="trailing" secondItem="Oeg-bg-2AE" secondAttribute="trailing" id="VyA-Ol-6U3"/>
                                     <constraint firstAttribute="trailing" secondItem="Ra6-7m-ef3" secondAttribute="trailing" constant="92" id="Yq3-gc-dei"/>
@@ -314,6 +334,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="input_password" width="40" height="40"/>
+        <image name="input_user" width="40" height="40"/>
         <image name="logo" width="245" height="101"/>
     </resources>
 </document>

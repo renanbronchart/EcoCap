@@ -40,6 +40,7 @@
 		25F70F3320C5C33F00AD33F7 /* overrideUiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F70F3220C5C33F00AD33F7 /* overrideUiColor.swift */; };
 		25F70F3520C5E8C600AD33F7 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */; };
 		25F70F3720C5F72600AD33F7 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */; };
+		2D2562B320C927D300D76A02 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2562B220C927D300D76A02 /* CustomField.swift */; };
 		94BCEBD638CC6B69A69EA665 /* Pods_EcoCapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */; };
 		EAEE475B20C06FB400C043D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAEE475A20C06FB400C043D5 /* GoogleService-Info.plist */; };
 		EAEE476320C5369900C043D5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE476220C5369900C043D5 /* Auth.storyboard */; };
@@ -103,6 +104,7 @@
 		25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		2D0A6CF63423A885B1AA7068 /* Pods-EcoCapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapUITests/Pods-EcoCapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D2562B220C927D300D76A02 /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
 		2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F3DD0FAE813D9EC3C5D9AF /* Pods_EcoCapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B114A8AEBD8C50396D042B9 /* Pods_EcoCap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoCap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 				25D165E220BAB62E00639D18 /* GradientView.swift */,
 				25D165E820BB813500639D18 /* CustomViewCell.swift */,
 				25E8ABDB20BCA3F600079A17 /* GradientRoundedButton.swift */,
+				2D2562B220C927D300D76A02 /* CustomField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */,
 				2573760120B8ABA1003D1B27 /* AuthViewController.swift in Sources */,
 				25E8ABDE20BCBFBB00079A17 /* DetailChallengeViewController.swift in Sources */,
+				2D2562B320C927D300D76A02 /* CustomField.swift in Sources */,
 				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
 				2573763320B8B77E003D1B27 /* PageOneOnboardingView.swift in Sources */,
 				25D165E320BAB62E00639D18 /* GradientView.swift in Sources */,
