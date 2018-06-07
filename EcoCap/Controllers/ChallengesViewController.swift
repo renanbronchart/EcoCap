@@ -71,19 +71,13 @@ class ChallengesViewController: UIViewController {
         super.viewDidLoad()
 
         // Récupérer les thémas avec le service des thématique
-        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "society"))
-        themas.append(Thema(color_gradient_1: "#58E4F5", color_gradient_2: "#2DBEDA", description: "Préservez l'eau", name: "water"))
-        themas.append(Thema(color_gradient_1: "#614FE8", color_gradient_2: "#FFCAE6", description: "Acheter responsable", name: "buy"))
-        themas.append(Thema(color_gradient_1: "#983BB6", color_gradient_2: "#FEA6D1", description: "Réduire mes déchets", name: "draft"))
-        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "energy"))
-        themas.append(Thema(color_gradient_1: "#5245C5", color_gradient_2: "#61A8FB", description: "Agir en société", name: "mobility"))
-        themas.append(Thema(color_gradient_1: "#F95A7D", color_gradient_2: "#F288E1", description: "Mangez mieux", name: "eat"))
+        ThemaSerivce.instance.getAllThemas(callback: { (themas) in
+            self.themas = themas
+        })
 
-        // à virer quand on aura le service retrieveChallenges
         if let userId = Auth.auth().currentUser?.uid {
             ChallengeService.instance.getAllChallengeRuns(userId: userId, completed: false) { (challenges_run) in
                 self.allChallengesUser = challenges_run
-                
                 self.challenges_user = self.allChallengesUser.filter({$0.repetition_type == "daily"})
                 self.tableView.reloadData()
             }

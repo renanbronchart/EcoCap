@@ -53,6 +53,19 @@ class UserService {
         }
     }
     
+    func getUserDetailsOrderedByScore(callback: @escaping ([UserDetail]) -> Void) {
+        var userDetails = [UserDetail]()
+        db.collection("user_detail").order(by: "score", descending: true).getDocuments() {
+            querySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                userDetails = querySnapshot!.documents.compactMap({UserDetail(dictionary: $0.data())})
+                callback(userDetails)
+            }
+        }
+    }
+    
     // Execute the levelUp action of levelUpUser
     func levelUpUserAction(userDetail: DocumentReference, userLevel: Int) {
         userDetail.updateData(["level": userLevel + 1])
