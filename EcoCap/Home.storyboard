@@ -823,7 +823,9 @@
                         <viewLayoutGuide key="safeArea" id="iO9-tt-g0f"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="5fd-sg-dxa"/>
-                    <navigationItem key="navigationItem" id="e6y-eD-Iui"/>
+                    <navigationItem key="navigationItem" id="e6y-eD-Iui">
+                        <barButtonItem key="backBarButtonItem" title=" " id="KN9-cV-ofL"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="gradientView" destination="x8F-Ep-iun" id="ZIV-B1-dVg"/>
                         <outlet property="headerProgressView" destination="jls-QL-HXe" id="77F-Nf-CGs"/>
