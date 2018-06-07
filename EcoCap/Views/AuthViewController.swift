@@ -43,7 +43,9 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     // Handle registering with firebase and
     // create a new user detail.
     @IBAction func registerButtonTapped(_ sender: UIButton) {

@@ -1,23 +1,24 @@
 //
-//  GradientRoundedButton.swift
+//  File.swift
 //  EcoCap
 //
-//  Created by Renan Bronchart on 28/05/2018.
+//  Created by Wladimir Delenclos on 07/06/2018.
 //  Copyright © 2018 Renan Bronchart. All rights reserved.
+//
 //
 
 import UIKit
 
-class GradientRoundedButton: UIButton {
+class RoundedField: UITextField {
     private var gradientLayer = CAGradientLayer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         layer.borderWidth = 0
-        layer.cornerRadius = self.frame.height / 2
+        layer.cornerRadius = 40
         clipsToBounds = true
-        contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+      
     }
     
     override func draw(_ rect: CGRect) {
