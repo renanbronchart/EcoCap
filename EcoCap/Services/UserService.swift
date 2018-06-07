@@ -24,6 +24,7 @@ class UserService {
         db.settings = settings
     }
     
+    /*
     // Increment the level of the user passed in params
     func levelUpUser(userId: String, callback: @escaping (DocumentReference, Int) -> Void) {
         let userDetail = db.collection("user_detail").document(userId)
@@ -39,7 +40,28 @@ class UserService {
             }
         }
     }
+    */
     
+    // Update the userDetail passed in params
+    func updateUserDetail(userDetail: UserDetail, callback: @escaping (String, UserDetail) -> Void) {
+        var currentUserDetail: String = ""
+        db.collection("user_detail").whereField("user_id", isEqualTo: userDetail.user_id).getDocuments() {
+            querySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                currentUserDetail = querySnapshot!.documents.first!.documentID
+                callback(currentUserDetail, userDetail)
+            }
+        }
+    }
+    
+    // Callback of the updateUserDetail method
+    func updateUserDetailAction(userDetailId: String, userDetail: UserDetail) {
+        self.db.collection("user_detail").document(userDetailId).setData(userDetail.dictionary)
+    }
+    
+    // Get UserDetail By user logged in id
     func getUserDetail(callback: @escaping (UserDetail) -> Void) {
         var userDetail: UserDetail!
         db.collection("user_detail").document((Auth.auth().currentUser?.uid)!).getDocument() {
@@ -53,6 +75,7 @@ class UserService {
         }
     }
     
+    // Get current Ranking
     func getUserDetailsOrderedByScore(callback: @escaping ([UserDetail]) -> Void) {
         var userDetails = [UserDetail]()
         db.collection("user_detail").order(by: "score", descending: true).getDocuments() {
@@ -66,6 +89,7 @@ class UserService {
         }
     }
     
+    /*
     // Execute the levelUp action of levelUpUser
     func levelUpUserAction(userDetail: DocumentReference, userLevel: Int) {
         userDetail.updateData(["level": userLevel + 1])
@@ -84,5 +108,5 @@ class UserService {
             }
         }
     }
-    
+    */
 }
