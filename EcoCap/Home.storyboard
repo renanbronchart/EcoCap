@@ -41,16 +41,12 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
-                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                 <color key="value" red="0.1176470588" green="0.63137254899999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
                                                 <color key="value" red="0.1176470588" green="0.63137254899999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelectedStateAccept" value="YES"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
@@ -78,9 +74,6 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                 <color key="value" red="0.1176470588" green="0.63137254899999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
-                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="noSelectedColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
@@ -102,9 +95,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="enableColor">
-                                                <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
                                                 <color key="value" red="0.1176470588" green="0.63137254899999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -1304,7 +1294,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="EXs-e6-Qwv" secondAttribute="bottom" constant="64" id="eRA-H7-uuQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="EXs-e6-Qwv" secondAttribute="bottom" constant="40" id="eRA-H7-uuQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
@@ -1314,7 +1304,7 @@
                                         <color key="value" red="0.23921568630000001" green="0.89019607840000003" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="496"/>
+                                        <real key="value" value="560"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -1329,7 +1319,7 @@
                                 <rect key="frame" x="0.0" y="460" width="375" height="158"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileTableViewCellIdentifier" rowHeight="133" id="I7Y-d9-cmF" customClass="ProfileTableViewCell" customModule="EcoCap" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileTableViewCellIdentifier" id="I7Y-d9-cmF" customClass="ProfileTableViewCell" customModule="EcoCap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I7Y-d9-cmF" id="PYf-ZM-JC3">
@@ -1342,8 +1332,8 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7XX-3W-uZ9">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="75" id="gpc-RE-hR9"/>
-                                                                <constraint firstAttribute="width" constant="75" id="nHP-cb-rsZ"/>
+                                                                <constraint firstAttribute="height" constant="120" id="gpc-RE-hR9"/>
+                                                                <constraint firstAttribute="width" constant="120" id="nHP-cb-rsZ"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lca-oD-Nmg">
@@ -1356,8 +1346,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="7XX-3W-uZ9" firstAttribute="leading" secondItem="8i1-XI-LF6" secondAttribute="leading" id="F0s-eh-kvF"/>
-                                                        <constraint firstItem="7XX-3W-uZ9" firstAttribute="top" secondItem="8i1-XI-LF6" secondAttribute="top" id="O8J-tm-hkc"/>
+                                                        <constraint firstItem="7XX-3W-uZ9" firstAttribute="leading" secondItem="8i1-XI-LF6" secondAttribute="leading" constant="-32" id="F0s-eh-kvF"/>
+                                                        <constraint firstItem="7XX-3W-uZ9" firstAttribute="top" secondItem="8i1-XI-LF6" secondAttribute="top" constant="-32" id="O8J-tm-hkc"/>
                                                         <constraint firstAttribute="trailing" secondItem="lca-oD-Nmg" secondAttribute="trailing" id="aZG-JQ-0uG"/>
                                                         <constraint firstItem="lca-oD-Nmg" firstAttribute="centerY" secondItem="8i1-XI-LF6" secondAttribute="centerY" id="nAo-9W-rvh"/>
                                                     </constraints>
@@ -1384,13 +1374,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="8i1-XI-LF6" secondAttribute="bottom" constant="12" id="2OY-wj-6Rc"/>
                                                 <constraint firstItem="8i1-XI-LF6" firstAttribute="leading" secondItem="PYf-ZM-JC3" secondAttribute="leading" constant="16" id="5Gs-iA-JDa"/>
                                                 <constraint firstItem="5lH-SJ-I2J" firstAttribute="leading" secondItem="PYf-ZM-JC3" secondAttribute="leading" constant="80" id="BQ7-TX-JDm"/>
                                                 <constraint firstAttribute="trailing" secondItem="5lH-SJ-I2J" secondAttribute="trailing" constant="80" id="CW7-ya-dM0"/>
                                                 <constraint firstItem="5lH-SJ-I2J" firstAttribute="top" secondItem="PYf-ZM-JC3" secondAttribute="top" constant="62" id="Law-aE-oyW"/>
                                                 <constraint firstAttribute="bottom" secondItem="5lH-SJ-I2J" secondAttribute="bottom" constant="36" id="Raa-vX-VxF"/>
                                                 <constraint firstAttribute="trailing" secondItem="8i1-XI-LF6" secondAttribute="trailing" constant="16" id="WqP-s2-wlS"/>
-                                                <constraint firstItem="8i1-XI-LF6" firstAttribute="bottom" secondItem="5lH-SJ-I2J" secondAttribute="bottom" constant="24" id="bPN-HZ-JPz"/>
                                                 <constraint firstItem="woR-yu-vC5" firstAttribute="leading" secondItem="PYf-ZM-JC3" secondAttribute="leading" constant="80" id="gwq-cc-Tal"/>
                                                 <constraint firstItem="woR-yu-vC5" firstAttribute="top" secondItem="PYf-ZM-JC3" secondAttribute="top" constant="24" id="m6B-ym-oZd"/>
                                                 <constraint firstItem="8i1-XI-LF6" firstAttribute="top" secondItem="PYf-ZM-JC3" secondAttribute="top" constant="12" id="swH-Al-ki1"/>
@@ -1412,15 +1402,15 @@
                             <constraint firstItem="SH3-QK-g4B" firstAttribute="trailing" secondItem="jrx-8n-t0x" secondAttribute="trailing" constant="16" id="0g1-5y-knT"/>
                             <constraint firstItem="SH3-QK-g4B" firstAttribute="trailing" secondItem="R0S-gI-nXT" secondAttribute="trailing" id="42f-CC-0zZ"/>
                             <constraint firstItem="jrx-8n-t0x" firstAttribute="top" secondItem="de0-NF-cyq" secondAttribute="bottom" constant="24" id="4a9-Za-eCz"/>
-                            <constraint firstItem="de0-NF-cyq" firstAttribute="top" secondItem="SH3-QK-g4B" secondAttribute="top" constant="-200" id="7TW-Fm-iX5"/>
+                            <constraint firstItem="de0-NF-cyq" firstAttribute="top" secondItem="SH3-QK-g4B" secondAttribute="top" constant="-368" id="7TW-Fm-iX5"/>
                             <constraint firstItem="R0S-gI-nXT" firstAttribute="top" secondItem="jrx-8n-t0x" secondAttribute="bottom" id="Cwe-QY-0Tj"/>
                             <constraint firstItem="SH3-QK-g4B" firstAttribute="top" secondItem="EXs-e6-Qwv" secondAttribute="top" constant="20" id="Gxr-CR-bnH"/>
-                            <constraint firstItem="de0-NF-cyq" firstAttribute="leading" secondItem="p5a-TG-Iig" secondAttribute="leading" constant="-300" id="OSJ-Ky-gSm"/>
+                            <constraint firstItem="de0-NF-cyq" firstAttribute="leading" secondItem="p5a-TG-Iig" secondAttribute="leading" constant="-368" id="OSJ-Ky-gSm"/>
                             <constraint firstItem="EXs-e6-Qwv" firstAttribute="leading" secondItem="SH3-QK-g4B" secondAttribute="leading" id="Pup-9N-q2X"/>
                             <constraint firstItem="R0S-gI-nXT" firstAttribute="bottom" secondItem="SH3-QK-g4B" secondAttribute="bottom" id="Umf-nI-QQQ"/>
                             <constraint firstItem="SH3-QK-g4B" firstAttribute="trailing" secondItem="EXs-e6-Qwv" secondAttribute="trailing" id="ZjX-WE-TzF"/>
                             <constraint firstItem="jrx-8n-t0x" firstAttribute="leading" secondItem="SH3-QK-g4B" secondAttribute="leading" constant="16" id="bP7-ZS-Q9u"/>
-                            <constraint firstAttribute="trailing" secondItem="de0-NF-cyq" secondAttribute="trailing" constant="-300" id="hzW-Mm-fwS"/>
+                            <constraint firstAttribute="trailing" secondItem="de0-NF-cyq" secondAttribute="trailing" constant="-368" id="hzW-Mm-fwS"/>
                             <constraint firstItem="R0S-gI-nXT" firstAttribute="leading" secondItem="SH3-QK-g4B" secondAttribute="leading" id="lax-gd-Fk2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SH3-QK-g4B"/>
@@ -1437,6 +1427,7 @@
                         <outlet property="remainingPointsLabel" destination="jRa-AW-2Qn" id="e39-SV-uDF"/>
                         <outlet property="tableView" destination="R0S-gI-nXT" id="NSb-VY-sR3"/>
                         <outlet property="userNameLabel" destination="UyU-9O-jF6" id="Tt1-W6-nlk"/>
+                        <outlet property="userProgressView" destination="4s2-Sn-l1B" id="c6b-bw-CnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkF-GC-fLa" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 struct Section {
     var type: String
-    var belonging: [String]
+    var belonging: [ChallengeRun]
 }
 
 class ProfilViewController: UIViewController {
-
     @IBOutlet weak var profilImageView: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var challengeCompletedLabel: UILabel!
@@ -23,20 +23,76 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var remainingPointsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var levelUserLabel: UILabel!
+    @IBOutlet weak var userProgressView: ProgressBarView!
     
+    lazy var themas = [Thema]()
     var sections = [Section]()
+    var user: UserDetail!
+    var challenges_user = [ChallengeRun]()
+    var challenges_weekly = [ChallengeRun]()
+    var challenges_daily = [ChallengeRun]()
+    var challenges_monthly = [ChallengeRun]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let userId = Auth.auth().currentUser?.uid {
+            ChallengeService.instance.getAllChallengeRuns(userId: userId, completed: true) { (challenges_run) in
+                self.challenges_user = challenges_run
+                self.challenges_daily = challenges_run.filter({$0.repetition_type == "daily"})
+                self.challenges_monthly = challenges_run.filter({$0.repetition_type == "monthly"})
+                self.challenges_weekly = challenges_run.filter({$0.repetition_type == "weekly"})
+                
+                self.challengeCompletedLabel.text = "\(challenges_run.count)"
+                
+                let today = Section(type: "Journaliers", belonging: self.challenges_daily)
+                let week = Section(type: "Hebdomadaires", belonging: self.challenges_monthly)
+                let month = Section(type: "Mensuels", belonging: self.challenges_weekly)
+                
+                self.sections.append(today)
+                self.sections.append(week)
+                self.sections.append(month)
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+        UserService.instance.getUserDetail(callback: { (userDetail) in
+            self.user = userDetail
+            self.profilImageView.image = UIImage(named: "avatar_level_\(self.user.level)")
+            self.levelUserLabel.text = "N.\(self.user.level)"
+            
+            self.pointsLabel.text = "\(userDetail.score)"
+            self.userNameLabel.text = userDetail.name
+            
+            LevelService.instance.getAllLevels { (levels) in
+                self.setDataInHeader(levels: levels, user: userDetail)
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        let today = Section(type: "Aujourd'hui", belonging: ["Cat", "Dog", "Lion"])
-        let week = Section(type: "Cette semaine", belonging: ["Bat", "plop", "plpi", "plop"])
-        let month = Section(type: "Le mois dernier", belonging: ["Bat", "plop", "plpi", "plop"])
+        ThemaService.instance.getAllThemas(callback: { (themas) in
+            self.tableView.reloadData()
+            self.themas = themas
+        })
         
-        sections.append(today)
-        sections.append(week)
-        sections.append(month)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func setDataInHeader (levels: [Level], user: UserDetail) {
+        let currentLevel = levels[user.level - 1]
+        let requiredLeftLevel = levels.indices.contains(user.level - 2) ? levels[user.level - 2].required : 0
+        let totalLevelPoint = currentLevel.required - requiredLeftLevel
+        let remainingPoints = totalLevelPoint - (user.score - requiredLeftLevel)
+        let progressInLevel = currentLevel.required - remainingPoints
+        let minValue = progressInLevel
+        let maxValue = currentLevel.required
+        
+        userProgressView.progress = Float(minValue) / Float(maxValue)
+        remainingPointsLabel.text = "\(remainingPoints) pts"
+        self.levelNameLabel.text = "\(currentLevel.pseudo_name)"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -55,6 +111,14 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileTableViewCellIdentifier") as! ProfileTableViewCell
+        let row = indexPath.row
+        
+        let challenge = sections[indexPath.section].belonging[row]
+        if let found = themas.first(where: { $0.name == challenge.type }) {
+            cell.thema = found
+        }
+
+        cell.challenge = challenge
         
         return cell
     }
@@ -64,7 +128,7 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 139
+        return 180
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -81,23 +145,8 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
         label.textColor = UIColor(red: 84 / 255, green: 84 / 255, blue: 84 / 255, alpha: 1)
         
         view.addSubview(label)
-        
         view.backgroundColor = UIColor.white
-        
-        
         
         return view
     }
-    
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 8
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let view = UIView()
-//
-//        view.backgroundColor = UIColor.white
-//
-//        return view
-//    }
 }

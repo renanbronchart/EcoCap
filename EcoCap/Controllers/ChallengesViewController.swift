@@ -248,8 +248,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
                 let currentCell = tableView.cellForRow(at: indexPath)
                 let challenge = challenges_user[indexPath.row - 1]
                 
-                print(challenge, "challenge")
-                
                 detailChallengeView.delegate = currentCell as? ChallengeDetailDelegate
                 detailChallengeView.challenge = challenge
 

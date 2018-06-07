@@ -9,19 +9,29 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var challengeTypeImageView: UIImageView!
     @IBOutlet weak var challengeNameLabel: UILabel!
     @IBOutlet weak var shortDescriptionLabel: UILabel!
     @IBOutlet weak var checkImageView: UIImageView!
     @IBOutlet weak var customViewCellGradient: CustomViewCell!
     
+    var thema: Thema! {
+        didSet {
+            let firstColor = thema.color_gradient_1
+            let secondColor = thema.color_gradient_2
+            
+            customViewCellGradient.firstColor = UIColor(hexString: firstColor)
+            customViewCellGradient.secondColor = UIColor(hexString: secondColor)
+        }
+    }
+    
     var challenge: ChallengeRun! {
         didSet {
             challengeNameLabel.text = challenge.name
             shortDescriptionLabel.text = challenge.short_description
-            customViewCellGradient.firstColor = UIColor(hexString: "#5245C5")
-            customViewCellGradient.secondColor = UIColor(hexString: "#61A8FB")
+            
+            challengeTypeImageView.image = UIImage(named: "icn_\(challenge.type)")
+            checkImageView.image = UIImage(named: "check_\(challenge.type)")
         }
     }
     
