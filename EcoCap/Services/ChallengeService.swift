@@ -49,6 +49,25 @@ class ChallengeService {
         }
     }
     
+    func updateChallengeRun(challengeRun: ChallengeRun, callback: @escaping (String, ChallengeRun) -> Void) {
+        var currentChallengeRun: String = ""
+        db.collection("challenge_run").whereField("user_id", isEqualTo: challengeRun.user_id).whereField("challenge_id", isEqualTo: challengeRun.challenge_id).getDocuments() {
+            querySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else {
+                currentChallengeRun = querySnapshot!.documents.first!.documentID
+                callback(currentChallengeRun, challengeRun)
+            }
+        }
+    }
+    
+    func updateChallengeRunAction(challengeRunId: String, challengeRun: ChallengeRun)
+    {
+        self.db.collection("challenge_run").document(challengeRunId).setData(challengeRun.dictionary)
+    }
+    
+    /*
     // Increment repetition completed on current challenge run
     // ChallengeService.instance.addRepetitionChallengeRun(userId: "ZDzTjDooIfVRvtDWpLnkDcsU7wj1", challenge_id: "CYTvtaqvD0fwJOR8b5nF", callback: { (challengeRun, querySnapshot) in ChallengeService.instance.addRepetitionAction(challengeRun: challengeRun, querySnapshot: querySnapshot)
     // })
@@ -77,4 +96,5 @@ class ChallengeService {
             self.db.collection("challenge_run").document(querySnapshot.documents.first!.documentID).updateData(["repetition_completed": 1])
         }
     }
+    */
 }
