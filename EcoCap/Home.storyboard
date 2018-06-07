@@ -1426,7 +1426,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="3Nx-Lz-p57">
             <objects>
-                <tabBarController id="syy-QE-SLK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="homeTapBarControllerIdentifier" id="syy-QE-SLK" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="IUY-nm-ljw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

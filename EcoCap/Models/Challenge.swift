@@ -7,35 +7,44 @@
 //
 
 import Foundation
-//import SwiftyJSON
 
-class Challenge {
-    var type: String!
-    var name: String!
-    var short_description: String!
-    var description: String!
-    var total_missions: Int!
-    var complete_missions: Int!
-    var name_mission: String!
-    var value: Int!
-    
-    init(name: String,
-         type: String,
-         short_description: String,
-         description: String,
-         total_missions: Int,
-         complete_missions: Int,
-         name_mission: String,
-         value: Int
-    ) {
-        self.type = type
-        self.name = name
-        self.short_description = short_description
-        self.description = description
-        self.total_missions = total_missions
-        self.complete_missions = complete_missions
-        self.name_mission = name_mission
-        self.value = value
+protocol DocumentSerializable {
+    init?(dictionary:[String: Any])
+}
+
+struct Challenge {
+    var uid: String
+    var name: String
+    var description: String
+    var points: Int
+    var repetition: Int
+    var repetition_type: String
+    var repetition_name: String
+    var type: String
+    var level: Int
+    var short_description: String
+
+    var dictionary:[String: Any] {
+        return [
+            "uid": uid,
+            "name": name,
+            "description": description,
+            "points": points,
+            "repetition": repetition,
+            "repetition_type": repetition_type,
+            "repetition_name": repetition_name,
+            "type": type,
+            "level": level,
+            "short_description": short_description,
+        ]
     }
 }
 
+extension Challenge: DocumentSerializable {
+    init?(dictionary:[String: Any]) {
+        guard let uid = dictionary["uid"] as? String, let name = dictionary["name"] as? String, let description = dictionary["description"] as? String, let points = dictionary["points"] as? Int, let repetition = dictionary["repetition"] as? Int, let repetition_type = dictionary["repetition_type"] as? String, let repetition_name = dictionary["repetition_name"] as? String, let type = dictionary["type"] as? String, let level = dictionary["level"] as? Int, let short_description = dictionary["short_description"] as? String else { return nil }
+
+        self.init(uid: uid, name: name, description: description, points: points, repetition: repetition, repetition_type: repetition_type, repetition_name: repetition_name, type: type, level: level, short_description: short_description)
+
+    }
+}
