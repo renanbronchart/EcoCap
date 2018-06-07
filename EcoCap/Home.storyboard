@@ -392,6 +392,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="containerLevelImage" destination="owi-cS-wMm" id="R8e-0w-3Rl"/>
+                                            <outlet property="customViewCell" destination="sen-2j-6ww" id="cHU-IM-eYi"/>
                                             <outlet property="userCompletionLabel" destination="TBS-KM-mtB" id="vgz-B5-5qq"/>
                                             <outlet property="userImageView" destination="O5I-61-vS6" id="Y5b-kn-jMP"/>
                                             <outlet property="userNameLabel" destination="aU3-vm-8zn" id="YWI-pT-1wE"/>

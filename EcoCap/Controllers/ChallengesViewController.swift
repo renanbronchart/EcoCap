@@ -46,26 +46,40 @@ class ChallengesViewController: UIViewController {
 
     func startDownload() {
         more = minValue + xpMore
-        downloader = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: (#selector(self.updater)), userInfo: nil, repeats: true)
+        downloader = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: (#selector(self.updater)), userInfo: nil, repeats: true)
     }
 
     @objc func updater () {
         if minValue != maxValue {
             if minValue != more {
-                minValue += 5
+                minValue += 1
                 headerProgressView.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
+                self.user.score = self.userPoints
+                
+                // set user
+                
+//                UserService.instance.updateUserDetail(
             }
         } else {
             minValue = 0
             more = minValue
+            
+            print("level update")
+            
+            self.retrieveCurrentLevelUser()
+            self.user.score = self.userPoints
+            self.user.level = self.currentLevel.number
+            
+            levelLabel.text = String("Niveau \(self.currentLevel.name)")
+            // set user
+            
             if let levelUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "levelUpViewControllerIdentifier") as? LevelUpViewController {
                 self.present(levelUpViewController, animated: true, completion: nil)
             }
         }
     }
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +114,22 @@ class ChallengesViewController: UIViewController {
         headerProgressView.setProgress(0, animated: false)
         self.navigationController?.isNavigationBarHidden = true
     }
+    
+    
+    func retrieveCurrentLevelUser () {
+        var totalLevelPoint = 0
+        var precedentTotalPoints = 0
+        
+        levels.forEach { (level) in
+            if ((level.required + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
+
+                self.currentLevel = level
+            }
+            
+            precedentTotalPoints = level.required + totalLevelPoint
+            totalLevelPoint += level.required
+        }
+    }
 
     // set progress bar and set currentLevel
     func retrieveCurrentLevel () {
@@ -123,11 +153,6 @@ class ChallengesViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -137,6 +162,11 @@ class ChallengesViewController: UIViewController {
 
 extension ChallengesViewController: CellProgressDelegate {
     func didChangeChallengeCompleteMissions(_ challenge: ChallengeRun) {
+        print("did change ------------------------")
+        ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
+            ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
+        }
+        
         if let index = allChallengesUser.index(where: { $0.challenge_id == challenge.challenge_id }) {
             allChallengesUser[index] = challenge
         }
@@ -147,8 +177,13 @@ extension ChallengesViewController: CellProgressDelegate {
     }
 
     func didCompleteChallenge(_ challenge: ChallengeRun) {
+        print("did complete  ------------------------")
         self.xpMore = challenge.points
         self.remainingPointsLabel.text = "\(remainingPoints)"
+        
+        ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
+            ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
+        }
         
         if let index = allChallengesUser.index(where: { $0.challenge_id == challenge.challenge_id }) {
             allChallengesUser[index] = challenge
@@ -161,6 +196,9 @@ extension ChallengesViewController: CellProgressDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
         }
+        
+        self.userPoints += challenge.points
+        self.user.score = self.userPoints
 
         self.startDownload()
     }
@@ -215,7 +253,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
             cell.challenge = challenge
-
             cell.delegate = self
 
             return cell
@@ -224,7 +261,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row > 0 {
-            print("clicked")
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
                 let currentCell = tableView.cellForRow(at: indexPath)
