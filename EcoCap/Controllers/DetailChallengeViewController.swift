@@ -29,6 +29,7 @@ class DetailChallengeViewController: UIViewController {
 
     @IBOutlet weak var titleInformationLabel: UILabel!
     @IBOutlet weak var informationChallengeView: UIView!
+    @IBOutlet weak var labelTypeView: UIView!
     @IBOutlet weak var footerInformationLabel: UILabel!
     @IBOutlet weak var bodyInformationLabel: UILabel!
 
@@ -71,6 +72,9 @@ class DetailChallengeViewController: UIViewController {
         titleInformationLabel.textColor = UIColor(hexString: firstColor)
         footerInformationLabel.textColor = UIColor(hexString: firstColor)
 
+        labelTypeView.backgroundColor = UIColor(hexString: secondColor)
+        
+        
         bodyInformationLabel.text = challenge.description
 
         challengeNameLabel.text = challenge?.name
