@@ -99,8 +99,6 @@ class AuthViewController: UIViewController {
                             "type": challenge.type,
                             "user_id": user.user.uid,
                             "challenge_id": challenge.uid,
-                            "end_at": "",
-                            "start_at": ""
                         ])
                     }
                     db.collection("user_detail").document(user.user.uid).setData(["name": name, "score": 0, "level": 1, "challenges_ids": challengeIds, "user_id": user.user.uid])
