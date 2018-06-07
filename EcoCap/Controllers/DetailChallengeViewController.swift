@@ -97,7 +97,6 @@ class DetailChallengeViewController: UIViewController {
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 challenge.repetition_completed += 1
-                challenge.completed = true
                 percentLabel.text = "\((challenge.repetition_completed * 100) / challenge.repetition) %"
                 delegate?.didChangeChallengeCompleteMissions(challenge: challenge)
                 downloader.invalidate()
@@ -106,6 +105,7 @@ class DetailChallengeViewController: UIViewController {
         } else {
             minValue = 0
             more = minValue
+            challenge.completed = true
             delegate?.didCompleteChallengeDetail(challenge)
 
             self.navigationController?.popViewController(animated: true)

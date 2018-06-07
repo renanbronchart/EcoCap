@@ -10,7 +10,7 @@ import UIKit
 
 protocol CellProgressDelegate {
     func didCompleteChallenge(_ challenge: ChallengeRun)
-    func didChangeChallengeCompleteMissions(value: Int)
+    func didChangeChallengeCompleteMissions(_ challenge: ChallengeRun)
 }
 
 class ChallengesTableViewCell: UITableViewCell {
@@ -37,8 +37,6 @@ class ChallengesTableViewCell: UITableViewCell {
 
     var challenge: ChallengeRun! {
         didSet {
-            challenge.repetition_completed = challenge.repetition_completed
-
             challengeNameLabel.text = challenge.name
             challengeShortDescriptionLabel.text = challenge.short_description
             challengeProgressLabel.text = "\(challenge.repetition - challenge.repetition_completed) \(challenge.repetition_name)"
@@ -46,6 +44,7 @@ class ChallengesTableViewCell: UITableViewCell {
             challengeValue = challenge.points
             maxValue = challenge.repetition * 10
             minValue = challenge.repetition_completed * 10
+            challengeProgressBar.progress = Float(minValue) / Float(maxValue)
         }
     }
 
@@ -59,19 +58,20 @@ class ChallengesTableViewCell: UITableViewCell {
         if minValue != maxValue {
             if minValue != more {
                 minValue += 1
-                challenge.repetition_completed = minValue / 10
                 challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name)"
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 downloader.invalidate()
                 challengeButton.isEnabled = true
+                challenge.repetition_completed = minValue / 10
                 challengePercentLabel.text = "\("\(challenge.repetition_completed * 100 / challenge.repetition)") %"
 
-                delegate?.didChangeChallengeCompleteMissions(value: challenge.repetition_completed * 10)
+                delegate?.didChangeChallengeCompleteMissions(challenge)
             }
         } else {
             minValue = 0
             more = minValue
+            challenge.completed = true
             delegate?.didCompleteChallenge(challenge)
         }
     }
@@ -114,6 +114,6 @@ extension ChallengesTableViewCell: ChallengeDetailDelegate {
 //        challengeProgressLabel.text = "\((maxValue / 10) - (minValue / 10)) \(challenge.repetition_name!)"
         challengeProgressBar.progress = Float(minValue) / Float(maxValue)
 
-        delegate?.didChangeChallengeCompleteMissions(value: challenge.points)
+        delegate?.didChangeChallengeCompleteMissions(challenge)
     }
 }

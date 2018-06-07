@@ -142,15 +142,26 @@ class ChallengesViewController: UIViewController {
 }
 
 extension ChallengesViewController: CellProgressDelegate {
-    func didChangeChallengeCompleteMissions(value: Int) {
-
+    func didChangeChallengeCompleteMissions(_ challenge: ChallengeRun) {
+        if let index = allChallengesUser.index(where: { $0.challenge_id == challenge.challenge_id }) {
+            allChallengesUser[index] = challenge
+        }
+        
+        if let index = challenges_user.index(where: { $0.challenge_id == challenge.challenge_id }) {
+            challenges_user[index] = challenge
+        }
     }
 
     func didCompleteChallenge(_ challenge: ChallengeRun) {
         self.xpMore = challenge.points
         self.remainingPointsLabel.text = "\(remainingPoints)"
-
+        
+        if let index = allChallengesUser.index(where: { $0.challenge_id == challenge.challenge_id }) {
+            allChallengesUser[index] = challenge
+        }
+        
         if let index = challenges_user.index(where: { $0.challenge_id == challenge.challenge_id }) {
+            allChallengesUser[index] = challenge
             challenges_user.remove(at: index)
             let indexPath = IndexPath(item: index + 1, section: 0)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -163,7 +174,10 @@ extension ChallengesViewController: CellProgressDelegate {
 
 extension ChallengesViewController: FilterChallengeDelegate {
     func didFilterBy(type: String) {
-        self.challenges_user = allChallengesUser.filter({$0.repetition_type == type})
+        self.challenges_user = allChallengesUser.filter({
+            $0.repetition_type == type && $0.completed == false
+        })
+        
         tableView.reloadData()
     }
 }
@@ -219,7 +233,6 @@ extension ChallengesViewController: UITableViewDelegate, UITableViewDataSource {
             print("clicked")
             if let detailChallengeView =
                 self.storyboard?.instantiateViewController(withIdentifier: "detailChallengeViewControllerIdentifier") as? DetailChallengeViewController {
-                print("inner clicked")
                 let currentCell = tableView.cellForRow(at: indexPath)
                 let challenge = challenges_user[indexPath.row - 1]
                 
