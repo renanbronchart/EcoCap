@@ -15,7 +15,7 @@ class GradientRoundedButton: UIButton {
         super.awakeFromNib()
         
         layer.borderWidth = 0
-        layer.cornerRadius = 20
+        layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
         contentEdgeInsets = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
