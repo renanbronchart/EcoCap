@@ -26,7 +26,7 @@ class ChallengesViewController: UIViewController {
     var downloader = Timer()
     var currentLevel: Level!
     var userPoints: Int = 0
-    var remainingPoints: Int = 5000
+    var remainingPoints: Int = 0
 
     @IBOutlet weak var headerStickyHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var headerStickyView: HeaderStickyView!
@@ -97,6 +97,7 @@ class ChallengesViewController: UIViewController {
         // à virer quand on aura le service retrieveLevels
         LevelService.instance.getAllLevels { (levels) in
             self.levels = levels
+            self.retrieveCurrentLevel()
         }
 
         // Add delegate to self to use native function table View
@@ -104,33 +105,24 @@ class ChallengesViewController: UIViewController {
         tableView.dataSource = self
         headerProgressView.setProgress(0, animated: false)
         self.navigationController?.isNavigationBarHidden = true
-
-        retrieveCurrentLevel()
     }
 
     // set progress bar and set currentLevel
     func retrieveCurrentLevel () {
-        var totalLevelPoint = 0
-        var precedentTotalPoints = 0
+        self.currentLevel = levels[self.user.level - 1]
+        let requiredLeftLevel = levels.indices.contains(self.user.level - 2) ? levels[self.user.level - 2].required : 0
+        let totalLevelPoint = currentLevel.required - requiredLeftLevel
 
-        levels.forEach { (level) in
-            if ((level.required + totalLevelPoint) > self.userPoints && precedentTotalPoints < self.userPoints) {
-                remainingPoints = (level.required + totalLevelPoint) - userPoints
-                let progressInLevel = level.required - remainingPoints
+        remainingPoints = totalLevelPoint - userPoints
 
-                self.currentLevel = level
-                self.minValue = progressInLevel
-                self.maxValue = level.required
+        let progressInLevel = currentLevel.required - remainingPoints
+        self.minValue = progressInLevel
+        self.maxValue = currentLevel.required
 
-                headerProgressView.progress = Float(minValue) / Float(maxValue)
+        headerProgressView.progress = Float(minValue) / Float(maxValue)
 
-                levelLabel.text = String("Niveau \(level.name)")
-                remainingPointsLabel.text = "Encore \(remainingPoints) points"
-            }
-
-            precedentTotalPoints = level.required + totalLevelPoint
-            totalLevelPoint += level.required
-        }
+        levelLabel.text = String("\(currentLevel.name)")
+        remainingPointsLabel.text = "Encore \(remainingPoints) points"
     }
 
     override func viewWillAppear(_ animated: Bool) {
