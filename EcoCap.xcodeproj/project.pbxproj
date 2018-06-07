@@ -48,6 +48,11 @@
 		94BCEBD638CC6B69A69EA665 /* Pods_EcoCapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D92644980E818F3E2AA3F85 /* Pods_EcoCapTests.framework */; };
 		EAEE475B20C06FB400C043D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAEE475A20C06FB400C043D5 /* GoogleService-Info.plist */; };
 		EAEE476320C5369900C043D5 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE476220C5369900C043D5 /* Auth.storyboard */; };
+		EAEE477420C87E6600C043D5 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE477320C87E6600C043D5 /* ChallengeService.swift */; };
+		EAEE477820C88A8000C043D5 /* ChallengeRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE477720C88A8000C043D5 /* ChallengeRun.swift */; };
+		EAEE477A20C8A24F00C043D5 /* LevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE477920C8A24F00C043D5 /* LevelService.swift */; };
+		EAEE477C20C8A4E200C043D5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE477B20C8A4E100C043D5 /* UserService.swift */; };
+		EAEE477E20C8A65E00C043D5 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE477D20C8A65E00C043D5 /* UserDetail.swift */; };
 		EDC9B40D2A661E4068ED3862 /* Pods_EcoCapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64F3DD0FAE813D9EC3C5D9AF /* Pods_EcoCapUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +127,11 @@
 		BC15E08D95B1193ACFA78F3F /* Pods-EcoCapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCapUITests/Pods-EcoCapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EAEE475A20C06FB400C043D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EAEE476220C5369900C043D5 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		EAEE477320C87E6600C043D5 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
+		EAEE477720C88A8000C043D5 /* ChallengeRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRun.swift; sourceTree = "<group>"; };
+		EAEE477920C8A24F00C043D5 /* LevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelService.swift; sourceTree = "<group>"; };
+		EAEE477B20C8A4E100C043D5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		EAEE477D20C8A65E00C043D5 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		FAAC53C4ACD15F91FE557A65 /* Pods-EcoCap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoCap.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcoCap/Pods-EcoCap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +199,7 @@
 		257375FD20B8ABA1003D1B27 /* EcoCap */ = {
 			isa = PBXGroup;
 			children = (
+				EAEE477220C87E5300C043D5 /* Services */,
 				EAEE476220C5369900C043D5 /* Auth.storyboard */,
 				2573763B20B8B805003D1B27 /* SupportFiles */,
 				2573763A20B8B7EA003D1B27 /* Models */,
@@ -260,8 +271,9 @@
 				25259A2D20BF343000E00F5A /* Challenge.swift */,
 				25259A2F20BF479400E00F5A /* Level.swift */,
 				2543A2FC20C8642C000D8A6E /* UserBeta.swift */,
-				2543A2FE20C864FF000D8A6E /* ChallengeRun.swift */,
 				2543A30420C8A07D000D8A6E /* Thema.swift */,
+				EAEE477720C88A8000C043D5 /* ChallengeRun.swift */,
+				EAEE477D20C8A65E00C043D5 /* UserDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +311,16 @@
 				BC15E08D95B1193ACFA78F3F /* Pods-EcoCapUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EAEE477220C87E5300C043D5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EAEE477320C87E6600C043D5 /* ChallengeService.swift */,
+				EAEE477920C8A24F00C043D5 /* LevelService.swift */,
+				EAEE477B20C8A4E100C043D5 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2573763F20B8CB44003D1B27 /* OnBoardingContainerViewController.swift in Sources */,
+				EAEE477A20C8A24F00C043D5 /* LevelService.swift in Sources */,
 				2573760120B8ABA1003D1B27 /* AuthViewController.swift in Sources */,
 				25E8ABDE20BCBFBB00079A17 /* DetailChallengeViewController.swift in Sources */,
 				256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */,
@@ -542,6 +565,8 @@
 				25D165E920BB813500639D18 /* CustomViewCell.swift in Sources */,
 				25CCA40D20C74A72009D0F55 /* overrideUIImage.swift in Sources */,
 				2573763120B8B68F003D1B27 /* OnboardingViewController.swift in Sources */,
+				EAEE477820C88A8000C043D5 /* ChallengeRun.swift in Sources */,
+				EAEE477420C87E6600C043D5 /* ChallengeService.swift in Sources */,
 				256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */,
 				25F70F3720C5F72600AD33F7 /* ProfileTableViewCell.swift in Sources */,
 				25259A2E20BF343000E00F5A /* Challenge.swift in Sources */,
@@ -555,11 +580,13 @@
 				2573763720B8B79E003D1B27 /* PageThreeOnboardingView.swift in Sources */,
 				2543A2FB20C833C8000D8A6E /* overrideUIView.swift in Sources */,
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
+				EAEE477E20C8A65E00C043D5 /* UserDetail.swift in Sources */,
 				25259A3020BF479400E00F5A /* Level.swift in Sources */,
 				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 				25F70F3520C5E8C600AD33F7 /* ProfilViewController.swift in Sources */,
 				2543A2FD20C8642C000D8A6E /* UserBeta.swift in Sources */,
+				EAEE477C20C8A4E200C043D5 /* UserService.swift in Sources */,
 				25D165E520BB148D00639D18 /* ChallengesTableViewCell.swift in Sources */,
 				25E8ABDA20BC992B00079A17 /* CategoryTableViewCell.swift in Sources */,
 				25E8ABDC20BCA3F600079A17 /* GradientRoundedButton.swift in Sources */,
