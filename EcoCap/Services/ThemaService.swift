@@ -9,9 +9,9 @@
 import Foundation
 import FirebaseFirestore
 
-class ThemaSerivce {
+class ThemaService {
     
-    static let instance = ThemaSerivce()
+    static let instance = ThemaService()
     let db: Firestore!
     
     private init() {

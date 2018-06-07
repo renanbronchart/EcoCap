@@ -52,11 +52,9 @@ class DetailChallengeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.view.clipsToBounds = true
-
         thematicImage.image = UIImage(named: "icn_\(thema.name)")
-        categoryLabel.text = "\(thema.description)"
+        categoryLabel.text = "\(thema.desc)"
         challengeDetailButton.setImage(UIImage(named: "btn_plus_\(thema.name)"), for: .normal)
 
         let firstColor = thema?.color_gradient_1 ?? "#E94366"
@@ -97,6 +95,10 @@ class DetailChallengeViewController: UIViewController {
                 challengeProgressBar.progress = Float(minValue) / Float(maxValue)
             } else {
                 challenge.repetition_completed += 1
+                // Update ChallengeRun with new values
+                ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
+                    ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
+                }
                 percentLabel.text = "\((challenge.repetition_completed * 100) / challenge.repetition) %"
                 delegate?.didChangeChallengeCompleteMissions(challenge: challenge)
                 downloader.invalidate()

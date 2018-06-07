@@ -11,7 +11,7 @@ import Foundation
 struct Thema {
     var color_gradient_1: String
     var color_gradient_2: String
-    var description: String
+    var desc: String
     var name: String
     var icon: String
 
@@ -19,7 +19,7 @@ struct Thema {
         return [
             "color_gradient_1": color_gradient_1,
             "color_gradient_2": color_gradient_2,
-            "description": description,
+            "desc": desc,
             "name": name,
             "icon": icon
         ]
@@ -28,7 +28,7 @@ struct Thema {
 
 extension Thema: DocumentSerializable {
     init?(dictionary: [String : Any]) {
-        guard let color_gradient_1 = dictionary["color_gradient_1"] as? String, let color_gradient_2 = dictionary["color_gradient_1"] as? String, let description = dictionary["description"] as? String, let name = dictionary["name"] as? String, let icon = dictionary["icon"] as? String else { return nil }
-        self.init(color_gradient_1: color_gradient_1, color_gradient_2: color_gradient_2, description: description, name: name, icon: icon)
+        guard let color_gradient_1 = dictionary["color_gradient_1"] as? String, let color_gradient_2 = dictionary["color_gradient_1"] as? String, let desc = dictionary["desc"] as? String, let name = dictionary["name"] as? String, let icon = dictionary["icon"] as? String else { return nil }
+        self.init(color_gradient_1: color_gradient_1, color_gradient_2: color_gradient_2, desc: desc, name: name, icon: icon)
     }
 }

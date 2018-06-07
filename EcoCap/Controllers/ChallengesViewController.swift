@@ -71,8 +71,8 @@ class ChallengesViewController: UIViewController {
         super.viewDidLoad()
 
         // Récupérer les thémas avec le service des thématique
-        ThemaSerivce.instance.getAllThemas(callback: { (themas) in
-            self.themas = themas
+        ThemaService.instance.getAllThemas(callback: { (themas) in
+            self.themas += themas
         })
 
         if let userId = Auth.auth().currentUser?.uid {

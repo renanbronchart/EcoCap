@@ -49,8 +49,7 @@ class ChallengeService {
         }
     }
     
-    func updateChallengeRun(challengeRun: ChallengeRun ,callback: @escaping (ChallengeRun) -> Void) {
-        var updatedChallengeRun: ChallengeRun!
+    func updateChallengeRun(challengeRun: ChallengeRun, callback: @escaping (String, ChallengeRun) -> Void) {
         var currentChallengeRun: String = ""
         db.collection("challenge_run").whereField("user_id", isEqualTo: challengeRun.user_id).whereField("challenge_id", isEqualTo: challengeRun.challenge_id).getDocuments() {
             querySnapshot, error in
@@ -58,18 +57,14 @@ class ChallengeService {
                 print("\(error.localizedDescription)")
             } else {
                 currentChallengeRun = querySnapshot!.documents.first!.documentID
-                self.db.collection("challenge_run").document(currentChallengeRun).setData(challengeRun.dictionary)
-                self.db.collection("challenge_run").whereField("user_id", isEqualTo: challengeRun.user_id).whereField("challenge_id", isEqualTo: challengeRun.challenge_id).getDocuments() {
-                    querySnapshot, error in
-                    if let error = error {
-                        print("\(error.localizedDescription)")
-                    } else {
-                        updatedChallengeRun = ChallengeRun(dictionary: querySnapshot!.documents.first!.data())
-                        callback(updatedChallengeRun)
-                    }
-                }
+                callback(currentChallengeRun, challengeRun)
             }
         }
+    }
+    
+    func updateChallengeRunAction(challengeRunId: String, challengeRun: ChallengeRun)
+    {
+        self.db.collection("challenge_run").document(challengeRunId).setData(challengeRun.dictionary)
     }
     
     /*
