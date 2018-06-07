@@ -15,6 +15,7 @@ struct Section {
 
 class ProfilViewController: UIViewController {
 
+    @IBOutlet weak var profilImageView: UIImageView!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var challengeCompletedLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -88,15 +89,15 @@ extension ProfilViewController: UITableViewDelegate, UITableViewDataSource {
         return view
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 8
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView()
-
-        view.backgroundColor = UIColor.white
-        
-        return view
-    }
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 8
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let view = UIView()
+//
+//        view.backgroundColor = UIColor.white
+//
+//        return view
+//    }
 }

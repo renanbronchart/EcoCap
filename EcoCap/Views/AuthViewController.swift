@@ -28,11 +28,11 @@ class AuthViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
-//            print("CONNECTED")
-//            self.redirectToChallengeViewStoryboard()
-//
-//        }
+        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
+            print("CONNECTED")
+            self.redirectToChallengeViewStoryboard()
+
+        }
     }
     
     
