@@ -10,5 +10,9 @@ Versioning: macOS 10.13.3, XCode 9.2 (Swift 4), Cocoapods 1.4, Particle-SDK pod 
 2. in XCode with `EcoCap.xcworkspace`
 4. Build and run - works on simulator and device (no need to do any modifications to Keychain settings)
 
+### About project
+[Download the project's file](https://github.com/renanbronchart/EcoCap/blob/dev/MOBE08%20Delenclos_Gathigniol_Sonet_Branchard_Bourgoin.zip)
 
 Enjoy
+
+Renan, Wladimir, Théo, Hugo, Enora
