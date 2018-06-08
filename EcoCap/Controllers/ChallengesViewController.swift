@@ -10,6 +10,10 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
+protocol ChallengesHomeDelegate {
+    func didCompleteLevel(_ level: Level)
+}
+
 class ChallengesViewController: UIViewController {
 
     lazy var challenges = [ChallengeRun]()
@@ -18,7 +22,8 @@ class ChallengesViewController: UIViewController {
     lazy var challenges_user = [ChallengeRun]()
     lazy var allChallengesUser = [ChallengeRun]()
     lazy var themas = [Thema]()
-
+    
+    var delegate: ChallengesHomeDelegate?
     var minValue = 0
     var maxValue = 100
     var xpMore = 0
@@ -77,7 +82,10 @@ class ChallengesViewController: UIViewController {
                 UserService.instance.updateUserDetailAction(userDetailId: currentUserDetail, userDetail: userDetail, hasLevelUp: levelUp)
             }
             
+            delegate?.didCompleteLevel(self.currentLevel)
+            
             if let levelUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "levelUpViewControllerIdentifier") as? LevelUpViewController {
+                levelUpViewController.level = self.currentLevel
                 self.present(levelUpViewController, animated: true, completion: nil)
             }
         }
@@ -161,7 +169,8 @@ extension ChallengesViewController: CellProgressDelegate {
 
     func didCompleteChallenge(_ challenge: ChallengeRun) {
         self.xpMore = challenge.points
-        self.remainingPointsLabel.text = "\(remainingPoints)"
+        self.remainingPoints -= challenge.points
+        self.remainingPointsLabel.text = "Encore \(self.remainingPoints) points"
         
         ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
             ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)

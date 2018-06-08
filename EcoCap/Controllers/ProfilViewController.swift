@@ -41,7 +41,7 @@ class ProfilViewController: UIViewController {
                 self.challenges_monthly = challenges_run.filter({$0.repetition_type == "monthly"})
                 self.challenges_weekly = challenges_run.filter({$0.repetition_type == "weekly"})
                 
-                self.challengeCompletedLabel.text = "\(challenges_run.count)"
+                self.challengeCompletedLabel.text = "\(self.challenges_user.count)"
                 
                 let today = Section(type: "Journaliers", belonging: self.challenges_daily)
                 let week = Section(type: "Hebdomadaires", belonging: self.challenges_monthly)
