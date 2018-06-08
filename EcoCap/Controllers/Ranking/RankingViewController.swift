@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RankingViewController: UIViewController {
     
@@ -52,15 +53,38 @@ class RankingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var users: [UserDetail]! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.delegate = self
-        tableView.dataSource = self
+        UserService.instance.getUserDetailsOrderedByScore { (userDetails) in
+            
+            var yolo = userDetails
+            ChallengeService.instance.getAllChallengeRuns(userId: yolo[0].user_id, completed: true, callback: { (challengeRuns) in
+                self.firstUserCompletionLabel.text = "\(challengeRuns.count) défis"
+            })
+            ChallengeService.instance.getAllChallengeRuns(userId: yolo[1].user_id, completed: true, callback: { (challengeRuns) in
+                self.secondUserCompletionLabel.text = "\(challengeRuns.count) défis"
+            })
+            ChallengeService.instance.getAllChallengeRuns(userId: yolo[2].user_id, completed: true, callback: { (challengeRuns) in
+                self.thirdUserCompletionLabel.text = "\(challengeRuns.count) défis"
+            })
+            self.firstUserNameLabel.text = yolo[0].name
+            self.secondUserNameLabel.text = yolo[1].name
+            self.thirdUserNameLabel.text = yolo[2].name
+            yolo.removeFirst(3)
+            self.users = yolo
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,14 +97,16 @@ class RankingViewController: UIViewController {
 extension RankingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingTableViewCellIdentifier") as! RankingTableViewCell
-        
-//        cell.user = users[indexPath.row]
-        
+        cell.user = self.users[indexPath.row]
+        ChallengeService.instance.getAllChallengeRuns(userId: self.users[indexPath.row].user_id, completed: true, callback: { (challengeRuns) in
+            cell.challengeRunsCompleted = challengeRuns.count
+        })
+        cell.rank = indexPath.row + 4
         return cell
     }
     

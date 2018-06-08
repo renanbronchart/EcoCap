@@ -59,8 +59,9 @@ class UserService {
                         for challenge in self.challenges {
                             challengeIds.append(challenge.uid)
                             self.db.collection("challenge_run").addDocument(data: ["name": challenge.name,"level": challenge.level,"description": challenge.description,"points": challenge.points, "short_description": challenge.short_description,"repetition": challenge.repetition, "repetition_completed": 0,"repetition_type": challenge.repetition_type, "repetition_name": challenge.repetition_name,"type": challenge.type,"user_id": (Auth.auth().currentUser?.uid)!,"completed": false,"challenge_id": challenge.uid])
-                            challengeIds.append(contentsOf: userDetail.challenges_ids)
                         }
+                        challengeIds.append(contentsOf: userDetail.challenges_ids)
+                        self.challenges.removeAll()
                         self.db.collection("user_detail").document((Auth.auth().currentUser?.uid)!).setData(["name": userDetail.name, "score": userDetail.score, "level": userDetail.level, "challenges_ids": challengeIds, "user_id": (Auth.auth().currentUser?.uid)!])
                     })
                 } else {
