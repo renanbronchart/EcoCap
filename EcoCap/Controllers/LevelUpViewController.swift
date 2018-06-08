@@ -9,10 +9,14 @@
 import UIKit
 
 class LevelUpViewController: UIViewController {
+    var level: Level!
+    
+    @IBOutlet weak var levelLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        levelLabel.text = level.name
         // Do any additional setup after loading the view.
     }
 
@@ -25,5 +29,11 @@ class LevelUpViewController: UIViewController {
         if let challengesViewcontroller = self.storyboard?.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
             self.present(challengesViewcontroller, animated: true, completion: nil)
         }
+    }
+}
+
+extension LevelUpViewController: ChallengesHomeDelegate {
+    func didCompleteLevel(_ level: Level) {
+        
     }
 }
