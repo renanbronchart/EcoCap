@@ -25,14 +25,14 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginCreateAccountButton: UIButton!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-//        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
-//            print("CONNECTED")
-//            self.redirectToChallengeViewStoryboard()
-//
-//        }
+        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
+            print("CONNECTED")
+            self.redirectToChallengeViewStoryboard()
+
+        }
     }
     
     

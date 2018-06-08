@@ -53,9 +53,9 @@ class DetailChallengeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.clipsToBounds = true
-        thematicImage.image = UIImage(named: "icn_\(thema.name)")
-        categoryLabel.text = "\(thema.desc)"
-        challengeDetailButton.setImage(UIImage(named: "btn_plus_\(thema.name)"), for: .normal)
+        thematicImage.image = UIImage(named: "icn_\(thema?.name ?? "eat")")
+        categoryLabel.text = "\(thema?.name ?? "Bien être")"
+        challengeDetailButton.setImage(UIImage(named: "btn_plus_\(thema?.name ?? "eat")"), for: .normal)
 
         let firstColor = thema?.color_gradient_1 ?? "#E94366"
         let secondColor = thema?.color_gradient_2 ?? "#F3AC5A"
