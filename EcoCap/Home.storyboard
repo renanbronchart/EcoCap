@@ -114,23 +114,14 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2g-OX-iiS" userLabel="First User Container Image">
-<<<<<<< HEAD
                                         <rect key="frame" x="137" y="126" width="100" height="100"/>
-=======
-                                        <rect key="frame" x="137" y="161" width="100" height="65"/>
->>>>>>> fix challenges, and add ranking page
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="ncG-1v-vP1"/>
                                             <constraint firstAttribute="height" constant="100" id="zFz-Xj-nkQ"/>
                                         </constraints>
                                     </imageView>
-<<<<<<< HEAD
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_level_4" translatesAutoresizingMaskIntoConstraints="NO" id="Lmr-MR-RyA">
                                         <rect key="frame" x="147" y="154" width="80" height="45"/>
-=======
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lmr-MR-RyA">
-                                        <rect key="frame" x="147" y="154" width="80" height="80"/>
->>>>>>> fix challenges, and add ranking page
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="JlQ-I5-SgA"/>
                                             <constraint firstAttribute="width" constant="80" id="V0s-f2-cA4"/>
@@ -158,11 +149,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-<<<<<<< HEAD
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_level_2" translatesAutoresizingMaskIntoConstraints="NO" id="qhz-4i-QDj">
-=======
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="qhz-4i-QDj">
->>>>>>> fix challenges, and add ranking page
                                         <rect key="frame" x="38" y="159" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="9Th-de-gMh"/>
@@ -189,11 +176,7 @@
                                             <constraint firstAttribute="height" constant="74" id="rrb-ha-qlb"/>
                                         </constraints>
                                     </imageView>
-<<<<<<< HEAD
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_level_1" translatesAutoresizingMaskIntoConstraints="NO" id="bA4-Ff-WrD">
-=======
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="bA4-Ff-WrD">
->>>>>>> fix challenges, and add ranking page
                                         <rect key="frame" x="276" y="159" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="4zZ-Vl-QZS"/>
@@ -210,68 +193,38 @@
                                             <constraint firstAttribute="height" constant="38" id="So9-Fn-eDf"/>
                                         </constraints>
                                     </imageView>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wladimir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSV-dI-Qzm">
                                         <rect key="frame" x="37" y="234" width="63.5" height="18"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSV-dI-Qzm">
-                                        <rect key="frame" x="49" y="234" width="39" height="18"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 défis" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-8E-shB">
                                         <rect key="frame" x="43.5" y="252" width="49.5" height="17"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-8E-shB">
-                                        <rect key="frame" x="50.5" y="252" width="35" height="17"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-A0-SAe">
                                         <rect key="frame" x="165" y="234" width="45" height="18"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nU-A0-SAe">
-                                        <rect key="frame" x="168" y="234" width="39" height="18"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 défis" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-7d-FRw">
                                         <rect key="frame" x="163" y="252" width="49.5" height="17"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-7d-FRw">
-                                        <rect key="frame" x="170" y="252" width="35" height="17"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Théo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4i-xn-d1n">
                                         <rect key="frame" x="288.5" y="230" width="36.5" height="22"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4i-xn-d1n">
-                                        <rect key="frame" x="287" y="254" width="39" height="18"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-<<<<<<< HEAD
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 défis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyO-oE-QWp">
                                         <rect key="frame" x="285" y="272" width="43.5" height="17"/>
-=======
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyO-oE-QWp">
-                                        <rect key="frame" x="289" y="272" width="35" height="17"/>
->>>>>>> fix challenges, and add ranking page
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1196,17 +1149,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="de0-NF-cyq" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
-<<<<<<< HEAD
                                 <rect key="frame" x="-368" y="-348" width="1111" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-e6-Qwv">
                                         <rect key="frame" x="368" y="348" width="375" height="348"/>
-=======
-                                <rect key="frame" x="-300" y="-180" width="975" height="592"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-e6-Qwv">
-                                        <rect key="frame" x="300" y="180" width="375" height="348"/>
->>>>>>> fix challenges, and add ranking page
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkv-CU-UKM">
                                                 <rect key="frame" x="64" y="32" width="247" height="21"/>
@@ -1268,21 +1214,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6b-0L-baZ">
-<<<<<<< HEAD
                                                 <rect key="frame" x="276" y="126" width="83" height="24"/>
-=======
-                                                <rect key="frame" x="276" y="127" width="83" height="24"/>
->>>>>>> fix challenges, and add ranking page
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="points cumulés" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8v-h4-Es5">
-<<<<<<< HEAD
                                                 <rect key="frame" x="276" y="150" width="83" height="33.5"/>
-=======
-                                                <rect key="frame" x="276" y="151" width="83" height="33.5"/>
->>>>>>> fix challenges, and add ranking page
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1406,21 +1344,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Derniers défis réalisés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrx-8n-t0x">
-<<<<<<< HEAD
                                 <rect key="frame" x="16" y="412" width="343" height="24"/>
-=======
-                                <rect key="frame" x="16" y="436" width="343" height="24"/>
->>>>>>> fix challenges, and add ranking page
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-gI-nXT">
-<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="436" width="375" height="182"/>
-=======
-                                <rect key="frame" x="0.0" y="460" width="375" height="158"/>
->>>>>>> fix challenges, and add ranking page
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="profileTableViewCellIdentifier" rowHeight="139" id="I7Y-d9-cmF" customClass="ProfileTableViewCell" customModule="EcoCap" customModuleProvider="target">
