@@ -65,112 +65,6 @@
             </objects>
             <point key="canvasLocation" x="1074" y="-255"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="y3X-M7-kgI">
-            <objects>
-                <viewController id="erN-HD-5tJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fRx-Oj-FdL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SIN-On-cNw" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxX-xE-aac" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="97" y="535" width="181" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="m5M-Pw-der"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <size key="titleShadowOffset" width="2" height="4"/>
-                                        <state key="normal" title="Partager à mes amis"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.51372549019607838" green="0.44313725490196076" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.51372549020000002" green="0.4431372549" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu viens de passer un niveau !" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHg-RL-cj6">
-                                        <rect key="frame" x="52" y="61" width="271" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Niveau 7" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktl-3k-ZT4">
-                                        <rect key="frame" x="52" y="421" width="271" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="level_up" translatesAutoresizingMaskIntoConstraints="NO" id="9E4-WT-ifX">
-                                        <rect key="frame" x="0.0" y="123" width="375" height="250"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKh-00-LXm">
-                                        <rect key="frame" x="80" y="466" width="215" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="oeD-ng-neX"/>
-                                        </constraints>
-                                        <string key="text">Wow… tu deviens vraiment fort !
-Continue comme ça</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU5-nN-Ii4">
-                                        <rect key="frame" x="0.0" y="607" width="375" height="60"/>
-                                        <color key="backgroundColor" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="DUH-H5-Ifa"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <state key="normal" title="Continuer"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cU5-nN-Ii4" secondAttribute="bottom" id="1VP-VK-pr3"/>
-                                    <constraint firstItem="hxX-xE-aac" firstAttribute="top" secondItem="XKh-00-LXm" secondAttribute="bottom" constant="21" id="2KT-rx-9v4"/>
-                                    <constraint firstItem="cU5-nN-Ii4" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" id="8XU-zV-N4x"/>
-                                    <constraint firstItem="XKh-00-LXm" firstAttribute="centerX" secondItem="SIN-On-cNw" secondAttribute="centerX" id="AzM-bS-92f"/>
-                                    <constraint firstItem="jHg-RL-cj6" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" constant="52" id="E2P-A3-ejf"/>
-                                    <constraint firstItem="9E4-WT-ifX" firstAttribute="leading" secondItem="SIN-On-cNw" secondAttribute="leading" id="HX2-MA-YFh"/>
-                                    <constraint firstAttribute="trailing" secondItem="cU5-nN-Ii4" secondAttribute="trailing" id="Hvs-3H-csv"/>
-                                    <constraint firstItem="cU5-nN-Ii4" firstAttribute="width" secondItem="SIN-On-cNw" secondAttribute="width" id="JCw-83-SOz"/>
-                                    <constraint firstItem="ktl-3k-ZT4" firstAttribute="centerX" secondItem="SIN-On-cNw" secondAttribute="centerX" id="JOh-sa-pup"/>
-                                    <constraint firstItem="ktl-3k-ZT4" firstAttribute="top" secondItem="9E4-WT-ifX" secondAttribute="bottom" constant="48" id="QGS-cZ-owd"/>
-                                    <constraint firstAttribute="trailing" secondItem="jHg-RL-cj6" secondAttribute="trailing" id="SPu-5f-vvK"/>
-                                    <constraint firstItem="jHg-RL-cj6" firstAttribute="top" secondItem="SIN-On-cNw" secondAttribute="top" constant="61" id="cCs-Rk-zuZ"/>
-                                    <constraint firstItem="hxX-xE-aac" firstAttribute="centerX" secondItem="SIN-On-cNw" secondAttribute="centerX" id="gBV-oc-LXR"/>
-                                    <constraint firstItem="9E4-WT-ifX" firstAttribute="top" secondItem="SIN-On-cNw" secondAttribute="top" constant="123" id="n0P-rJ-2Gg"/>
-                                    <constraint firstItem="XKh-00-LXm" firstAttribute="top" secondItem="ktl-3k-ZT4" secondAttribute="bottom" constant="16" id="r4P-Zd-kZw" userLabel="Wow… tu deviens vraiment fort ! Continue comme ça.top = Niveau 7.bottom + 16"/>
-                                    <constraint firstAttribute="trailing" secondItem="9E4-WT-ifX" secondAttribute="trailing" id="tht-CS-ivB"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" red="0.18823529410000001" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.36078431370000003" green="0.90588235289999997" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="SIN-On-cNw" firstAttribute="leading" secondItem="DJi-ZX-wkF" secondAttribute="leading" id="5zy-Hh-AQT"/>
-                            <constraint firstItem="SIN-On-cNw" firstAttribute="bottom" secondItem="DJi-ZX-wkF" secondAttribute="bottom" id="HZl-pP-jE8"/>
-                            <constraint firstItem="SIN-On-cNw" firstAttribute="trailing" secondItem="DJi-ZX-wkF" secondAttribute="trailing" id="Zdo-iw-gPd"/>
-                            <constraint firstItem="SIN-On-cNw" firstAttribute="top" secondItem="fRx-Oj-FdL" secondAttribute="top" id="bR1-wM-i8y"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="DJi-ZX-wkF"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ft7-RQ-S13" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2712.8000000000002" y="-781.25937031484261"/>
-        </scene>
         <!--Page One Onboarding View-->
         <scene sceneID="qrv-gd-fRe">
             <objects>
@@ -186,7 +80,7 @@ Continue comme ça</string>
                                         <rect key="frame" x="0.0" y="25" width="375" height="379"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Au secours !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-pC-jCs">
-                                        <rect key="frame" x="0.0" y="446" width="375" height="29"/>
+                                        <rect key="frame" x="122" y="446" width="131.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -386,7 +280,6 @@ Continue comme ça</string>
         </scene>
     </scenes>
     <resources>
-        <image name="level_up" width="330" height="250"/>
         <image name="onboarding_1" width="356" height="379"/>
         <image name="onboarding_2" width="347" height="379"/>
         <image name="onboarding_3" width="347" height="379"/>

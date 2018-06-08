@@ -15,8 +15,6 @@ protocol ChallengesHomeDelegate {
 }
 
 class ChallengesViewController: UIViewController {
-
-    lazy var challenges = [ChallengeRun]()
     lazy var levels = [Level]()
     var user: UserDetail!
     lazy var challenges_user = [ChallengeRun]()
@@ -97,6 +95,8 @@ class ChallengesViewController: UIViewController {
         // Récupérer les thémas avec le service des thématique
         ThemaService.instance.getAllThemas(callback: { (themas) in
             self.themas += themas
+            
+            self.tableView.reloadData()
         })
 
         if let userId = Auth.auth().currentUser?.uid {

@@ -14,7 +14,6 @@
 		2543A2FD20C8642C000D8A6E /* UserBeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A2FC20C8642C000D8A6E /* UserBeta.swift */; };
 		2543A30320C88F82000D8A6E /* LevelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A30220C88F82000D8A6E /* LevelUpViewController.swift */; };
 		2543A30520C8A07D000D8A6E /* Thema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2543A30420C8A07D000D8A6E /* Thema.swift */; };
-		256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A020B9AA8B00490E1D /* ProfileViewController.swift */; };
 		256803A320B9AAB400490E1D /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A220B9AAB400490E1D /* ChallengesViewController.swift */; };
 		256803A520B9AAC500490E1D /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A420B9AAC500490E1D /* RankingViewController.swift */; };
 		256803A720B9AAD900490E1D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256803A620B9AAD900490E1D /* SettingsViewController.swift */; };
@@ -81,7 +80,6 @@
 		2543A2FC20C8642C000D8A6E /* UserBeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBeta.swift; sourceTree = "<group>"; };
 		2543A30220C88F82000D8A6E /* LevelUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelUpViewController.swift; sourceTree = "<group>"; };
 		2543A30420C8A07D000D8A6E /* Thema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thema.swift; sourceTree = "<group>"; };
-		256803A020B9AA8B00490E1D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		256803A220B9AAB400490E1D /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		256803A420B9AAC500490E1D /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		256803A620B9AAD900490E1D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -238,19 +236,11 @@
 		2573763820B8B7A4003D1B27 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				25AE792C20CA2D7B003348ED /* Ranking */,
+				25AE792B20CA2CF1003348ED /* Profile */,
+				25AE792A20CA2CCE003348ED /* Challenges */,
 				2573763D20B8B9ED003D1B27 /* OnBoarding */,
 				2573760020B8ABA1003D1B27 /* AuthViewController.swift */,
-				256803A020B9AA8B00490E1D /* ProfileViewController.swift */,
-				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
-				256803A420B9AAC500490E1D /* RankingViewController.swift */,
-				256803A620B9AAD900490E1D /* SettingsViewController.swift */,
-				25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */,
-				25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */,
-				25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */,
-				25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */,
-				25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */,
-				25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */,
-				2543A30220C88F82000D8A6E /* LevelUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +291,37 @@
 				2573763620B8B79E003D1B27 /* PageThreeOnboardingView.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		25AE792A20CA2CCE003348ED /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				25E8ABD920BC992B00079A17 /* CategoryTableViewCell.swift */,
+				25E8ABDD20BCBFBB00079A17 /* DetailChallengeViewController.swift */,
+				25D165E420BB148D00639D18 /* ChallengesTableViewCell.swift */,
+				256803A220B9AAB400490E1D /* ChallengesViewController.swift */,
+				2543A30220C88F82000D8A6E /* LevelUpViewController.swift */,
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		25AE792B20CA2CF1003348ED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				25F70F3420C5E8C600AD33F7 /* ProfilViewController.swift */,
+				256803A620B9AAD900490E1D /* SettingsViewController.swift */,
+				25F70F3620C5F72600AD33F7 /* ProfileTableViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		25AE792C20CA2D7B003348ED /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				256803A420B9AAC500490E1D /* RankingViewController.swift */,
+				25CCA40A20C73DA2009D0F55 /* RankingTableViewCell.swift */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		66BBD07205EDC370959C96D5 /* Pods */ = {
@@ -586,7 +607,6 @@
 				257375FF20B8ABA1003D1B27 /* AppDelegate.swift in Sources */,
 				EAEE477E20C8A65E00C043D5 /* UserDetail.swift in Sources */,
 				25259A3020BF479400E00F5A /* Level.swift in Sources */,
-				256803A120B9AA8B00490E1D /* ProfileViewController.swift in Sources */,
 				2573763520B8B78F003D1B27 /* PageTwoOnboardingView.swift in Sources */,
 				25F70F3520C5E8C600AD33F7 /* ProfilViewController.swift in Sources */,
 				2543A2FD20C8642C000D8A6E /* UserBeta.swift in Sources */,

@@ -25,6 +25,12 @@ class ProfilViewController: UIViewController {
     @IBOutlet weak var levelUserLabel: UILabel!
     @IBOutlet weak var userProgressView: ProgressBarView!
     
+    @IBAction func goToSettings(_ sender: Any) {
+        if let settingsViewController = self.storyboard?.instantiateViewController(withIdentifier: "settingsViewControllerIdentifier") as? SettingsViewController {
+            self.present(settingsViewController, animated: true, completion: nil)
+        }
+    }
+    
     lazy var themas = [Thema]()
     var sections = [Section]()
     var user: UserDetail!
@@ -36,6 +42,7 @@ class ProfilViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if let userId = Auth.auth().currentUser?.uid {
             ChallengeService.instance.getAllChallengeRuns(userId: userId, completed: true) { (challenges_run) in
+                self.sections = []
                 self.challenges_user = challenges_run
                 self.challenges_daily = challenges_run.filter({$0.repetition_type == "daily"})
                 self.challenges_monthly = challenges_run.filter({$0.repetition_type == "monthly"})
