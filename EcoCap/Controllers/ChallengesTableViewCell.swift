@@ -19,8 +19,7 @@ class ChallengesTableViewCell: UITableViewCell {
     @IBOutlet weak var challengeNameLabel: UILabel!
 
     @IBOutlet weak var challengeShortDescriptionLabel: UILabel!
-    @IBOutlet weak var challengeButton: UIButton!
-
+    @IBOutlet weak var challengeButton: GradientRoundedButton!
     @IBOutlet weak var challengeProgressBar: ProgressBarView!
     @IBOutlet weak var challengeProgressLabel: UILabel!
     @IBOutlet weak var challengePercentLabel: UILabel!
@@ -88,6 +87,7 @@ class ChallengesTableViewCell: UITableViewCell {
         challengeProgressBar.firstColor = UIColor(hexString: firstColor)
         challengeProgressBar.secondColor = UIColor(hexString: secondColor)
         challengeTypeImage.image = UIImage(named: "icn_\(challenge.type)")
+        challengeButton.setImage(UIImage(named: "btn_plus_\(thema?.name ?? "eat")"), for: .normal)
     }
 
     override func awakeFromNib() {

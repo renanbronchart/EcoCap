@@ -732,9 +732,11 @@
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-JR-STY">
-                                                            <rect key="frame" x="297" y="69" width="46" height="30"/>
-                                                            <state key="normal" title="Button"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNI-JR-STY" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
+                                                            <rect key="frame" x="237" y="39" width="138" height="90"/>
+                                                            <state key="normal" image="btn_plus_water">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="startDownload:" destination="KUf-VI-hWU" eventType="touchUpInside" id="X50-hi-l20"/>
                                                             </connections>
@@ -765,7 +767,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="ybk-Av-oQq" secondAttribute="trailing" constant="72" id="2XM-iM-CIA"/>
                                                         <constraint firstItem="40K-Hd-row" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="-32" id="2jM-bH-L3V"/>
                                                         <constraint firstItem="N05-bd-XVv" firstAttribute="leading" secondItem="tXc-w9-CCf" secondAttribute="leading" constant="64" id="7Vz-Uw-scl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="KNI-JR-STY" secondAttribute="trailing" id="EoR-eo-Wcg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KNI-JR-STY" secondAttribute="trailing" constant="-76" id="EoR-eo-Wcg"/>
                                                         <constraint firstAttribute="trailing" secondItem="3T2-NO-ELE" secondAttribute="trailing" constant="72" id="JEL-B2-MTP"/>
                                                         <constraint firstItem="KNI-JR-STY" firstAttribute="centerY" secondItem="tXc-w9-CCf" secondAttribute="centerY" id="JvR-bL-8PC"/>
                                                         <constraint firstItem="6lo-xy-WbG" firstAttribute="centerY" secondItem="N05-bd-XVv" secondAttribute="centerY" id="KhB-UJ-AI3"/>
@@ -1483,23 +1485,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nog-zT-UCg" customClass="GradientView" customModule="EcoCap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-HY-PPb" customClass="GradientRoundedButton" customModule="EcoCap" customModuleProvider="target">
-                                        <rect key="frame" x="97" y="535" width="181" height="48"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="4ra-e8-sv8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <size key="titleShadowOffset" width="2" height="4"/>
-                                        <state key="normal" title="Partager à mes amis"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                                <color key="value" red="0.51372549020000002" green="0.4431372549" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                                <color key="value" red="0.51372549020000002" green="0.4431372549" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tu viens de passer un niveau !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iG-Fl-oMl">
                                         <rect key="frame" x="52" y="61" width="271" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
@@ -1542,18 +1527,15 @@ Continue comme ça</string>
                                 <constraints>
                                     <constraint firstItem="Kgj-an-Wlk" firstAttribute="width" secondItem="Nog-zT-UCg" secondAttribute="width" id="1Bx-Ay-Osv"/>
                                     <constraint firstAttribute="trailing" secondItem="UaH-ag-ScX" secondAttribute="trailing" id="1ux-Ik-DpJ"/>
-                                    <constraint firstItem="Yfe-HY-PPb" firstAttribute="top" secondItem="hp4-TC-NYe" secondAttribute="bottom" constant="21" id="3DI-fM-0mq"/>
                                     <constraint firstAttribute="bottom" secondItem="Kgj-an-Wlk" secondAttribute="bottom" id="6ty-5F-RvA"/>
                                     <constraint firstItem="gpx-6s-fjN" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" constant="52" id="GB9-fc-T2e"/>
                                     <constraint firstItem="UaH-ag-ScX" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" id="Gm9-eO-wRh"/>
                                     <constraint firstAttribute="trailing" secondItem="hp4-TC-NYe" secondAttribute="trailing" constant="80" id="Ir3-it-5xH"/>
-                                    <constraint firstItem="Yfe-HY-PPb" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" constant="97" id="Mef-h2-wXD"/>
                                     <constraint firstAttribute="trailing" secondItem="7iG-Fl-oMl" secondAttribute="trailing" constant="52" id="QOb-3M-qKG"/>
                                     <constraint firstItem="7iG-Fl-oMl" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" constant="52" id="Xj5-jx-fJn"/>
                                     <constraint firstItem="7iG-Fl-oMl" firstAttribute="top" secondItem="Nog-zT-UCg" secondAttribute="top" constant="61" id="ZFF-nz-amG"/>
                                     <constraint firstItem="gpx-6s-fjN" firstAttribute="top" secondItem="UaH-ag-ScX" secondAttribute="bottom" constant="48" id="ars-Xp-v7J"/>
                                     <constraint firstItem="UaH-ag-ScX" firstAttribute="top" secondItem="Nog-zT-UCg" secondAttribute="top" constant="123" id="cAf-eW-kC6"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yfe-HY-PPb" secondAttribute="trailing" constant="97" id="d7W-PR-UhQ"/>
                                     <constraint firstItem="hp4-TC-NYe" firstAttribute="top" secondItem="gpx-6s-fjN" secondAttribute="bottom" constant="16" id="oWg-3k-MWb" userLabel="Wow… tu deviens vraiment fort ! Continue comme ça.top = Niveau 7.bottom + 16"/>
                                     <constraint firstItem="Kgj-an-Wlk" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" id="pfA-lB-ObB"/>
                                     <constraint firstItem="hp4-TC-NYe" firstAttribute="leading" secondItem="Nog-zT-UCg" secondAttribute="leading" constant="80" id="pp3-2D-NJ2"/>

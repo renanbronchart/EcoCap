@@ -169,7 +169,8 @@ extension ChallengesViewController: CellProgressDelegate {
 
     func didCompleteChallenge(_ challenge: ChallengeRun) {
         self.xpMore = challenge.points
-        self.remainingPointsLabel.text = "\(remainingPoints)"
+        self.remainingPoints -= challenge.points
+        self.remainingPointsLabel.text = "Encore \(self.remainingPoints) points"
         
         ChallengeService.instance.updateChallengeRun(challengeRun : challenge) { (challengeRunId, challengeRun) in
             ChallengeService.instance.updateChallengeRunAction(challengeRunId: challengeRunId, challengeRun: challengeRun)
