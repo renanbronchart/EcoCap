@@ -7,10 +7,30 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RankingTableViewCell: UITableViewCell {
-//    var currentUser: UserDetail!
-//    var user: UserDetail!
+    var rank: Int! {
+        didSet {
+            userRankingLabel.text = "\(rank!)"
+        }
+    }
+    
+    var challengeRunsCompleted: Int! {
+        didSet {
+            userCompletionLabel.text = ("Déjà \(challengeRunsCompleted!) défis réussis")
+        }
+    }
+    var user: UserDetail! {
+        didSet {
+            userNameLabel.text = user.name
+            userCompletionLabel.text = "10"
+            userTotalPoints.text = "\(user.score) points cumulés"
+            if (Auth.auth().currentUser?.uid == user.user_id) {
+                customViewCell.firstColor = UIColor(hexString: "#ca7cf2")
+            }
+        }
+    }
     
     @IBOutlet weak var customViewCell: CustomViewCell!
     @IBOutlet weak var userImageView: UIImageView!
@@ -24,12 +44,6 @@ class RankingTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         containerLevelImage.image = UIImage(named: "rank_other")
-        
-//        customViewCell.firstColor...
-//
-//        if (currentUser.user_id == user.user_id) {
-//            customViewCell.firstColor = UIColor(hexString: "#fffff")
-//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
