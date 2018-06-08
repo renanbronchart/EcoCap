@@ -31,7 +31,6 @@ class AuthViewController: UIViewController {
         if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
             print("CONNECTED")
             self.redirectToChallengeViewStoryboard()
-
         }
     }
     
@@ -64,7 +63,6 @@ class AuthViewController: UIViewController {
                     self.showAlert(title: "Error", message: "An error occured during sign in.")
                 } else if let _ = data {
                     UserDefaults.standard.set(true, forKey: "USERLOGGEDIN")
-                    print(UserDefaults.standard.bool(forKey: "USERLOGGEDIN"))
                     self.redirectToChallengeViewStoryboard()
                 }
             }
@@ -112,6 +110,9 @@ class AuthViewController: UIViewController {
                     }
                     db.collection("user_detail").document(user.user.uid).setData(["name": name, "score": 0, "level": 1, "challenges_ids": challengeIds, "user_id": user.user.uid])
                 })
+                
+                UserDefaults.standard.set(true, forKey: "USERLOGGEDIN")
+                
                 self.redirectToChallengeViewStoryboard()
             }
         })

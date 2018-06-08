@@ -13,6 +13,24 @@ class OnBoardingContainerViewController: UIViewController {
     @IBOutlet weak var containerOnboarding: UIView!
     @IBOutlet weak var pageControlOnboarding: UIPageControl!
     
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: "USERLOGGEDIN") == true {
+            print("CONNECTED")
+            self.redirectToChallengeViewStoryboard()
+            
+        }
+    }
+    
+    private func redirectToChallengeViewStoryboard() {
+        var homeStoryboard: UIStoryboard!
+        homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        
+        if let challengesViewcontroller = homeStoryboard.instantiateViewController(withIdentifier: "homeTapBarControllerIdentifier") as? UITabBarController {
+            self.present(challengesViewcontroller, animated: true, completion: nil)
+        }
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let onboardingViewController = segue.destination as? OnboardingViewController {

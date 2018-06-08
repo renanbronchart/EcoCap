@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  SettingsViewController.swift
 //  EcoCap
 //
 //  Created by Renan Bronchart on 26/05/2018.
@@ -8,8 +8,20 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
+    @IBAction func logout(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey:"USERLOGGEDIN")
+        
+        var AuthStoryboard: UIStoryboard!
+        
+        AuthStoryboard = UIStoryboard(name: "Auth", bundle: nil)
+        
+        if let authViewController = AuthStoryboard.instantiateViewController(withIdentifier: "loginIdentifier") as? AuthViewController {
+            self.present(authViewController, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

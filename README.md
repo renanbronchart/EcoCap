@@ -1,4 +1,6 @@
 # EcoCap
+## Éveilles ta conscience écologique
+-------------------------------------------------
 
 Swift iOS app for basic Mobile Projet at HETIC / Firebase and cocoapods usage.
 
